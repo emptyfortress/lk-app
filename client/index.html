@@ -48,7 +48,15 @@
             </zf-accordion-item>
             <zf-accordion-item title="Папки">
                 <ul class="block-list accordion">
-                    <li class="with-chevron"><a ui-sref=""><img src="img/folder-dark.png" alt="">&nbsp;&nbsp;Мои документы</a></li>
+                    <li class="with-chevron folder">
+                        <zf-accordion-item title="Мои документы">
+                            <ul class="block-list">
+                                <li><a href="">Важные</a></li>
+                                <li><a href="">Подождут</a></li>
+                                <li class="with-chevron"><a href="">Корзина</a></li>
+                            </ul>
+                        </zf-accordion-item>
+                    </li>
                     <li class="with-chevron"><a ui-sref=""><img src="img/folder-dark.png" alt="">&nbsp;&nbsp;Распоряжения</a></li>
                     <li><a ui-sref=""><img src="img/folder-dark.png" alt="">&nbsp;&nbsp;Temp</a></li>
                     <li class="with-chevron"><a ui-sref=""><img src="img/folder-dark.png" alt="">&nbsp;&nbsp;ОРД Доксвижн</a></li>

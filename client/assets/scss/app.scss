@@ -160,6 +160,20 @@ input.search.ng-hide {
 
 //accordion *********************************************
 .accordion-content {padding-top: 0;}
+.with-chevron .accordion-title {
+    background: #aaa;
+    color: black;
+    padding-left: 40px;
+    background: url(../../img/folder-dark.png) no-repeat;
+    background-position: 1rem center;
+}
+
+//.accordion-title.ng-binding {background: red;}
+
+
+.block-list li.with-chevron::after {
+  top: 20px;
+}
 
 
 //tables ************************************************
