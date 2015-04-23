@@ -1,0 +1,53 @@
+<header>
+    <div class="hm float-left">
+        <a href="" zf-toggle="off-canvas-menu"><img src="img/hm.png" alt="">
+        </a>
+    </div>
+    <div class="main-nav" ng-hide="hideBreadcrumb">
+        <zf-action-sheet>
+            <zf-as-button><a href="">{{vars.par}}</a></zf-as-button>
+            <zf-as-content position="bottom">
+                <ul>
+                    <li><a ui-sref="Задания">Задания</a></li>
+                    <li><a ui-sref="Документы">Мои документы</a></li>
+                    <li><a ui-sref="Папки">Папки</a></li>
+                </ul>
+            </zf-as-content>
+        </zf-action-sheet>
+        &nbsp;&nbsp;&gt;&nbsp;
+        <zf-action-sheet>
+            <zf-as-button><a href="">{{vars.title}}</a></zf-as-button>
+            <zf-as-content position="bottom">
+                <ul>
+                    <li ng-repeat="item in vars.list"><a ui-sref="{{ item }}">{{ item }}</a></li>
+                </ul>
+            </zf-as-content>
+        </zf-action-sheet>
+    </div>
+
+
+    <ul class="float-right">
+        <li class="rel">
+            <a ng-click="showSearch = !showSearch; hideBreadcrumb=!hideBreadcrumb">
+                <img src="img/search-w.png" alt=""></a>
+                <input type="text" class="search" ng-show="showSearch" placeholder="Search in current view">
+        </li>
+        <li class="hide-for-small-only">
+             <a href="#"><img src="img/user.png" alt=""></a>
+        </li>
+        <li class="hide-for-small-only">
+            <a href="#"><img src="img/help.png" alt="">
+            </a>
+        </li>
+    </ul>
+</header>
+<section class="small-bar">
+    <ul class="left">
+        <li class="add">
+            <a href="#" data-reveal-id="addModal"><img src="img/plus.png" alt="">&nbsp;&nbsp;Добавить</a>
+        </li>
+        <li>
+            <a href="#"><img src="img/filter.png" alt="">&nbsp;&nbsp;Фильтр</a>
+        </li>
+    </ul>
+</section>

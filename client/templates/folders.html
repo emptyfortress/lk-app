@@ -1,0 +1,34 @@
+---
+name: Папки
+url: /folders
+title: Папки
+par: Главная
+list:
+    - Мои документы
+    - Распоряжения
+    - Temp
+    - ОРД Доксвижн
+    - Actionspace
+---
+
+<div ng-include="'templates/partials/header.html'" class="folder"></div>
+
+    <div class="grid-container">
+        <br>
+
+    
+   <div class="grid-content">
+         <h3>{{ vars.title }}</h3>
+        <section class="block-list">
+        <ul>
+            <li class="with-chevron" ng-repeat="item in vars.list"><a ui-sref="{{ item }}"><img src="../img/folder-dark.png" alt="">&nbsp;&nbsp;&nbsp;{{ item }}</a>
+            </li>
+    
+        </ul>
+        </section>
+    </div>
+    
+    
+    
+    </div>
+    

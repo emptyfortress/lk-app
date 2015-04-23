@@ -1,0 +1,35 @@
+---
+name: Задания
+url: /tasks
+title: Задания
+par: Главная
+list:
+    - Входящие задания
+    - Исходящие задания
+    - Согласование
+    - Контроль
+    - Доработка
+---
+
+<div ng-include="'templates/partials/header.html'" class="task"></div>
+
+    <div class="grid-container">
+        <br>
+
+    
+   <div class="grid-content">
+         <h3>{{ vars.title }}</h3>
+        <section class="block-list">
+        <ul>
+            <li class="with-chevron rel" ng-repeat="item in vars.list"><a ui-sref="{{ item }}">{{ item }}</a>
+            <span class="alert badge">1</span>
+            </li>
+    
+        </ul>
+        
+        </section>
+    </div>
+    
+    
+    </div>
+    

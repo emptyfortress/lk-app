@@ -1,0 +1,208 @@
+@import "variables";
+@import "settings";
+@import "foundation";
+@import "responsive-tables";
+
+
+//temp class *********************
+.red {border: 1px solid red;}
+
+//common ***********************************
+.m0 {margin: 0;}
+.p0 {padding: 0;}
+.pad {padding: 2rem;}
+.rel {position: relative;}
+.no-float {float: none;}
+.grid-container {max-width: rem-calc(1024)}
+body {background: #aaa;}
+
+
+//footer *****************************************************
+footer {
+    background-color: #ccc;
+    font-size: rem-calc(13);
+    & .grid-block {
+        padding: 5px;
+    }
+}
+
+
+//header *****************************************************
+header {
+    width: 100%;
+    height: rem-calc(65);
+    color: white;
+    & ul {list-style: none;}
+}
+.doc header {background: $blue url(../../img/shad-b.png) no-repeat top left;}
+.task header {background: $green url(../../img/shad-g.png) no-repeat top left;}
+.folder header {background: $darkblue url(../../img/shad-d.png) no-repeat top left;}
+
+.main-nav {
+    float: left;
+    font-family: $SegLight;
+    font-size: rem-calc(27);
+    line-height: rem-calc(65);
+    margin-left: 20px;
+    & a {color: white;
+        padding: 15px 10px;
+        &:hover {
+            background: rgba(black, 0.2);
+        }
+    }
+}
+ul.float-right li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    & a {
+        display: block;
+        padding: 0 20px;
+        line-height: rem-calc(65);
+        &:hover {
+            background: rgba(black, 0.2);
+        }
+    }
+}
+
+input.search {
+    position: absolute;
+    top: 3px;
+    right: 60px;
+    background: rgba(white,0.5);
+    height: 32px;
+    width: 25rem;
+    border: none;
+    margin-top: 15px;
+    color: black;
+    transition: all 400ms ease;
+    overflow: hidden;
+}
+input.search.ng-hide {
+    width: 0;
+}
+.search::-webkit-input-placeholder {
+    color: white;
+    font-family: "Segoe UI Light";
+}
+
+
+
+
+
+//small-bar with add button and filters *************************
+.small-bar {
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+    height: 42px;
+    font-family: $SegLight;
+    ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    }
+}
+
+.small-bar li {
+    float: left;
+    line-height: 42px;
+    & a {
+        color: white;
+        padding: 10px 20px;
+    }
+}
+
+.doc .small-bar li a:hover {
+    background-color: darken($blue,20%);
+}
+.task .small-bar li a:hover {
+    background-color: darken($green,20%);
+}
+.folder .small-bar li a:hover {
+    background-color: darken($darkblue,20%);
+}
+
+
+.doc .small-bar {
+    background-color: darken($blue, 7%);
+}
+.task .small-bar {
+    background-color: darken($green, 7%);
+}
+.folder .small-bar {
+    background-color: darken($darkblue, 7%);
+}
+
+.block-list .badge {
+    position: absolute;
+    top:10px;
+    right:40px;
+    display: inline;
+    padding: 0;
+    padding-top: 5px;
+    text-align: center;
+}
+.accordion .block-list .badge {right: 10px;}
+
+
+//off-canvas *******************************
+#off-canvas-menu {font-family: Segoe UI;}
+.back {background: rgba(black,0.3);}
+
+.side-links {
+    list-style: none;
+    & img {
+        margin: 0 1rem;
+    }
+}
+
+
+
+
+//accordion *********************************************
+.accordion-content {padding-top: 0;}
+
+
+//tables ************************************************
+table { 
+    border: 1px solid #ddd;
+    border-collapse: separate;
+    font-family: Segoe UI;
+    width: 100%;
+}
+
+table th {
+    background: #ddd;
+    border: 1px solid white;
+    border-bottom: 1px solid #aaa;
+    color: #333;
+    font-family: $SegLight;
+    font-size: rem-calc(12);
+    &:hover {
+        background: rgba(#007FFF,0.1);
+    }
+}
+
+
+tbody tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+tbody tr:hover {
+    background: rgba(#007FFF,0.2);
+    cursor: pointer;
+}
+tbody td {border: 1px solid white;}
+
+
+//forms ***************************************************
+form {
+    border: 1px solid #aaa;
+    width: 680px;
+    padding: 20px;
+}
+
+
+
+
+
+

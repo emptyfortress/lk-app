@@ -1,0 +1,26 @@
+---
+name: Входящие
+url: /docs/inbox
+par: Документы
+title: Входящие
+list:
+    - Последние
+    - Входящие
+    - Исходящие
+    - ОРД
+    - Заявки
+    - Служебные записки
+---
+
+<div ng-include="'templates/partials/header.html'" class="doc"></div>
+
+<div class="grid-container">
+   <div class="grid-content1">
+       <br>
+        <h3>{{ vars.title }}</h3>
+           <div ng-include="'templates/partials/table1.html'"></div>
+                        
+   
+   
+   </div>
+</div>
