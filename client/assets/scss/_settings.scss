@@ -266,7 +266,7 @@
 
 // $accordion-title-background: $gray-light;
 // $accordion-title-background: #666;
- $accordion-title-background-hover: smartscale($accordion-title-background, -20%);
+// $accordion-title-background-hover: smartscale($accordion-title-background, -20%);
 // $accordion-title-background-hover: smartscale($accordion-title-background, 5%);
 // $accordion-title-background-active: smartscale($accordion-title-background, 3%);
 // $accordion-title-background-active: smartscale($accordion-title-background, -20%);
@@ -492,7 +492,7 @@
 // $motion-spin-and-fade: true;
 
 // Default speed for transitions and animations
-// $motion-duration-default: 500ms;
+ $motion-duration-default: 300ms;
 
 // Slow and fast modifiders
 // $motion-duration-slow: 750ms;
@@ -558,15 +558,18 @@
 // 21. Panel
 // - - - - - - - - - - - - - - -
 
+ $panel-size-horizontal: 245px;
 // $panel-size-horizontal: 300px;
 // $panel-size-vertical: 300px;
 // $panel-padding: 0;
 
+ $panel-background: #aaa;
 // $panel-background: #fff;
+// $panel-shadow: 3px 0 10px rgba(black, 0.5);
 // $panel-shadow: 3px 0 10px rgba(black, 0.25);
 
 // DEPRECATED: these variables will be removed in a future version.
-// $panel-animation-speed: 0.25s; 
+// $panel-animation-speed: 0.1s;
 
 // 22. Popup
 // - - - - - - - - - - - - - - -

@@ -15,7 +15,11 @@
 .no-float {float: none;}
 .grid-container {max-width: rem-calc(1024)}
 body {background: #aaa;}
+.bg-green {background: $green;}
+.bg-blue {background: $blue;}
+.bg-darkblue {background: $darkblue;}
 
+.grid-content .grid-block {margin-left: 0; margin-right: 0;}
 
 //footer *****************************************************
 footer {
@@ -28,54 +32,44 @@ footer {
 
 
 //header *****************************************************
-header {
-    width: 100%;
+.header {
     height: rem-calc(65);
     color: white;
-    & ul {list-style: none;}
+    & a {
+    color: white;
+    }
 }
-.doc header {background: $blue url(../../img/shad-b.png) no-repeat top left;}
-.task header {background: $green url(../../img/shad-g.png) no-repeat top left;}
-.folder header {background: $darkblue url(../../img/shad-d.png) no-repeat top left;}
-
 .main-nav {
-    float: left;
     font-family: $SegLight;
     font-size: rem-calc(27);
     line-height: rem-calc(65);
     margin-left: 20px;
     & a {color: white;
-        padding: 15px 10px;
+        padding: 15px;
         &:hover {
             background: rgba(black, 0.2);
         }
     }
-}
-ul.float-right li {
-    float: left;
-    margin: 0;
-    padding: 0;
-    & a {
-        display: block;
-        padding: 0 20px;
-        line-height: rem-calc(65);
-        &:hover {
-            background: rgba(black, 0.2);
-        }
+    & img {
+        margin-bottom: 35px;
     }
 }
+.doc .header {background: $blue url(../../img/shad-b.png) no-repeat top left;}
+.task .header {background: $green url(../../img/shad-g.png) no-repeat top left;}
+.folder .header {background: $darkblue url(../../img/shad-d.png) no-repeat top left;}
+
 
 input.search {
     position: absolute;
     top: 3px;
-    right: 60px;
+    right: 52px;
     background: rgba(white,0.5);
     height: 32px;
-    width: 25rem;
+    width: 86%;
     border: none;
     margin-top: 15px;
     color: black;
-    transition: all 400ms ease;
+    transition: all 300ms ease;
     overflow: hidden;
 }
 input.search.ng-hide {
@@ -85,9 +79,6 @@ input.search.ng-hide {
     color: white;
     font-family: "Segoe UI Light";
 }
-
-
-
 
 
 //small-bar with add button and filters *************************
@@ -132,6 +123,8 @@ input.search.ng-hide {
     background-color: darken($darkblue, 7%);
 }
 
+
+
 .block-list .badge {
     position: absolute;
     top:10px;
@@ -161,7 +154,7 @@ input.search.ng-hide {
 //accordion *********************************************
 .accordion-content {padding-top: 0;}
 .with-chevron .accordion-title {
-    background: #aaa;
+//    background: #aaa;
     color: black;
     padding-left: 40px;
     background: url(../../img/folder-dark.png) no-repeat;
@@ -169,6 +162,15 @@ input.search.ng-hide {
 }
 
 //.accordion-title.ng-binding {background: red;}
+
+.bg-green .accordion-title {background: $green; text-transform: uppercase; color:white;}
+.bg-blue .accordion-title {background: $blue; text-transform: uppercase;color:white;}
+.bg-darkblue .accordion-title {background: $darkblue; text-transform: uppercase;color:white;}
+.bg-green li, .bg-blue li, .bg-darkblue li {background: rgba(white,0.5);}
+.block-list li {border-bottom: 1px solid rgba(black,0.2);}
+.block-list li:first-child {border-top: 1px solid rgba(black,0.2);}
+.accordion-content {padding-bottom: 0;}
+
 
 
 .block-list li.with-chevron::after {
@@ -216,7 +218,9 @@ form {
 }
 
 
-
-
+//panel *****************************************************
+.back a {
+    color: white;
+}
 
 

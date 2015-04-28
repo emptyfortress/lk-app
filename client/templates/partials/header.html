@@ -1,22 +1,26 @@
-<header>
-    <div class="hm float-left">
-        <a href="" zf-toggle="off-canvas-menu"><img src="img/hm.png" alt="">
-        </a>
-    </div>
-    <div class="main-nav" ng-hide="hideBreadcrumb">
+<div class="grid-block header">
+    <div class="grid-block shrink"><a href="" zf-toggle="off-canvas-menu"><img src="img/hm.png" alt="">
+        </a></div>
+    <div class="grid-block shrink  main-nav">
         <zf-action-sheet>
-            <zf-as-button><a href="">{{vars.par}}</a></zf-as-button>
+            <zf-as-button ng-hide="showSearch">
+                <a href="">{{vars.par}}</a>
+            </zf-as-button>
             <zf-as-content position="bottom">
                 <ul>
                     <li><a ui-sref="Задания">Задания</a></li>
                     <li><a ui-sref="Документы">Мои документы</a></li>
                     <li><a ui-sref="Папки">Папки</a></li>
                 </ul>
-            </zf-as-content>
+             </zf-as-content>
         </zf-action-sheet>
-        &nbsp;&nbsp;&gt;&nbsp;
+    </div>
+    <div class="grid-block shrink  main-nav"><span ng-hide="showSearch">&nbsp;&nbsp;&gt;&nbsp;</span></div>
+    <div class="grid-block shrink  main-nav">
         <zf-action-sheet>
-            <zf-as-button><a href="">{{vars.title}}</a></zf-as-button>
+            <zf-as-button>
+                <a href="">{{vars.title}}</a>
+            </zf-as-button>
             <zf-as-content position="bottom">
                 <ul>
                     <li ng-repeat="item in vars.list"><a ui-sref="{{ item }}">{{ item }}</a></li>
@@ -25,22 +29,15 @@
         </zf-action-sheet>
     </div>
 
+    <div class="grid-block align-right main-nav">
+        <a ng-click="showSearch = !showSearch;">
+            <img src="img/search-w.png" alt=""></a>
+            <input type="text" class="search" ng-show="showSearch" placeholder="Search in current view">
+    </div>
+    <div class="grid-block align-right shrink main-nav hide-for-small-only"><a href="#"><img src="img/user.png" alt=""></a></div>
+    <div class="grid-block align-right shrink main-nav hide-for-small-only"><a href="#"><img src="img/help.png" alt=""></a></div>
+</div>
 
-    <ul class="float-right">
-        <li class="rel">
-            <a ng-click="showSearch = !showSearch; hideBreadcrumb=!hideBreadcrumb">
-                <img src="img/search-w.png" alt=""></a>
-                <input type="text" class="search" ng-show="showSearch" placeholder="Search in current view">
-        </li>
-        <li class="hide-for-small-only">
-             <a href="#"><img src="img/user.png" alt=""></a>
-        </li>
-        <li class="hide-for-small-only">
-            <a href="#"><img src="img/help.png" alt="">
-            </a>
-        </li>
-    </ul>
-</header>
 <section class="small-bar">
     <ul class="left">
         <li class="add">
