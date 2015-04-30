@@ -1,0 +1,68 @@
+---
+name: На согласование
+url: /task/soglas
+par: Задания
+title: На согласование
+back: true
+view: true
+---
+
+<div ng-include="'templates/partials/header.html'" class="task"></div>
+
+<div class="grid-container rel">
+   <div class="grid-content">
+<!--       <br>-->
+        <div class="grid-block nowrap">
+            <div class="grid-content">
+                <p class="nomer">ОРГ-3</p>
+                <h3><span class="important">&uarr;&nbsp;</span>Согласовать письмо в исполком партии пиратов<a href=""><img src="../img/edit.png" alt="" class="edit"></a> </h3>
+            </div>
+            <div class="grid-content shrink bottom text-right"><h5>Ожидает решения</h5></div>
+        </div>
+
+        <div zf-tabs="" class="custom-tabs">
+
+            <div zf-tab="" title="Главное">
+                <div ng-include="'templates/partials/main-tab.html'"></div>
+            </div>
+            <div zf-tab="" title="Комментарии">
+                Tab content 2
+            </div>
+            <div zf-tab="" title="Ход согласования">
+                Tab content 3
+            </div>
+            <div zf-tab="" title="История">
+                Tab content 4
+            </div>
+        </div>
+   </div>
+
+   <div class="prev">&lsaquo;</div>
+<div class="next">&rsaquo;</div>
+
+</div>
+
+
+<zf-panel id="buttPanel" position="right" class="myPanel">
+    <div zf-close="">
+      Закрыть
+    </div>
+    <br><br><br><br>
+    <h5>Примите решение</h5>
+    <br>
+    <a class="decision" href="#">Согласовать</a>
+     <a class="decision" href="#">Отклонить</a>
+     <br>
+     <a class="decision" href="#">Делегировать</a>
+     <a class="decision" href="#">Согласовать с замечаниями</a>
+     <a class="decision" href="#">Отозвать</a>
+     <a class="decision" href="#">Удалить</a>
+     <a class="decision" href="#">Сообщить о проблеме</a>
+     <a class="decision" href="#">Подумать</a>
+     <a class="decision" href="#">Решение</a>
+</zf-panel>
+
+
+
+
+

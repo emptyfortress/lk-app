@@ -1,0 +1,45 @@
+---
+name: Выдать задание
+url: /tasks/add
+par: Задания
+title: Выдать задание
+animationIn: zoomIn
+back: true
+view: true
+---
+
+<div ng-include="'templates/partials/header.html'" class="task"></div>
+
+<div class="grid-container">
+<br>
+<h3>Новое задание</h3>
+<form action="" ng-controller="formCtrl">
+
+
+
+    <select name="" id="">
+        <option value="">Breakfast</option>
+        <option value="">Bacon Pancakes</option>
+        <option value="">Mountain Dew</option>
+        <option value="">Scrambled eggs with grilled zucchini, spinach, leeks, roasted tomatoes and mozzarella</option>
+    </select>
+
+</form>
+
+
+<form>
+       <ol>
+         <li>
+           <input id="title" name="title" size="40" ng-model="data" ng-change="entered" ng-class={'empty': data}/>
+           <label for="title">Title</label>
+         </li>
+<!--         <li>{{formCtrl.data}}</li>-->
+         <li>
+           <input id="author" name="author" size="40" />
+           <label for="author">Author</label>
+         </li>
+      </ol>
+    </form>
+
+
+</div>

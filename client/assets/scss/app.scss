@@ -6,6 +6,12 @@
 
 //temp class *********************
 .red {border: 1px solid red;}
+.red-color {color: red;}
+.black {
+    background: #777;
+    color: white;
+    & h5 {color: white;}
+}
 
 //common ***********************************
 .m0 {margin: 0;}
@@ -18,8 +24,54 @@ body {background: #aaa;}
 .bg-green {background: $green;}
 .bg-blue {background: $blue;}
 .bg-darkblue {background: $darkblue;}
-
+.mr-20 {margin-right: 20px;}
+.ml-20 {margin-left: 20px;}
+.mt-10 {margin-top: 10px;}
+.bottom {align-self: flex-end;}
 .grid-content .grid-block {margin-left: 0; margin-right: 0;}
+.medium-size, .medium-size p {font-size: 0.9rem;}
+.important {color: darkred;}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    font-size: 5rem;
+    opacity: 0.2;
+    padding: 1rem;
+    cursor: pointer;
+    &:hover{
+        background: #eee;
+        opacity: 1;
+    }
+}
+
+//button *****************************
+.decision {
+    display: block;
+    background: #ccc;
+    width: 100%;
+    color: #333;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: .9rem;
+    margin-bottom: 5px;
+    &.more {
+        background: transparent;
+        font-size: 2rem;
+        line-height: 1rem;
+        &:hover {
+            background: #eee;
+        }
+    }
+    &:hover {
+        color: black;
+        background: scale-color($button-background, $lightness: -10%);
+    }
+}
+
+.prev {
+    left: -50px;
+}
+.next {right: -50px;}
 
 //footer *****************************************************
 footer {
@@ -35,6 +87,11 @@ footer {
 .header {
     height: rem-calc(65);
     color: white;
+    & a {
+    color: white;
+    }
+}
+.main-nav {
     & a {
     color: white;
     }
@@ -94,6 +151,7 @@ input.search.ng-hide {
 }
 
 .small-bar li {
+    color: white;
     float: left;
     line-height: 42px;
     & a {
@@ -224,3 +282,298 @@ form {
 }
 
 
+
+//modal ***********************************
+.addModal .grid-content .grid-block {
+    font-family: "Calibri Light";
+    font-size: rem-calc(17);
+    display: block;
+    margin-top: 2px;
+    padding: 15px;
+    cursor: pointer;
+    color: white;
+    & a {
+        color: white;
+    }
+}
+.grid-block.bg-green:hover {
+    background: darken($green,10%);
+}
+.grid-block.bg-blue:hover {
+    background: darken($blue,10%);
+}
+
+.sub {
+    padding-left: 40px;
+    background: lighten($blue,10%);
+    &:hover {
+        background: darken($blue,5%);
+    }
+}
+
+.back {
+    height: rem-calc(42);
+    overflow: hidden;
+    & img {
+        height: 50px;
+        margin-top: -3px;
+    }
+}
+
+.view {
+    float: right;
+}
+
+.view select {
+    height: 30px;
+    margin-top: 5px;
+    border: 1px solid white;
+    background: transparent;
+    color: black;
+   vertical-align: middle;
+   font: normal 12px/14px "Segoe UI", Arial, Helvetica, Sans-serif;
+   outline: 0 none;
+
+    & option {
+    background: #fff;
+    color: #333;
+    }
+}
+
+//form elements ******************************************
+/* At first just some design */
+
+input, label {
+    font-size: 1.5em;
+    font-family: "Calibri";
+}
+
+form > ol {
+    list-style: none;
+    padding: 0px;
+}
+
+form > ol > li {
+    position: relative;
+    margin: 1.2em;
+}
+
+input {
+    padding: 0.1em 0em;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px dotted #555;
+    outline: none;
+    margin: 0px;
+    background: none;
+}
+
+/**** HERE THE MAGIC STARTS *****/
+/* Original label position: top left and small */
+label {
+    position: absolute;
+    top: -1em;
+    left: 0.08em;
+    color: #aaaaaa;
+    z-index:-1;
+    font-size: 0.85em;
+    animation: float-labels 300ms none ease-out;
+  -webkit-animation: float-labels 300ms none ease-out;
+
+    /* There is a bug sometimes pausing the animation. This avoids that.*/
+    animation-play-state:running !important;
+  -webkit-animation-play-state:running !important;
+}
+
+/* Label highlight effect also for non-JS browsers */
+input:not(.empty):focus + label {
+    color: #0099ff;
+}
+
+/* In JS Browsers the .empty class is assigned to empty inputs -> label is rendered like a placeholder in the input field */
+input.empty + label {
+    top: 0.1em;
+    font-size: 1.5em;
+    animation:none;
+    -webkit-animation:none;
+}
+
+/* The animation is a bit more complex than what is achievable with simple transitions, because I do not want the label to fly over my input. The place-holder label should fade out first and then appear again above the input text */
+@keyframes float-labels {
+
+   0% {
+    opacity:0;
+    color:#aaa;
+    top:0.1em;
+    font-size:1.5em;
+  }
+  20% {
+    font-size:1.5em;
+    opacity:0;
+  }
+  30% {
+    top:0.1em;
+  }
+  50% {
+    opacity:0;
+    font-size:0.85em;
+  }
+  100% {
+    top:-1em;
+    opacity:1;
+  }
+}
+@-webkit-keyframes float-labels {
+
+ 0% {
+    opacity:1;
+    color:#aaa;
+    top:0.1em;
+    font-size:1.5em;
+  }
+  20% {
+    font-size:1.5em;
+    opacity:0;
+  }
+  30% {
+    top:0.1em;
+  }
+  50% {
+    opacity:0;
+    font-size:0.85em;
+  }
+  100% {
+    top:-1em;
+    opacity:1;
+  }
+}
+
+
+//карточка *****************************************
+.nomer {
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+img.edit {
+    margin-left: 3rem;
+    opacity: 0.3;
+    a:hover & {
+        opacity: 1;
+    }
+}
+
+//tabs *********************************
+
+
+// This is the container for your tabstrip
+.custom-tabs {
+border-top: 1px solid #ccc;
+    & .tab-item {
+        font-family: "Calibri Light";
+        background: white;
+        text-transform: uppercase;
+        padding: 10px 15px;
+        color: #aaa;
+    }
+    & .tab-item.is-active {
+        background: white;
+        border-top: 1px solid black;
+        margin-top: -1px;
+        font-family: "Calibri";
+        font-weight: 600;
+    }
+    & .tab-content {margin-top: 20px;}
+
+}
+
+
+.block {
+    font-size: rem-calc(14);
+    width: 100%;
+}
+.zag {
+    font-family: "Segoe UI Semibold";
+    font-size: 0.9rem;
+//    font-weight: 600;
+    cursor: pointer;
+    padding: 5px 5px 5px 0;
+    &:hover {
+        background: rgba(black,0.05);
+    }
+}
+.light {
+    font-family: "Calibri Light";
+    list-style: none;
+    margin: 0;
+    margin-top: 10px;
+    & li {
+        line-height: 120%;
+    }
+}
+
+
+//chevron *********************************
+
+.chevron::before {
+	border-style: solid;
+	border-width: 0.2em 0.2em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	left: 1em;
+	position: relative;
+	top: 0.1em;
+	transform: rotate(-45deg);
+	vertical-align: middle;
+	width: 0.45em;
+}
+
+.chevron.right:before {
+	left: 0;
+	transform: rotate(45deg);
+}
+
+.chevron.bottom:before {
+	top: 0;
+	transform: rotate(135deg);
+}
+
+.chevron.left:before {
+	left: 0.25em;
+	transform: rotate(-135deg);
+}
+
+.myPanel {
+//    width: rem-calc(300);
+    background: #fff;
+    text-align: center;
+    padding: 1rem;
+    & a {
+        padding: 1rem;
+        background: #d3d3d3;
+//        border: 1px solid #ccc;
+    }
+}
+.report {
+    border: 3px dotted #ccc;
+    padding: 1rem;
+    display: block;
+    position: relative;
+    top:-40px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    cursor: pointer;
+    &:hover {
+        border-color: black;
+        background: #d2eab6;
+        color: black;
+        & img {
+            opacity: 1;
+        }
+    }
+    & img {
+        opacity: 0.3;
+    }
+}
