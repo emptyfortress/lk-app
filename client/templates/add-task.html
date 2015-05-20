@@ -4,41 +4,75 @@ url: /tasks/add
 par: Задания
 title: Выдать задание
 animationIn: zoomIn
+animationOut: slideOutBottom
 back: true
 view: true
 ---
 
 <div ng-include="'templates/partials/header.html'" class="task"></div>
 
-<div class="grid-container">
+<div class="grid-container task">
 <br>
-<h3>Новое задание</h3>
-<form action="" ng-controller="formCtrl">
+<h3 class="ml-20">Новое задание</h3>
 
 
-
+<form action="" class="myForm">
     <select name="" id="">
-        <option value="">Breakfast</option>
-        <option value="">Bacon Pancakes</option>
-        <option value="">Mountain Dew</option>
-        <option value="">Scrambled eggs with grilled zucchini, spinach, leeks, roasted tomatoes and mozzarella</option>
+        <option value="">Задание / Задание УД / На исполнение</option>
+        <option value="">Задание / Задание УД / Согласование</option>
+        <option value="">Задание / Задание УД / Задание</option>
     </select>
 
-</form>
 
 
-<form>
-       <ol>
-         <li>
-           <input id="title" name="title" size="40" ng-model="data" ng-change="entered" ng-class={'empty': data}/>
-           <label for="title">Title</label>
-         </li>
-<!--         <li>{{formCtrl.data}}</li>-->
-         <li>
-           <input id="author" name="author" size="40" />
-           <label for="author">Author</label>
-         </li>
-      </ol>
+
+      <div class="grid-block">
+          <input id="title1" ng-model="title1" ng-class="{'empty': !title1.length }"/>
+           <label for="title1" class="lb">Название</label>
+      </div>
+      <div class="grid-block">
+          <input id="description" ng-model="descr"  ng-class="{'empty': !descr.length }"/>
+               <label for="description" class="lb">Описание</label>
+      </div>
+      <div class="grid-block">
+          <div class="grid-block">
+               <input id="to" ng-model="to" ng-class="{'empty': !to.length }"/>
+                <label for="to" class="lb">Исполнитель</label>
+          </div>
+          &nbsp;&nbsp;&nbsp;
+          <div class="grid-block">
+              <input id="to1" ng-model="to1" ng-class="{'empty': !to1.length }"/>
+               <label for="to1" class="lb">Срок</label>
+          </div>
+      </div>
+
+      <input id="controler" type="checkbox" ng-model="showCont"><label for="controler">Назначить контролера</label>
+
+      <div class="grid-block animate-show" ng-show="showCont">
+          <div class="grid-block">
+               <input id="cont" ng-model="cont" ng-class="{'empty': !cont.length }"/>
+                <label for="cont" class="lb">Контролер</label>
+          </div>
+          &nbsp;&nbsp;&nbsp;
+          <div class="grid-block">
+              <input id="to2" ng-model="to2" ng-class="{'empty': !to2.length }"/>
+               <label for="to2" class="lb">Срок</label>
+          </div>
+      </div>
+      <input id="priem" type="checkbox" ><label for="priem">Требуется приемка</label>
+
+      <br><br>
+      <div class="grid-block">
+          <div class="grid-block">
+            <a class="button" href="#">Отменить</a>
+          </div>
+           <div class="grid-block align-right">
+            <a class="button" href="#">Сохранить</a>
+            <a class="button primary" ui-sref="Исходящие задания">Отправить</a>
+          </div>
+      </div>
+
+
     </form>
 
 

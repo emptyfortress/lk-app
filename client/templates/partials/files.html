@@ -1,0 +1,70 @@
+<div class="grid-block">
+    <div class="zag1 medium-size rel" ng-click="hideFile = !hideFile;">
+        Ссылки (3)
+        <span class="arrow" ng-show="hideFile">&and;</span>
+        <span ng-show="!hideFile" class="arrow">&or;</span>
+    </div>
+    <div class="plus">
+        <img src="../../img/plus-dark.png" alt="" ng-hide="showSubMenu" ng-click="showSubMenu = !showSubMenu">
+        <img src="../../img/close-dark.png" alt="" class="close"  ng-show="showSubMenu" ng-click="showSubMenu = !showSubMenu">
+        <span ng-show="showSubMenu" class="jump">
+            <div zf-action-sheet="">
+                <div zf-as-button="">
+                    <img src="../../img/url.png" alt="">
+                </div>
+                <div zf-as-content="" position="bottom" class="custom-as">
+                <p>Прикрепить URL</p>
+                <ul>
+                <li zf-as-button=""><a href="#" >Дополнение</a></li>
+                <li zf-as-button=""><a href="#" >Ссылается на</a></li>
+                <li zf-as-button=""><a href="#" >Связано с</a></li>
+                </ul>
+                </div>
+            </div>
+            <div zf-action-sheet="" >
+                <div zf-as-button="">
+                    <img src="../../img/link-attach.png" alt="">
+                </div>
+                <div zf-as-content="" position="bottom" class="custom-as">
+                <p>Прикрепить файл</p>
+                <ul>
+                <li zf-as-button=""><a href="#" >Основной документ</a></li>
+                <li zf-as-button=""><a href="#" >Дополнение</a></li>
+                <li zf-as-button=""><a href="#" >Отчет</a></li>
+                </ul>
+                </div>
+            </div>
+            <div zf-action-sheet="" >
+                <div zf-as-button="">
+                    <img src="../../img/link.png" alt="">
+                </div>
+                <div zf-as-content="" position="bottom" class="custom-as">
+                <p>Прикрепить ссылку</p>
+                <ul>
+                <li zf-as-button=""><a href="#" >Отчет</a></li>
+                <li zf-as-button=""><a href="#" >Дополнение</a></li>
+                <li zf-as-button=""><a href="#" >Ссылается на</a></li>
+                <li zf-as-button=""><a href="#" >В ответ на</a></li>
+                </ul>
+                </div>
+            </div>
+            <div zf-action-sheet="" >
+                <div zf-as-button="">
+                    <img src="../../img/add-link.png" alt="">
+                </div>
+                <div zf-as-content="" position="bottom" class="custom-as">
+                <p>Создать</p>
+                <ul>
+                <li zf-as-button=""><a href="#" >Отчет</a></li>
+                <li zf-as-button=""><a href="#" >Дополнение</a></li>
+                <li zf-as-button=""><a href="#" >Ссылается на</a></li>
+                <li zf-as-button=""><a href="#" >В ответ на</a></li>
+                </ul>
+                </div>
+            </div>
+
+
+        </span>
+    </div>
+</div>
+

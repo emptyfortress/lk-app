@@ -2,43 +2,101 @@
 @import "settings";
 @import "foundation";
 @import "responsive-tables";
-
-
 //temp class *********************
-.red {border: 1px solid red;}
-.red-color {color: red;}
+.red {
+    border: 1px solid red;
+}
+
+.red-color {
+    color: red;
+}
+
 .black {
     background: #777;
     color: white;
-    & h5 {color: white;}
+    & h5 {
+        color: white;
+    }
 }
 
 //common ***********************************
-.m0 {margin: 0;}
-.p0 {padding: 0;}
-.pad {padding: 2rem;}
-.rel {position: relative;}
-.no-float {float: none;}
-.grid-container {max-width: rem-calc(1024)}
-body {background: #aaa;}
-.bg-green {background: $green;}
-.bg-blue {background: $blue;}
-.bg-darkblue {background: $darkblue;}
-.mr-20 {margin-right: 20px;}
-.ml-20 {margin-left: 20px;}
-.mt-10 {margin-top: 10px;}
-.bottom {align-self: flex-end;}
-.grid-content .grid-block {margin-left: 0; margin-right: 0;}
-.medium-size, .medium-size p {font-size: 0.9rem;}
-.important {color: darkred;}
-.prev, .next {
+.m0 {
+    margin: 0;
+}
+
+.p0 {
+    padding: 0;
+}
+
+.pad {
+    padding: 2rem;
+}
+
+.rel {
+    position: relative;
+}
+
+.no-float {
+    float: none;
+}
+
+//.grid-container {max-width: rem-calc(1024); margin: 0 auto;}
+body {
+    background: #aaa;
+}
+
+.bg-green {
+    background: $green;
+}
+
+.bg-blue {
+    background: $blue;
+}
+
+.bg-darkblue {
+    background: $darkblue;
+}
+
+.mr-20 {
+    margin-right: 20px;
+}
+
+.ml-20 {
+    margin-left: 20px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.bottom {
+    align-self: flex-end;
+}
+
+.grid-content .grid-block {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.medium-size,
+.medium-size p {
+    font-size: 0.9rem;
+}
+
+.important {
+    color: darkred;
+}
+.pointer {cursor: pointer;}
+
+.prev,
+.next {
     position: absolute;
     top: 50%;
     font-size: 5rem;
     opacity: 0.2;
     padding: 1rem;
     cursor: pointer;
-    &:hover{
+    &:hover {
         background: #eee;
         opacity: 1;
     }
@@ -50,7 +108,7 @@ body {background: #aaa;}
     background: #ccc;
     width: 100%;
     color: #333;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
     text-align: center;
     font-size: .9rem;
     margin-bottom: 5px;
@@ -71,7 +129,40 @@ body {background: #aaa;}
 .prev {
     left: -50px;
 }
-.next {right: -50px;}
+
+.next {
+    right: -50px;
+}
+
+.task .button.primary {
+    background: $green;
+    color: white;
+    &:hover {
+        background: scale-color($green, $lightness: -10%);
+    }
+}
+
+.doc .button.primary {
+    background: $blue;
+    color: white;
+    &:hover {
+        background: scale-color($blue, $lightness: -10%);
+    }
+}
+
+.close-button {
+    font-family: 'sans-serif';
+    padding: 3px;
+    color: #aaa;
+    &:hover {
+        color: white;
+        background: #FF7373;
+    }
+}
+
+a.dotted {
+    border-bottom: 1px dotted #00558b;
+}
 
 //footer *****************************************************
 footer {
@@ -82,26 +173,28 @@ footer {
     }
 }
 
-
 //header *****************************************************
 .header {
     height: rem-calc(65);
     color: white;
     & a {
-    color: white;
+        color: white;
     }
 }
+
 .main-nav {
     & a {
-    color: white;
+        color: white;
     }
 }
+
 .main-nav {
     font-family: $SegLight;
     font-size: rem-calc(27);
     line-height: rem-calc(65);
     margin-left: 20px;
-    & a {color: white;
+    & a {
+        color: white;
         padding: 15px;
         &:hover {
             background: rgba(black, 0.2);
@@ -111,16 +204,27 @@ footer {
         margin-bottom: 35px;
     }
 }
-.doc .header {background: $blue url(../../img/shad-b.png) no-repeat top left;}
-.task .header {background: $green url(../../img/shad-g.png) no-repeat top left;}
-.folder .header {background: $darkblue url(../../img/shad-d.png) no-repeat top left;}
 
+.doc .header {
+    background: $blue url(../../img/shad-b.png) no-repeat top left;
+}
+
+.task .header {
+    background: $green url(../../img/shad-g.png) no-repeat top left;
+}
+
+.folder .header {
+    background: $darkblue url(../../img/shad-d.png) no-repeat top left;
+}
+.welcome .header {
+    background: $darkblue url(../../img/shad-d.png) no-repeat top left;
+}
 
 input.search {
     position: absolute;
     top: 3px;
     right: 52px;
-    background: rgba(white,0.5);
+    background: rgba(white, 0.5);
     height: 32px;
     width: 86%;
     border: none;
@@ -129,24 +233,25 @@ input.search {
     transition: all 300ms ease;
     overflow: hidden;
 }
+
 input.search.ng-hide {
     width: 0;
 }
+
 .search::-webkit-input-placeholder {
     color: white;
     font-family: "Segoe UI Light";
 }
 
-
 //small-bar with add button and filters *************************
 .small-bar {
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
     height: 42px;
     font-family: $SegLight;
     ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+        margin: 0;
+        padding: 0;
+        list-style: none;
     }
 }
 
@@ -161,43 +266,51 @@ input.search.ng-hide {
 }
 
 .doc .small-bar li a:hover {
-    background-color: darken($blue,20%);
-}
-.task .small-bar li a:hover {
-    background-color: darken($green,20%);
-}
-.folder .small-bar li a:hover {
-    background-color: darken($darkblue,20%);
+    background-color: darken($blue, 20%);
 }
 
+.task .small-bar li a:hover {
+    background-color: darken($green, 20%);
+}
+
+.folder .small-bar li a:hover {
+    background-color: darken($darkblue, 20%);
+}
 
 .doc .small-bar {
     background-color: darken($blue, 7%);
 }
+
 .task .small-bar {
     background-color: darken($green, 7%);
 }
+
 .folder .small-bar {
     background-color: darken($darkblue, 7%);
 }
 
-
-
 .block-list .badge {
     position: absolute;
-    top:10px;
-    right:40px;
+    top: 10px;
+    right: 40px;
     display: inline;
     padding: 0;
     padding-top: 5px;
     text-align: center;
 }
-.accordion .block-list .badge {right: 10px;}
 
+.accordion .block-list .badge {
+    right: 10px;
+}
 
 //off-canvas *******************************
-#off-canvas-menu {font-family: Segoe UI;}
-.back {background: rgba(black,0.3);}
+#off-canvas-menu {
+    font-family: Segoe UI;
+}
+
+.back {
+    background: rgba(black, 0.3);
+}
 
 .side-links {
     list-style: none;
@@ -206,13 +319,13 @@ input.search.ng-hide {
     }
 }
 
-
-
-
 //accordion *********************************************
-.accordion-content {padding-top: 0;}
+.accordion-content {
+    padding-top: 0;
+}
+
 .with-chevron .accordion-title {
-//    background: #aaa;
+    //    background: #aaa;
     color: black;
     padding-left: 40px;
     background: url(../../img/folder-dark.png) no-repeat;
@@ -220,24 +333,48 @@ input.search.ng-hide {
 }
 
 //.accordion-title.ng-binding {background: red;}
-
-.bg-green .accordion-title {background: $green; text-transform: uppercase; color:white;}
-.bg-blue .accordion-title {background: $blue; text-transform: uppercase;color:white;}
-.bg-darkblue .accordion-title {background: $darkblue; text-transform: uppercase;color:white;}
-.bg-green li, .bg-blue li, .bg-darkblue li {background: rgba(white,0.5);}
-.block-list li {border-bottom: 1px solid rgba(black,0.2);}
-.block-list li:first-child {border-top: 1px solid rgba(black,0.2);}
-.accordion-content {padding-bottom: 0;}
-
-
-
-.block-list li.with-chevron::after {
-  top: 20px;
+.bg-green .accordion-title {
+    background: $green;
+    text-transform: uppercase;
+    color: white;
 }
 
+.bg-blue .accordion-title {
+    background: $blue;
+    text-transform: uppercase;
+    color: white;
+}
+
+.bg-darkblue .accordion-title {
+    background: $darkblue;
+    text-transform: uppercase;
+    color: white;
+}
+
+.bg-green li,
+.bg-blue li,
+.bg-darkblue li {
+    background: rgba(white, 0.5);
+}
+
+.block-list li {
+    border-bottom: 1px solid rgba(black, 0.2);
+}
+
+.block-list li:first-child {
+    border-top: 1px solid rgba(black, 0.2);
+}
+
+.accordion-content {
+    padding-bottom: 0;
+}
+
+.block-list li.with-chevron::after {
+    top: 20px;
+}
 
 //tables ************************************************
-table { 
+table {
     border: 1px solid #ddd;
     border-collapse: separate;
     font-family: Segoe UI;
@@ -252,36 +389,28 @@ table th {
     font-family: $SegLight;
     font-size: rem-calc(12);
     &:hover {
-        background: rgba(#007FFF,0.1);
+        background: rgba(#007FFF, 0.1);
     }
 }
-
 
 tbody tr:nth-child(odd) {
     background-color: #eee;
 }
 
 tbody tr:hover {
-    background: rgba(#007FFF,0.2);
+    background: rgba(#007FFF, 0.2);
     cursor: pointer;
 }
-tbody td {border: 1px solid white;}
 
-
-//forms ***************************************************
-form {
-    border: 1px solid #aaa;
-    width: 680px;
-    padding: 20px;
+tbody td {
+    border: 1px solid white;
 }
 
-
+//forms ***************************************************
 //panel *****************************************************
 .back a {
     color: white;
 }
-
-
 
 //modal ***********************************
 .addModal .grid-content .grid-block {
@@ -296,18 +425,32 @@ form {
         color: white;
     }
 }
+
 .grid-block.bg-green:hover {
-    background: darken($green,10%);
-}
-.grid-block.bg-blue:hover {
-    background: darken($blue,10%);
+    background: darken($green, 10%);
 }
 
-.sub {
-    padding-left: 40px;
-    background: lighten($blue,10%);
+.grid-block.bg-blue:hover {
+    background: darken($blue, 10%);
+}
+
+.sub-b {
+    background: lighten($blue, 10%);
     &:hover {
-        background: darken($blue,5%);
+        background: darken($blue, 5%);
+    }
+    & span {
+        margin-left: 2rem;
+    }
+}
+
+.sub-g {
+    background: lighten($green, 10%);
+    &:hover {
+        background: darken($green, 5%);
+    }
+    & span {
+        margin-left: 2rem;
     }
 }
 
@@ -330,32 +473,32 @@ form {
     border: 1px solid white;
     background: transparent;
     color: black;
-   vertical-align: middle;
-   font: normal 12px/14px "Segoe UI", Arial, Helvetica, Sans-serif;
-   outline: 0 none;
-
+    vertical-align: middle;
+    font: normal 12px/14px "Segoe UI", Arial, Helvetica, Sans-serif;
+    outline: 0 none;
     & option {
-    background: #fff;
-    color: #333;
+        background: #fff;
+        color: #333;
     }
 }
 
 //form elements ******************************************
 /* At first just some design */
 
-input, label {
+form {
+    margin: 20px;
+}
+
+input,
+label.lb {
     font-size: 1.5em;
     font-family: "Calibri";
 }
 
-form > ol {
-    list-style: none;
-    padding: 0px;
-}
-
-form > ol > li {
+form .grid-block {
     position: relative;
     margin: 1.2em;
+    margin-left: 0;
 }
 
 input {
@@ -366,94 +509,110 @@ input {
     outline: none;
     margin: 0px;
     background: none;
+    width: 100%;
 }
 
+.half input {
+    width: 40%;
+}
 /**** HERE THE MAGIC STARTS *****/
 /* Original label position: top left and small */
-label {
+
+label.lb {
     position: absolute;
     top: -1em;
     left: 0.08em;
     color: #aaaaaa;
-    z-index:-1;
+    z-index: -1;
     font-size: 0.85em;
     animation: float-labels 300ms none ease-out;
-  -webkit-animation: float-labels 300ms none ease-out;
-
+    -webkit-animation: float-labels 300ms none ease-out;
     /* There is a bug sometimes pausing the animation. This avoids that.*/
-    animation-play-state:running !important;
-  -webkit-animation-play-state:running !important;
-}
 
+    animation-play-state: running !important;
+    -webkit-animation-play-state: running !important;
+}
 /* Label highlight effect also for non-JS browsers */
+
 input:not(.empty):focus + label {
     color: #0099ff;
 }
-
 /* In JS Browsers the .empty class is assigned to empty inputs -> label is rendered like a placeholder in the input field */
+
 input.empty + label {
     top: 0.1em;
     font-size: 1.5em;
-    animation:none;
-    -webkit-animation:none;
+    animation: none;
+    -webkit-animation: none;
 }
-
 /* The animation is a bit more complex than what is achievable with simple transitions, because I do not want the label to fly over my input. The place-holder label should fade out first and then appear again above the input text */
+
 @keyframes float-labels {
-
-   0% {
-    opacity:0;
-    color:#aaa;
-    top:0.1em;
-    font-size:1.5em;
-  }
-  20% {
-    font-size:1.5em;
-    opacity:0;
-  }
-  30% {
-    top:0.1em;
-  }
-  50% {
-    opacity:0;
-    font-size:0.85em;
-  }
-  100% {
-    top:-1em;
-    opacity:1;
-  }
+    0% {
+        opacity: 0;
+        color: #aaa;
+        top: 0.1em;
+        font-size: 1.5em;
+    }
+    20% {
+        font-size: 1.5em;
+        opacity: 0;
+    }
+    30% {
+        top: 0.1em;
+    }
+    50% {
+        opacity: 0;
+        font-size: 0.85em;
+    }
+    100% {
+        top: -1em;
+        opacity: 1;
+    }
 }
+
 @-webkit-keyframes float-labels {
-
- 0% {
-    opacity:1;
-    color:#aaa;
-    top:0.1em;
-    font-size:1.5em;
-  }
-  20% {
-    font-size:1.5em;
-    opacity:0;
-  }
-  30% {
-    top:0.1em;
-  }
-  50% {
-    opacity:0;
-    font-size:0.85em;
-  }
-  100% {
-    top:-1em;
-    opacity:1;
-  }
+    0% {
+        opacity: 1;
+        color: #aaa;
+        top: 0.1em;
+        font-size: 1.5em;
+    }
+    20% {
+        font-size: 1.5em;
+        opacity: 0;
+    }
+    30% {
+        top: 0.1em;
+    }
+    50% {
+        opacity: 0;
+        font-size: 0.85em;
+    }
+    100% {
+        top: -1em;
+        opacity: 1;
+    }
 }
 
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+    -webkit-transition: all linear 0.3s;
+    transition: all linear 0.3s;
+}
+
+.animate-show.ng-hide {
+    line-height: 0;
+    opacity: 0;
+    //  padding: 0 10px;
+}
 
 //карточка *****************************************
 .nomer {
     margin-top: 2rem;
     margin-bottom: 0;
 }
+
 img.edit {
     margin-left: 3rem;
     opacity: 0.3;
@@ -463,11 +622,9 @@ img.edit {
 }
 
 //tabs *********************************
-
-
 // This is the container for your tabstrip
 .custom-tabs {
-border-top: 1px solid #ccc;
+    border-top: 1px solid #ccc;
     & .tab-item {
         font-family: "Calibri Light";
         background: white;
@@ -482,25 +639,39 @@ border-top: 1px solid #ccc;
         font-family: "Calibri";
         font-weight: 600;
     }
-    & .tab-content {margin-top: 20px;}
-
+    & .tab-content {
+        margin-top: 20px;
+    }
 }
-
 
 .block {
     font-size: rem-calc(14);
     width: 100%;
 }
+
 .zag {
     font-family: "Segoe UI Semibold";
     font-size: 0.9rem;
-//    font-weight: 600;
+    //    font-weight: 600;
     cursor: pointer;
     padding: 5px 5px 5px 0;
     &:hover {
-        background: rgba(black,0.05);
+        background: rgba(black, 0.05);
     }
 }
+
+.zag1 {
+    font-family: "Segoe UI Semibold";
+    font-size: 0.9rem;
+    //    font-weight: 600;
+    cursor: pointer;
+    padding: 5px 5px 5px 0;
+    margin-right: 50px;
+    &:hover {
+        background: rgba(black, 0.05);
+    }
+}
+
 .light {
     font-family: "Calibri Light";
     list-style: none;
@@ -511,55 +682,60 @@ border-top: 1px solid #ccc;
     }
 }
 
-
 //chevron *********************************
+span.arrow {
+    font-family: monospace;
+    font-weight: 700;
+    margin: 0 10px;
+    font-size: rem-calc(12);
+    color: #aaa;
+}
 
 .chevron::before {
-	border-style: solid;
-	border-width: 0.2em 0.2em 0 0;
-	content: '';
-	display: inline-block;
-	height: 0.45em;
-	left: 1em;
-	position: relative;
-	top: 0.1em;
-	transform: rotate(-45deg);
-	vertical-align: middle;
-	width: 0.45em;
+    border-style: solid;
+    border-width: 0.2em 0.2em 0 0;
+    content: '';
+    display: inline-block;
+    height: 0.45em;
+    left: 1em;
+    position: relative;
+    top: 0.1em;
+    transform: rotate(-45deg);
+    vertical-align: middle;
+    width: 0.45em;
 }
 
 .chevron.right:before {
-	left: 0;
-	transform: rotate(45deg);
+    left: 0;
+    transform: rotate(45deg);
 }
 
 .chevron.bottom:before {
-	top: 0;
-	transform: rotate(135deg);
+    top: 0;
+    transform: rotate(135deg);
 }
 
 .chevron.left:before {
-	left: 0.25em;
-	transform: rotate(-135deg);
+    left: 0.25em;
+    transform: rotate(-135deg);
 }
 
 .myPanel {
-//    width: rem-calc(300);
     background: #fff;
     text-align: center;
     padding: 1rem;
     & a {
         padding: 1rem;
         background: #d3d3d3;
-//        border: 1px solid #ccc;
     }
 }
+
 .report {
     border: 3px dotted #ccc;
     padding: 1rem;
     display: block;
     position: relative;
-    top:-40px;
+    top: -40px;
     border-radius: 10px;
     text-align: center;
     font-size: 0.9rem;
@@ -576,4 +752,248 @@ border-top: 1px solid #ccc;
     & img {
         opacity: 0.3;
     }
+}
+
+//comment *****************************************
+.comment {
+    font-size: rem-calc(14);
+    border-bottom: 1px solid #ddd;
+    margin: 5px 0;
+    //    padding: 10px;
+    & p {
+        font-size: rem-calc(14);
+        margin-bottom: rem-calc(10);
+    }
+    blockquote {
+        padding: 3px 20px;
+    }
+}
+
+.comment .fio {
+    font-family: "Segoe UI Semibold";
+    font-size: 0.9rem;
+    & img {
+        opacity: 0.4;
+    }
+}
+
+.comment .time {
+    font-family: "Calibri Light";
+    font-style: italic;
+}
+
+textarea.grow {
+    background: #eee;
+    border: 1px solid #ccc;
+}
+
+@media all and (max-width: 40em) {
+    .down {
+        margin-top: 60px;
+    }
+}
+
+.plus {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    img {
+        cursor: pointer;
+        opacity: .3;
+        display: block;
+        float: right;
+        margin-left: 1rem;
+        &:hover {
+            opacity: 1;
+        }
+        &.close {
+            background: #ccc;
+            &:hover {
+//                background: $pink;
+            }
+        }
+    }
+}
+
+span.jump {
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+
+.jump.ng-hide-add         {
+  -webkit-animation:0.3s disappear cubic-bezier(.69,.09,.37,1.36);
+  animation:0.3s lightSpeedOut cubic-bezier(.69,.09,.37,1.36);
+}
+
+/* when showing the thing */
+.jump.ng-hide-remove      {
+  -webkit-animation:0.3s appear cubic-bezier(.69,.09,.37,1.36);
+//  -webkit-animation:0.5s appear ease;
+  animation:0.3s flipInX cubic-bezier(.69,.09,.37,1.36);
+}
+
+
+
+@keyframes appear{
+  0% {
+    opacity:0;
+    transform:  translate(65px,0px)  ;
+  }
+  100% {
+    opacity:1;
+    transform:  translate(0px,0px)  ;
+  }
+}
+
+@-moz-keyframes appear{
+  0% {
+    opacity:0;
+    -moz-transform:  translate(65px,0px)  ;
+  }
+  100% {
+    opacity:1;
+    -moz-transform:  translate(0px,0px)  ;
+  }
+}
+
+@-webkit-keyframes appear {
+  0% {
+    opacity:0;
+    -webkit-transform:  translate(65px,0px)  ;
+  }
+  100% {
+    opacity:1;
+    -webkit-transform:  translate(0px,0px)  ;
+  }
+}
+
+@-o-keyframes appear {
+  0% {
+    opacity:0;
+    -o-transform:  translate(65px,0px)  ;
+  }
+  100% {
+    opacity:1;
+    -o-transform:  translate(0px,0px)  ;
+  }
+}
+
+@-ms-keyframes appear {
+  0% {
+    opacity:0;
+    -ms-transform:  translate(65px,0px)  ;
+  }
+  100% {
+    opacity:1;
+    -ms-transform:  translate(0px,0px)  ;
+  }
+}
+
+
+@keyframes disappear{
+  0% {
+    opacity:1;
+    transform:  translate(0px,0px)  ;
+  }
+  100% {
+    opacity:0;
+    transform:  translate(65px,0px)  ;
+  }
+}
+
+@-moz-keyframes disappear{
+  0% {
+    opacity:1;
+    -moz-transform:  translate(0px,0px)  ;
+  }
+  100% {
+    opacity:0;
+    -moz-transform:  translate(65px,0px)  ;
+  }
+}
+
+@-webkit-keyframes disappear {
+  0% {
+    opacity:1;
+    -webkit-transform:  translate(0px,0px)  ;
+  }
+  100% {
+    opacity:0;
+    -webkit-transform:  translate(65px,0px)  ;
+  }
+}
+
+@-o-keyframes disappear {
+  0% {
+    opacity:1;
+    -o-transform:  translate(0px,0px)  ;
+  }
+  100% {
+    opacity:0;
+    -o-transform:  translate(65px,0px)  ;
+  }
+}
+
+@-ms-keyframes disappear {
+  0% {
+    opacity:1;
+    -ms-transform:  translate(0px,0px)  ;
+  }
+  100% {
+    opacity:0;
+    -ms-transform:  translate(65px,0px)  ;
+  }
+}
+
+
+.custom-as {
+    width: 150px;
+    padding: 0;
+    & p {
+        font-size: 0.8rem;
+        color: white;
+        background: #777;
+        padding: 5px;
+        margin-bottom: 0;
+    }
+    & ul, li {
+        font-size: 0.8rem;
+        margin: 0; padding: 0;
+    }
+}
+
+
+.myslide {
+    max-height: 999px;
+    transition: all 600ms linear;
+}
+.myslide.ng-hide {
+    max-height: 1em;
+    overflow: hidden;
+
+}
+
+.tree, .etap {
+    font-size: rem-calc(18);
+    padding: 5px;
+    &:hover {
+        cursor: pointer;
+        background: rgba(black, 0.05);
+    }
+}
+.etap {
+    margin-left: 2em;
+    font-size: rem-calc(16);
+}
+.print {
+    cursor: pointer;
+    opacity: .3;
+    &:hover {opacity: 1;}
+}
+
+.ang.ng-hide {
+  /* standard transition code */
+  transition: 1s linear all;
+  opacity:0;
 }

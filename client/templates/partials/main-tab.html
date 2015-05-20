@@ -1,8 +1,9 @@
-<div class="grid-block" ng-app="angularSlideables">
+<div class="grid-block">
        <div class="grid-block medium-12 large-3 small-order-3 medium-order-3 large-order-1">
+
         <div class="block">
-            <div class="zag" ng-click="hideAttr = !hideAttr;">Атрибуты<span ng-class="{'chevron top': !hideAttr, 'chevron bottom' : hideAttr}"></div>
-            <ul class="light" ng-hide="hideAttr">
+            <div class="zag" slide-toggle="#attr1" ng-click="hideAttr = !hideAttr;">Атрибуты<span class="arrow" ng-show="hideAttr">&and;</span><span ng-show="!hideAttr" class="arrow">&or;</span></div>
+            <ul id="attr1" class="light slideable">
                 <li>Номер: ОРГ-3</li>
                 <li>Вид: ОРД</li>
 
@@ -13,33 +14,44 @@
                 <li class="red-color">Срок: 25.10.2015</li>
             </ul>
             <br>
-            <div class="zag" ng-click="hideLinkedTask = !hideLinkedTask;">Связанные задания (2)<span ng-class="{'chevron top': !hideLinkedTask, 'chevron bottom' : hideLinkedTask}"></div>
-            <ul class="light" id="attribute" ng-hide="hideLinkedTask">
+            <div class="zag" slide-toggle="#attr2" ng-click="hideAttr1 = !hideAttr1;">Связанные задания (2)<span class="arrow" ng-show="hideAttr1">&and;</span><span ng-show="!hideAttr1" class="arrow">&or;</span></div>
+            <ul class="light slideable" id="attr2">
                 <li><a href="">Прочитать письмо</a></li>
                 <li class="mt-10"><a href="">Законспектировать письмо</a></li>
             </ul>
         </div>
     </div>
     <div class="grid-content medium-9  large-7 small-order-2 medium-order-1 large-order-2">
-        <div class="zag medium-size" ng-click="hideDescription = !hideDescription;">Описание<span ng-class="{'chevron top': !hideDescription, 'chevron bottom' : hideDescription}"></div>
+        <div class="zag medium-size" ng-click="hideDescription = !hideDescription;">Описание<span class="arrow" ng-show="!hideDescription">&and;</span><span ng-show="hideDescription" class="arrow">&or;</span></div>
         <p class="medium-size" ng-hide="hideDescription">
             Кластерное вибрато, по определению, начинает звукосниматель. Плавно-мобильное голосовое поле просветляет аккорд. Адажио, следовательно, продолжает флюгель-горн. Арпеджио продолжает мелодический сет, это и есть одномоментная вертикаль в сверхмногоголосной полифонической ткани. Процессуальное изменение монотонно иллюстрирует позиционный динамический эллипсис.
+            Кластерное вибрато, по определению, начинает звукосниматель. Плавно-мобильное голосовое поле просветляет аккорд. Адажио, следовательно, продолжает флюгель-горн. Арпеджио продолжает мелодический сет, это и есть одномоментная вертикаль в сверхмногоголосной полифонической ткани. Процессуальное изменение монотонно иллюстрирует позиционный динамический эллипсис.
+            Кластерное вибрато, по определению, начинает звукосниматель. Плавно-мобильное голосовое поле просветляет аккорд. Адажио, следовательно, продолжает флюгель-горн. Арпеджио продолжает мелодический сет, это и есть одномоментная вертикаль в сверхмногоголосной полифонической ткани. Процессуальное изменение монотонно иллюстрирует позиционный динамический эллипсис.
         </p>
-        <div class="zag medium-size" ng-click="hideFile = !hideFile;">Ссылки (3)<span ng-class="{'chevron top': !hideFile, 'chevron bottom' : hideFile}"></div>
+
+        <div ng-include="'templates/partials/files.html'"></div>
+
+
+           <div>
+            <p class="medium-size">Здесь будут ссылки, гиперссылки и файлы</p>
+        </div>
+
+
+
+
     </div>
+<!--button panel *******************************************-->
     <div class="grid-content p0 medium-3 large-2 small-order-1 medium-order-2 large-order-3">
         <div class="report" ng-mouseover="overDrop == true" ng-mouseleave="overDrop == false">
                <img src="../../img/attach.png" alt=""><br>
             <span ng-hide="overDrop">Прикрепить отчет</span>
             <span ng-show="overDrop">Перетащите сюда файлы</span>
         </div>
-        <a class="decision" href="#">Согласовать</a>
+        <a class="decision primary" href="#">Согласовать</a>
         <a class="decision" href="#">Отклонить</a>
         <a class="decision more" zf-toggle="buttPanel">...</a>
     </div>
 </div>
 
-
-<!--button panel *******************************************-->
 
 

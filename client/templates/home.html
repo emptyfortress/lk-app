@@ -1,17 +1,37 @@
 ---
 name: home
 url: /
+title: Главная
+welcome: true
+header: welcome
 ---
 
-<div class="grid-container">
-  <h1>Welcome to new Light Client!</h1>
-  
+<div ng-include="'templates/partials/header.html'" class="{{vars.header}}"></div>
+
+ <div class="grid-container">
+  <br>
+  <h3>Последние карточки</h3>
   <ul>
-      <li><a ui-sref="Задания">Задания</a></li>
-      <li><a ui-sref="Документы">Мои документы</a></li>
-      <li><a ui-sref="Папки">Папки</a></li>
+      <li><a ui-sref="">Здесь</a></li>
+      <li><a ui-sref="">будем</a></li>
+      <li><a ui-sref="">выводить</a></li>
+      <li><a ui-sref="">последние</a></li>
+      <li><a ui-sref="">карточки</a></li>
+      <li><a ui-sref="">с которыми</a></li>
+      <li><a ui-sref="">работал</a></li>
+      <li><a ui-sref="">пользователь</a></li>
   </ul>
+  <br><br>
+  <p>
+      Работает гамбургер-навигация, breadcrumbs, Добавить > задание > <a ui-sref="Выдать задание">на исполнение</a>
+  </p>
+
+  <p>
+      Увидеть карточку согласования: Документы > Входящие > <a ui-sref="На согласование">Первая строка в таблице (Извещение о выселении)</a>
+  </p>
+  <p>Ссылка для мобильных устройств:</p>
+  <img src="../img/qr-code.gif" alt="">
+
   
 </div>
 
-<!--<div ng-include="'templates/partials/footer.html'"></div>-->

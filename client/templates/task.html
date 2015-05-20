@@ -4,21 +4,23 @@ url: /task/soglas
 par: Задания
 title: На согласование
 back: true
-view: true
 ---
 
 <div ng-include="'templates/partials/header.html'" class="task"></div>
 
 <div class="grid-container rel">
-   <div class="grid-content">
-<!--       <br>-->
+
+<div class="grid-content">
+
         <div class="grid-block nowrap">
             <div class="grid-content">
                 <p class="nomer">ОРГ-3</p>
                 <h3><span class="important">&uarr;&nbsp;</span>Согласовать письмо в исполком партии пиратов<a href=""><img src="../img/edit.png" alt="" class="edit"></a> </h3>
             </div>
-            <div class="grid-content shrink bottom text-right"><h5>Ожидает решения</h5></div>
+            <div class="grid-content shrink bottom"><h5>Ожидает решения</h5></div>
         </div>
+</div>
+
 
         <div zf-tabs="" class="custom-tabs">
 
@@ -26,19 +28,22 @@ view: true
                 <div ng-include="'templates/partials/main-tab.html'"></div>
             </div>
             <div zf-tab="" title="Комментарии">
-                Tab content 2
+                <div ng-include="'templates/partials/comment-tab.html'"></div>
             </div>
             <div zf-tab="" title="Ход согласования">
-                Tab content 3
+                <div ng-include="'templates/partials/sogl-tab.html'"></div>
+            </div>
+               <div zf-tab="" title="Дерево версий">
+                <div ng-include="'templates/partials/isp-tab.html'"></div>
+                Дерево версий
             </div>
             <div zf-tab="" title="История">
-                Tab content 4
+                История
             </div>
         </div>
-   </div>
 
-   <div class="prev">&lsaquo;</div>
-<div class="next">&rsaquo;</div>
+<div class="show-for-large-only prev">&lsaquo;</div>
+<div class="show-for-large-only next">&rsaquo;</div>
 
 </div>
 
