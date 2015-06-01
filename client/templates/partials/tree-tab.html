@@ -1,0 +1,159 @@
+<div class="grid-block">
+    <div class="grid-content small-12 medium-9 large-10">
+        Версии документов
+
+  <div class="grid-content">
+    <table class="simple" ng-hide="hideFile">
+    <tbody>
+        <tr class="table-header">
+            <th>вид</th>
+            <th>имя</th>
+            <th>тип</th>
+            <th></th>
+        </tr>
+        <tr ng-click="showFirstFile = !showFirstFile">
+            <td><img src="../../img/skrepka.png" alt="">
+            </td>
+            <td><a href="">Договор с Ленэнерго</a>
+            </td>
+            <td class="italic">Документ Word, 14 kB</td>
+            <td>
+                5 версий
+            </td>
+        </tr>
+        <tr ng-show="showFirstFile">
+            <td colspan="4" class="">
+                <br>
+                <div>
+                    <a href="">Исходный документ</a>
+                </div>
+                <br>
+
+
+
+
+
+<!--
+                <table>
+                    <tr>
+                        <td>Гордеева С.</td>
+                        <td><a href=""><img src="../../img/document.png" alt=""></a></td>
+                        <td>Исправления в тексте</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Иванова П.</td>
+                        <td><a href=""><img src="../../img/document.png" alt=""></a></td>
+                        <td></td>
+                        <td><a href=""><img src="../../img/comment.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td>Волков А.</td>
+                        <td><a href=""><img src="../../img/document.png" alt=""></a></td>
+                        <td>Орфография поправлена</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Пуцин С.</td>
+                        <td><a href=""><img src="../../img/document.png" alt=""></a></td>
+                        <td>Изменил сумму договора на 100 т. руб. <br>
+                        Траектория, в соответствии с модифицированным уравнением Эйлера, относительно трансформирует интеграл от переменной величины. Следует отметить, что линеаризация вращает кинетический момент.
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+
+                <br>
+                <br>
+                <br>
+
+                <div class="tree" ng-click="showCycle1 = !showCycle1">
+                     <span ng-show="showCycle1" class="arrow">&or;</span>
+                     <span ng-hide="showCycle1" class="arrow">&and;</span>
+                     Цикл 1
+                </div>
+-->
+
+
+
+
+                <div class="grid-block pad5">
+                    <div class="grid-content small-4">Гордеева С.</div>
+                    <div class="grid-content small-4"><a href=""><img src="../../img/document.png" alt="">&nbsp;&nbsp;v.1.1.gordeeva</a></div>
+                    <div class="grid-content small-4 text-right"><a href=""><img src="../../img/kebab.png" alt="" class="fade"></a></div>
+
+                </div>
+                <div class="grid-block pad5">
+                    <div class="grid-content small-4">Иванова И.</div>
+                    <div class="grid-content small-4"><a href=""><img src="../../img/document.png" alt="">&nbsp;&nbsp;v.1.1.ivanova</a></div>
+                    <div class="grid-content small-4 text-right"><a href=""><img src="../../img/kebab.png" alt="" class="fade"></a></div>
+                </div>
+                <div class="grid-block pad5">
+                    <div class="grid-content small-4">Петрова к.</div>
+                    <div class="grid-content small-4"><a href=""><img src="../../img/document.png" alt="">&nbsp;&nbsp;v.1.1.petrova</a></div>
+                    <div class="grid-content small-4 text-right"><a href=""><img src="../../img/kebab.png" alt="" class="fade"></a></div>
+                </div>
+                <div class="grid-block pad5">
+                    <div class="grid-content small-4">Обама Б.</div>
+                    <div class="grid-content small-4"><a href=""><img src="../../img/document.png" alt="">&nbsp;&nbsp;v.1.2.obama</a></div>
+                    <div class="grid-content small-4 text-right"><a href=""><img src="../../img/kebab.png" alt="" class="fade"></a></div>
+                </div>
+                <div class="grid-block pad5">
+                    <div class="grid-content small-4 bold">Объединенная версия 1 этапа</div>
+                    <div class="grid-content small-4"><a href=""><img src="../../img/document.png" alt="">&nbsp;&nbsp;v.1.2.combine</a></div>
+                    <div class="grid-content small-4 text-right"><a href=""><img src="../../img/kebab.png" alt="" class="fade"></a></div>
+                </div>
+
+
+
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td><img src="../../img/skrepka.png" alt=""></td>
+            <td><a href="">Исходящее письмо.doc</a></td>
+            <td class="italic">Документ Word, 13 kB</td>
+            <td>3 версии</td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+
+
+
+
+
+                </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       <div class="grid-content p0 small-12 medium-3 large-2 down">
+        <div class="report" ng-mouseover="overDrop == true" ng-mouseleave="overDrop == false">
+               <img src="../../img/attach.png" alt=""><br>
+            <span ng-hide="overDrop">Прикрепить отчет</span>
+            <span ng-show="overDrop">Перетащите сюда файлы</span>
+        </div>
+        <a class="decision primary" href="#">Согласовать</a>
+        <a class="decision" href="#">Отклонить</a>
+        <a class="decision more" zf-toggle="buttPanel">...</a>
+
+    </div>
+</div>

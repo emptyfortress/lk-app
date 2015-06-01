@@ -18,15 +18,87 @@
 
   config.$inject = ['$urlRouterProvider', '$locationProvider'];
 
+
+//my controllers*****************************************
+
+app.controller('flipCtrl', function($scope) {});
+
 app.controller( 'TimeCtrl', ['$scope', function($scope) {
     $scope.date = new Date();
 }]);
 
 
+app.controller('TabController', function () {
+        this.tab = 1;
+
+        this.setTab = function (tabId) {
+            this.tab = tabId;
+        };
+
+        this.isSet = function (tabId) {
+            return this.tab === tabId;
+        };
+    });
+
+
+ app.controller('DocCtrl', ['$scope', function($scope){
+        $scope.orderByField = 'state';
+        $scope.reverseSort = false;
+        $scope.docs = [
+            {
+            'name' : 'Волков А.',
+            'state' : 'Подготовка',
+            'created' : '09.10.2014 7:15',
+            'modified' : '09.10.2014 7:20',
+            'registeredBy' : 'Петров Г.',
+            'number' : 'Вх-3',
+            'title' : 'Извещение о выселении'
+            },
+            {
+            'name' : 'Пуцин С.',
+            'state' : 'Регистрация',
+            'created' : '10.10.2014 7:15',
+            'modified' : '10.10.2014 7:20',
+            'registeredBy' : 'Петров Г.',
+            'number' : 'Вх-2',
+            'title' : 'Приказ о выпуске продукта'
+            },
+            {
+            'name' : 'Смирнов В.',
+            'state' : 'В работе',
+            'created' : '11.10.2014 7:15',
+            'modified' : '11.10.2014 7:20',
+            'registeredBy' : 'Петров Г.',
+            'number' : 'Вх-1',
+            'title' : 'Письмо из исполкома'
+            },
+            {
+            'name' : 'Смирнов В.',
+            'state' : 'Завершено',
+            'created' : '12.10.2014 7:15',
+            'modified' : '12.10.2014 7:20',
+            'registeredBy' : 'Петров Г.',
+            'number' : 'Вх-4',
+            'title' : 'Ознакомьтесь с презентацией'
+            },
+            {
+            'name' : 'Гордеева С.',
+            'state' : 'Подготовка',
+            'created' : '14.10.2014 7:15',
+            'modified' : '14.10.2014 7:20',
+            'registeredBy' : 'Петров Г.',
+            'number' : 'Вх-5',
+            'title' : 'Письмо для генерального'
+            }
+
+        ];
+  }]);
 
 
 
 
+
+//end of my controllers ****************************
   function config($urlProvider, $locationProvider) {
     $urlProvider.otherwise('/');
 
@@ -47,6 +119,8 @@ app.controller( 'TimeCtrl', ['$scope', function($scope) {
 }
 
 })();
+
+
 
 $(document).ready(function() {
   var switched = false;
@@ -116,6 +190,12 @@ $(document).ready(function() {
 
 
 });
+
+
+
+
+
+
 
 
 //slideable **************************************
@@ -384,4 +464,3 @@ angular.module('monospaced.elastic', [])
     }
   ]);
 
-//animate repeat

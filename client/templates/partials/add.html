@@ -1,27 +1,31 @@
 <div zf-modal="addModal" id="addModal" class="addModal">
-    <a zf-close="" class="close-button">&times;</a>
-    <h3>Добавить</h3>
-    <div class="grid-block">
-        <div class="grid-content small-6">
-            <div class="grid-block bg-green">Задание:</div>
-                <div class="grid-block sub-g" zf-close="" ui-sref="Выдать задание"><span>На исполнение</span></div>
-                <div class="grid-block sub-g"><span>На согласование</span></div>
-                <div class="grid-block sub-g"><span>Задание</span></div>
-            <div class="grid-block  bg-green">Группа заданий</div>
-        </div>
-        <div class="grid-content small-6">
-            <div class="grid-block bg-blue">Файл</div>
-            <div class="grid-block bg-blue">
-                Документ УД:
+    <div class="contentModal">
+        <a zf-close="" class="close-button">&times;</a>
+        <h3>Добавить</h3>
+        <div class="vertical medium-horizontal grid-block">
+            <div class="grid-block">
+                <ul class="block-list">
+                    <li class="bg-green"><a href="">Задание:</a></li>
+                    <li class="bg-green1"><a ui-sref="Выдать задание" zf-close="">На исполнение</a></li>
+                    <li class="bg-green1"><a ui-sref="Выдать задание" zf-close="">На согласование</a> </li>
+                    <li class="bg-green1"><a ui-sref="Выдать задание" zf-close="">Группа заданий</a></li>
+                </ul>
             </div>
-               <div class="grid-block sub-b"><span>Входящий</span></div>
-               <div class="grid-block sub-b"><span>Исходящий</span></div>
-               <div class="grid-block sub-b"><span>Заявка</span></div>
-               <div class="grid-block sub-b"><span>ОРД</span></div>
-               <div class="grid-block sub-b"><span>Рабочий</span></div>
-               <div class="grid-block sub-b"><span>Служебная записка</span></div>
+            <div class="grid-block">
+                <ul class="block-list">
+                       <li class="bg-blue"><a href="">Файл</a></li>
+                       <li class="bg-blue"><a href="">Документ УД:</a></li>
+                       <li class="bg-blue1"><a ui-sref="Новый документ" zf-close="">Входящий</a></li>
+                       <li class="bg-blue1"><a  ui-sref="Новый документ" zf-close="">Исходящий</a></li>
+                       <li class="bg-blue1"><a  ui-sref="Новый документ" zf-close="">Заявка</a></li>
+                       <li class="bg-blue1"><a  ui-sref="Новый документ" zf-close="">ОРД</a></li>
+                       <li class="bg-blue1"><a  ui-sref="Новый документ" zf-close="">Рабочий</a></li>
+                       <li class="bg-blue1"><a  ui-sref="Новый документ" zf-close="">Служебная записка</a></li>
+                </ul>
+            </div>
         </div>
     </div>
+
 
 
 </div>

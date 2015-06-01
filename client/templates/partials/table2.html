@@ -1,60 +1,24 @@
-<table class="responsive" role="grid">
+<table class="responsive" ng-controller="DocCtrl">
     <tbody>
         <tr class="table-header">
-            <th>Тема&nbsp;<img src="img/sort-down.png" alt="">
+            <th ng-click="orderByField='title'; reverseSort = !reverseSort">
+                Карточка
+                <span ng-show="orderByField == 'title'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
             </th>
-            <th>Номер
+            <th ng-click="orderByField='name'; reverseSort = !reverseSort">
+                Исполнитель
+                <span ng-show="orderByField == 'name'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
             </th>
-            <th>Состояние
-            </th>
-            <th>Отправитель
-            </th>
-            <th>Создано
-            </th>
-            <th>Изменено
-            </th>
-            <th>Регистратор
+            <th ng-click="orderByField='modified'; reverseSort = !reverseSort">
+                Дата
+                <span ng-show="orderByField == 'modified'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
             </th>
         </tr>
-        <tr>
-            <td>Извещение о выселении без предупреждения о выселении
-            </td>
-            <td>Вх-3</td>
-            <td>Подготовка</td>
-            <td>Пуцин С.</td>
-            <td>09.10.2014 7:15</td>
-            <td>09.10.2014 7:15</td>
-            <td>Петров Г.</td>
+        <tr ng-repeat="doc in docs | orderBy:orderByField:reverseSort | filter:{name:query1}" class="repeat-animation" ui-sref="На согласование">
+            <td>{{doc.title}}</td>
+            <td>{{doc.name}}</td>
+            <td>{{doc.modified}}</td>
         </tr>
-        <tr>
-            <td>Приказ
-            </td>
-            <td>Вх-3</td>
-            <td>Подготовка</td>
-            <td>Волков А.</td>
-            <td>09.10.2014 7:15</td>
-            <td>09.10.2014 7:15</td>
-            <td>Петров Г.</td>
-        </tr>
-        <tr>
-            <td>Письмо из исполкома письмо из исполкома письмо из исполкома
-            </td>
-            <td>Вх-3</td>
-            <td>Подготовка</td>
-            <td>Смирнов В.</td>
-            <td>09.10.2014 7:15</td>
-            <td>09.10.2014 7:15</td>
-            <td>Петров Г.</td>
-        </tr>
-        <tr>
-            <td>Ознакомьтесь с презентацией очень длинный текст
-            </td>
-            <td>Вх-3</td>
-            <td>Подготовка</td>
-            <td>Пуцин С.</td>
-            <td>09.10.2014 7:15</td>
-            <td>09.10.2014 7:15</td>
-            <td>Петров Г.</td>
-        </tr>
+
     </tbody>
 </table>

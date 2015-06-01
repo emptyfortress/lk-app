@@ -1,13 +1,58 @@
 <div class="grid-block">
     <div class="zag1 medium-size rel" ng-click="hideFile = !hideFile;">
-        Ссылки (3)
+        Вложения (3)
         <span class="arrow" ng-show="hideFile">&and;</span>
         <span ng-show="!hideFile" class="arrow">&or;</span>
     </div>
+       <table class="simple" ng-hide="hideFile">
+        <tbody>
+          <tr class="table-header">
+              <th>вид</th>
+              <th>имя</th>
+              <th>тип</th>
+              <th></th>
+          </tr>
+            <tr>
+                <td><img src="../../img/anchor.png" alt="" class="fade"></td>
+                <td><a href="">dv-design.digdes.com</a></td>
+                <td class="italic">Ссылка</td>
+                <td class="text-right">
+                    <a href=""><img src="../../img/info-black.png" alt="" class="fade"></a>
+                    &nbsp;&nbsp;
+                    <a href=""><img src="../../img/kebab.png" alt="" class="fade"></a>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="../../img/skrepka.png" alt="" class="fade"></td>
+                <td><a href="">Исходящее письмо.doc</a></td>
+                <td class="italic">Документ</td>
+                <td class="text-right">
+                    <a href=""><img src="../../img/info-black.png" alt="" class="fade"></a>
+                    &nbsp;&nbsp;
+                    <a href=""><img src="../../img/kebab.png" alt="" class="fade"></a>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="../../img/dv.png" alt="" class="fade"></td>
+                <td><a href="">Карточка Приказ о выселении</a></td>
+                <td class="italic">Связанная карточка</td>
+                <td class="text-right">
+                    <a href=""><img src="../../img/info-black.png" alt="" class="fade"></a>
+                    &nbsp;&nbsp;
+                    <a href=""><img src="../../img/kebab.png" alt="" class="fade"></a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <br><br>
+
+
+
     <div class="plus">
         <img src="../../img/plus-dark.png" alt="" ng-hide="showSubMenu" ng-click="showSubMenu = !showSubMenu">
         <img src="../../img/close-dark.png" alt="" class="close"  ng-show="showSubMenu" ng-click="showSubMenu = !showSubMenu">
-        <span ng-show="showSubMenu" class="jump">
+        <div ng-show="showSubMenu" class="jump slide-right">
             <div zf-action-sheet="">
                 <div zf-as-button="">
                     <img src="../../img/url.png" alt="">
@@ -63,8 +108,8 @@
                 </div>
             </div>
 
-
-        </span>
+        </div>
     </div>
+
 </div>
 

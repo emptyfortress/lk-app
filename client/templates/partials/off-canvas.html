@@ -1,0 +1,76 @@
+<zf-offcanvas id="off-canvas-menu" position="left" class="detached">
+        <div class="back clearfix">
+                    <div class="float-left">
+                        <a href="#" zf-close="off-canvas-menu"><img src="img/close.png" alt=""></a>
+                    </div>
+                    <div class="close float-right hide-for-small-only">
+                        <a href=""><img src="img/pin.png" alt=""></a>
+                    </div>
+        </div>
+
+
+
+        <zf-accordion auto-open="false" collapsible="true" multi-open="true">
+            <zf-accordion-item title="Задания">
+                <ul class="block-list accordion">
+                    <li><a ui-sref="Входящие задания">Входящие</a><span class="alert badge">1</span></li>
+                    <li><a ui-sref="Исходящие задания">Исходящие</a></li>
+                    <li><a ui-sref="Согласование">Согласование</a></li>
+                    <li><a ui-sref="Контроль">Контроль</a><span class="alert badge">3</span></li>
+                    <li><a ui-sref="Доработка">Доработка</a></li>
+                </ul>
+            </zf-accordion-item>
+            <zf-accordion-item title="Документы">
+                <ul class="block-list accordion">
+                    <li><a ui-sref="Последние">Последние</a></li>
+                    <li><a ui-sref="Входящие">Входящие</a></li>
+                    <li><a ui-sref="Исходящие">Исходящие</a></li>
+                    <li><a ui-sref="ОРД">ОРД</a></li>
+                    <li><a ui-sref="Заявки">Заявки</a></li>
+                    <li><a ui-sref="Служебные записки">Служебные записки</a></li>
+                </ul>
+            </zf-accordion-item>
+            <zf-accordion-item title="Папки">
+                <ul class="block-list">
+                    <li class="with-chevron"><a zf-open="panel1"><img src="img/folder-dark.png" alt="">&nbsp;&nbsp;Распоряжения</a></li>
+                        <div zf-panel="" id="panel1">
+                            <div class="back">
+                                <a href="#" zf-close=""><img src="img/back.png" alt="">
+                                   Распоряжения
+                                </a>
+                            </div>
+                            <ul class="block-list m0 p0">
+                                <li><a href=""><img src="img/folder-dark.png" alt="">&nbsp;&nbsp;Важные распоряжения</a></li>
+                                <li class="with-chevron"><a zf-open="panel2"><img src="img/folder-dark.png" alt="">&nbsp;&nbsp;Обычные разобычные распоряжения</a></li>
+                                    <div zf-panel="" id="panel2" class="panelAnimate">
+                                        <div class="back">
+                                            <a href="#" zf-close=""><img src="img/back.png" alt="">Обычные разобычные распоряжения
+                                            </a>
+                                        </div>
+                                         <ul class="block-list m0 p0">
+                                          <li><a href=""><img src="img/folder-dark.png" alt="">&nbsp;&nbsp;folder 1</a></li>
+                                          <li><a href=""><img src="img/folder-dark.png" alt="">&nbsp;&nbsp;folder 2</a></li>
+                                          <li><a href=""><img src="img/folder-dark.png" alt="">&nbsp;&nbsp;folder 3</a></li>
+                                          <li><a href=""><img src="img/folder-dark.png" alt="">&nbsp;&nbsp;folder 4</a></li>
+                                          <li><a href=""><img src="img/folder-dark.png" alt="">&nbsp;&nbsp;folder 5</a></li>
+                                      </ul>
+                                    </div>
+                                <li><a href=""><img src="img/folder-dark.png" alt="">&nbsp;&nbsp;Неважные распоряжения</a></li>
+                            </ul>
+                        </div>
+                    <li><a ui-sref=""><img src="img/folder-dark.png" alt="">&nbsp;&nbsp;Temp</a></li>
+                    <li class="with-chevron"><a ui-sref=""><img src="img/folder-dark.png" alt="">&nbsp;&nbsp;ОРД Доксвижн</a></li>
+                    <li><a ui-sref=""><img src="img/folder-dark.png" alt="">&nbsp;&nbsp;Actionspace</a></li>
+                </ul>
+            </zf-accordion-item>
+        </zf-accordion>
+        <br>
+        <ul class="side-links block-list show-for-small-only">
+            <li>
+                <a href="#"><img src="img/user.png" alt="">Профиль</a>
+            </li>
+            <li>
+                <a href="#"><img src="img/help.png" alt="">Справка</a>
+            </li>
+    </ul>
+    </zf-offcanvas>

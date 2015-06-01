@@ -1,12 +1,12 @@
 <div class="grid-block header">
     <div class="grid-block shrink"><a href="" zf-toggle="off-canvas-menu"><img src="img/hm.png" alt="">
         </a></div>
-    <div class="main-nav" ng-show="{{vars.welcome}}" ng-controller="TimeCtrl">
-        Доксвижн: {{date | date:'dd MMM yyyy'}}
+    <div class="main-nav" ng-show={{vars.welcome}} ng-controller="TimeCtrl" >
+        <span ng-hide="showSearch">{{date | date:'dd MMM yyyy'}}</span>
     </div>
     <div class="grid-block shrink  main-nav" ng-hide="{{vars.welcome}}">
         <zf-action-sheet>
-            <zf-as-button ng-hide="showSearch">
+            <zf-as-button ng-hide="showSearch" class="hide-for-small-only">
                 <a href="">{{vars.par}}</a>
             </zf-as-button>
             <zf-as-content position="bottom">
@@ -18,7 +18,7 @@
              </zf-as-content>
         </zf-action-sheet>
     </div>
-    <div class="grid-block shrink  main-nav" ng-hide="{{vars.welcome}}"><span ng-hide="showSearch">&nbsp;&nbsp;&gt;&nbsp;</span></div>
+    <div class="grid-block shrink  main-nav hide-for-small-only" ng-hide="{{vars.welcome}}"><span ng-hide="showSearch">&nbsp;&nbsp;&gt;&nbsp;</span></div>
     <div class="grid-block shrink  main-nav" ng-hide="{{vars.welcome}}">
         <zf-action-sheet>
             <zf-as-button>
@@ -41,6 +41,7 @@
     <div class="grid-block shrink main-nav hide-for-small-only"><a href="#"><img src="img/help.png" alt=""></a></div>
 </div>
 
+<!--
 <section class="small-bar" ng-hide="{{vars.welcome}}">
     <ul>
         <li class="back" ng-show="{{vars.back}}"><a href=""><img src="../../img/back.png" alt="">Назад</a></li>
@@ -64,3 +65,4 @@
         <li>&nbsp;&nbsp;&nbsp;</li>
     </ul>
 </section>
+-->

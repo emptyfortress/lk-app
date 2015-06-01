@@ -12,7 +12,8 @@ list:
     - Служебные записки
 ---
 
-<div ng-include="'templates/partials/header.html'" class="doc"></div>
+<div ng-include="'templates/partials/header.html'" class="doc slide-top"></div>
+<div ng-include="'templates/partials/smallbar.html'" class="doc slide-top"></div>
 
 <div class="grid-container">
    <div class="grid-content">
@@ -20,10 +21,7 @@ list:
         <h3>{{ vars.title }}</h3>
            <div ng-include="'templates/partials/table1.html'"></div>
                         
-   <div class="grid-block">
-       <div class="grid-block red">asgasg</div>
-       <div class="grid-block red">asdgasg</div>
-   </div>
+
    
    </div>
 </div>

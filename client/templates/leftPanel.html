@@ -1,0 +1,45 @@
+---
+name: leftPanel
+url: /fixed
+title: Главная
+welcome: true
+header: welcome
+fixed: true
+---
+
+<!--<div ng-include="'templates/partials/smallbar.html'" class="folder slide-top"></div>-->
+<!--
+ <div class="grid-container grid-content">
+  <br>
+  <br>
+  <br>
+  <h4>left Panel</h4>
+  <p>Ссылка для мобильных устройств: <br>
+  <img src="../img/qr-code.gif" alt="">
+  </p>
+</div>
+-->
+<!--left panel  *******************************************************-->
+<div class="grid-block">
+    <div class="leftPanel">
+        <div ng-include="'templates/partials/navigation.html'"></div>
+    </div>
+
+<!--    right panel **********************************************************-->
+    <div class="grid-content p0">
+        <div ng-include="'templates/partials/header.html'" class="{{vars.header}} slide-top"></div>
+        <div ng-include="'templates/partials/smallbar.html'" class="folder slide-top"></div>
+
+        <div class="grid-container grid-content">
+          <br>
+          <br>
+          <br>
+          <h4>left Panel</h4>
+          <p>Ссылка для мобильных устройств: <br>
+          <img src="../img/qr-code.gif" alt="">
+          </p>
+        </div>
+
+
+    </div>
+</div>

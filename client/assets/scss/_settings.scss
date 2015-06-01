@@ -157,8 +157,8 @@
 // We use these to control header size reduction on small screens
 // $h1-font-reduction: rem-calc(10);
 // $h2-font-reduction: rem-calc(10);
-// $h3-font-reduction: rem-calc(5);
-// $h4-font-reduction: rem-calc(5);
+ $h3-font-reduction: rem-calc(0);
+// $h4-font-reduction: rem-calc(3);
 // $h5-font-reduction: 0;
 // $h6-font-reduction: 0;
 
@@ -268,6 +268,7 @@
  $accordion-border: none;
 
 // $accordion-title-background: $gray-light;
+ $accordion-title-background: $darkblue;
 // $accordion-title-background: #666;
 // $accordion-title-background-hover: smartscale($accordion-title-background, -20%);
 // $accordion-title-background-hover: smartscale($accordion-title-background, 5%);
@@ -551,7 +552,7 @@
 // $offcanvas-size-vertical: 250px;
 
 // $offcanvas-background: #fff;
- $offcanvas-background: #aaa;
+ $offcanvas-background: $darkblue;
 // $offcanvas-color: isitlight($offcanvas-background);
 // $offcanvas-padding: 0;
 // $offcanvas-shadow: 3px 0 10px rgba(black, 0.25);
@@ -564,7 +565,7 @@
 
  $panel-size-horizontal: 245px;
 // $panel-size-horizontal: 300px;
-// $panel-size-vertical: 300px;
+ $panel-size-vertical: 350px;
 // $panel-padding: 0;
 
  $panel-background: #aaa;
@@ -629,3 +630,4 @@
 //   right: 'right',
 //   title: 'title',
 // ); 
+

@@ -1,0 +1,23 @@
+---
+name: В работе
+url: /tasks/working
+par: Задания
+title: В работе
+list:
+    - Входящие задания
+    - Исходящие задания
+    - Согласование
+    - Контроль
+    - Доработка
+---
+
+<div ng-include="'templates/partials/header.html'" class="task slide-top"></div>
+<div ng-include="'templates/partials/smallbar.html'" class="task slide-top"></div>
+
+<div class="grid-container">
+   <div class="grid-content">
+       <br>
+        <h3>{{ vars.title }}</h3>
+        <p>{{vars}}</p>
+   </div>
+</div>

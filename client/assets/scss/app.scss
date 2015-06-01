@@ -2,14 +2,11 @@
 @import "settings";
 @import "foundation";
 @import "responsive-tables";
+@import "ng-animate";
 //temp class *********************
-.red {
-    border: 1px solid red;
-}
+.red { border: 1px solid red;}
 
-.red-color {
-    color: red;
-}
+.red-color { color: red; }
 
 .black {
     background: #777;
@@ -20,59 +17,27 @@
 }
 
 //common ***********************************
-.m0 {
-    margin: 0;
-}
-
-.p0 {
-    padding: 0;
-}
-
-.pad {
-    padding: 2rem;
-}
-
-.rel {
-    position: relative;
-}
-
-.no-float {
-    float: none;
-}
+.bold {font-weight: 600;}
+.m0 { margin: 0;}
+.p0 {padding: 0;}
+.pad {padding: 2rem;}
+.pad5 {padding: 5px;}
+.pad-l {padding-left: 1rem;}
+.rel {position: relative;}
+.no-float { float: none; }
+.italic {font-family: $SegLight; font-style: italic;}
 
 //.grid-container {max-width: rem-calc(1024); margin: 0 auto;}
-body {
-    background: #aaa;
-}
-
-.bg-green {
-    background: $green;
-}
-
-.bg-blue {
-    background: $blue;
-}
-
-.bg-darkblue {
-    background: $darkblue;
-}
-
-.mr-20 {
-    margin-right: 20px;
-}
-
-.ml-20 {
-    margin-left: 20px;
-}
-
-.mt-10 {
-    margin-top: 10px;
-}
-
-.bottom {
-    align-self: flex-end;
-}
-
+//body { background: #aaa;}
+.bg-green { background: $green; }
+.bg-green1 { background: rgba($green, .5); }
+.bg-blue { background: $blue; }
+.bg-blue1 { background:  rgba($blue, .5); }
+.bg-darkblue { background: $darkblue; }
+.mr-20 { margin-right: 20px; }
+.ml-20 { margin-left: 20px; }
+.mt-10 {margin-top: 10px; }
+.bottom { align-self: flex-end; }
 .grid-content .grid-block {
     margin-left: 0;
     margin-right: 0;
@@ -102,6 +67,33 @@ body {
     }
 }
 
+.prev {
+     @include breakpoint(medium down){
+        display: none;
+    }
+    @include breakpoint(medium up){
+        left:-10px;
+    }
+    @include breakpoint(large up){
+    left: -50px;
+    }
+
+}
+
+.next {
+    @include breakpoint(medium down){
+        display: none;
+    }
+    @include breakpoint(medium up){
+        right:-10px;
+    }
+    @include breakpoint(large up){
+    right: -50px;
+    }
+
+}
+
+
 //button *****************************
 .decision {
     display: block;
@@ -124,17 +116,14 @@ body {
         color: black;
         background: scale-color($button-background, $lightness: -10%);
     }
+    @include breakpoint (medium down) {
+        padding: 1rem;
+        font-size: rem-calc(22);
+    }
 }
 
-.prev {
-    left: -50px;
-}
 
-.next {
-    right: -50px;
-}
-
-.task .button.primary {
+.task .button.primary, .task .decision.primary {
     background: $green;
     color: white;
     &:hover {
@@ -142,7 +131,7 @@ body {
     }
 }
 
-.doc .button.primary {
+.doc .button.primary, .doc .decision.primary {
     background: $blue;
     color: white;
     &:hover {
@@ -169,7 +158,7 @@ footer {
     background-color: #ccc;
     font-size: rem-calc(13);
     & .grid-block {
-        padding: 5px;
+        padding: rem-calc(5);
     }
 }
 
@@ -202,6 +191,12 @@ footer {
     }
     & img {
         margin-bottom: 35px;
+    }
+    span {
+//        @include breakpoint(medium down) {display: none;}
+    }
+    @include breakpoint(medium down) {
+        font-size: rem-calc(22);
     }
 }
 
@@ -248,13 +243,21 @@ input.search.ng-hide {
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
     height: 42px;
     font-family: $SegLight;
+    img {
+        opacity: .4; margin-top: 5px;
+        &.active {opacity: 1;}
+    }
     ul {
         margin: 0;
         padding: 0;
         list-style: none;
     }
 }
-
+.small-bar .active img {opacity: 1;}
+.add {
+    background: rgba(black,.2);
+    img {margin-top:0;}
+}
 .small-bar li {
     color: white;
     float: left;
@@ -289,19 +292,7 @@ input.search.ng-hide {
     background-color: darken($darkblue, 7%);
 }
 
-.block-list .badge {
-    position: absolute;
-    top: 10px;
-    right: 40px;
-    display: inline;
-    padding: 0;
-    padding-top: 5px;
-    text-align: center;
-}
 
-.accordion .block-list .badge {
-    right: 10px;
-}
 
 //off-canvas *******************************
 #off-canvas-menu {
@@ -314,10 +305,24 @@ input.search.ng-hide {
 
 .side-links {
     list-style: none;
-    & img {
-        margin: 0 1rem;
+    margin: 0;
+    padding: 0;
+    li {
+        border-bottom: 1px solid rgba(black, .3);
+        padding-left: 1rem;
+        &:hover{
+        background: rgba(white, .1);
+        }
+        a {
+            color: white;
+            display: block;
+            padding: .8rem 0;
+        }
     }
 }
+
+
+
 
 //accordion *********************************************
 .accordion-content {
@@ -325,31 +330,17 @@ input.search.ng-hide {
 }
 
 .with-chevron .accordion-title {
-    //    background: #aaa;
     color: black;
     padding-left: 40px;
     background: url(../../img/folder-dark.png) no-repeat;
     background-position: 1rem center;
 }
 
-//.accordion-title.ng-binding {background: red;}
-.bg-green .accordion-title {
-    background: $green;
+.accordion-title {
     text-transform: uppercase;
-    color: white;
 }
 
-.bg-blue .accordion-title {
-    background: $blue;
-    text-transform: uppercase;
-    color: white;
-}
 
-.bg-darkblue .accordion-title {
-    background: $darkblue;
-    text-transform: uppercase;
-    color: white;
-}
 
 .bg-green li,
 .bg-blue li,
@@ -357,21 +348,38 @@ input.search.ng-hide {
     background: rgba(white, 0.5);
 }
 
-.block-list li {
+.detached .block-list li {
     border-bottom: 1px solid rgba(black, 0.2);
+    position: relative;
+    a {
+        color: white;
+        &:hover {
+            background: rgba(white, .1);
+            color: white;
+        }
+    }
 }
 
 .block-list li:first-child {
     border-top: 1px solid rgba(black, 0.2);
+}
+.block-list li.with-chevron::after {
+    top: 20px;
+}
+.block-list li .badge {
+    position: absolute;
+    top:10px;
+    right: 10px;
+    padding: 0;
+    padding-top: 5px;
+    text-align: center;
+    color: white;
 }
 
 .accordion-content {
     padding-bottom: 0;
 }
 
-.block-list li.with-chevron::after {
-    top: 20px;
-}
 
 //tables ************************************************
 table {
@@ -413,46 +421,25 @@ tbody td {
 }
 
 //modal ***********************************
-.addModal .grid-content .grid-block {
+
+.addModal {
     font-family: "Calibri Light";
     font-size: rem-calc(17);
-    display: block;
-    margin-top: 2px;
-    padding: 15px;
+    .contentModal {
+    max-height:100%;
+    overflow:auto;
+    }
+    .block-list {
+    width: 100%;
+    padding: 10px;
     cursor: pointer;
-    color: white;
-    & a {
-        color: white;
+        li a:hover {
+            background: rgba(black, 0.1);
+        }
     }
 }
 
-.grid-block.bg-green:hover {
-    background: darken($green, 10%);
-}
 
-.grid-block.bg-blue:hover {
-    background: darken($blue, 10%);
-}
-
-.sub-b {
-    background: lighten($blue, 10%);
-    &:hover {
-        background: darken($blue, 5%);
-    }
-    & span {
-        margin-left: 2rem;
-    }
-}
-
-.sub-g {
-    background: lighten($green, 10%);
-    &:hover {
-        background: darken($green, 5%);
-    }
-    & span {
-        margin-left: 2rem;
-    }
-}
 
 .back {
     height: rem-calc(42);
@@ -607,6 +594,49 @@ input.empty + label {
     //  padding: 0 10px;
 }
 
+
+//flip animation **********************************
+
+.container {
+//  width: 200px;
+  height: 60vh;
+  position: relative;
+  perspective: 800px;
+}
+.fcard {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform .7s;
+
+}
+.fcard .face {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.fcard .front {
+  margin-top: 5px;
+  background: white;
+//    border: 1px solid #ccc;
+}
+.fcard .back {
+  margin-top: 5px;
+background: white;
+  transform: rotateY( 180deg );
+-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+}
+
+.fcard.flipped {
+  transform: rotateY( 180deg );
+}
+
 //карточка *****************************************
 .nomer {
     margin-top: 2rem;
@@ -752,6 +782,31 @@ span.arrow {
     & img {
         opacity: 0.3;
     }
+     @include breakpoint(medium down) {display: none;}
+}
+.upload {
+    border: 3px dotted #ccc;
+    padding: 1rem;
+    display: block;
+    position: relative;
+//    top: -40px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    cursor: pointer;
+    &:hover {
+        border-color: black;
+        background: #d2eab6;
+        color: black;
+        & img {
+            opacity: 1;
+        }
+    }
+    & img {
+        opacity: 0.3;
+    }
+     @include breakpoint(medium down) {display: none;}
 }
 
 //comment *****************************************
@@ -808,30 +863,28 @@ textarea.grow {
         }
         &.close {
             background: #ccc;
-            &:hover {
-//                background: $pink;
-            }
         }
     }
+
 }
 
-span.jump {
+.jump {
+    float: right;
     display: inline-block;
     margin-right: 2rem;
 }
 
 
-.jump.ng-hide-add         {
-  -webkit-animation:0.3s disappear cubic-bezier(.69,.09,.37,1.36);
-  animation:0.3s lightSpeedOut cubic-bezier(.69,.09,.37,1.36);
-}
 
-/* when showing the thing */
-.jump.ng-hide-remove      {
-  -webkit-animation:0.3s appear cubic-bezier(.69,.09,.37,1.36);
-//  -webkit-animation:0.5s appear ease;
-  animation:0.3s flipInX cubic-bezier(.69,.09,.37,1.36);
-}
+//.jump.ng-hide-add         {
+//    -webkit-animation:0.5s disappear cubic-bezier(.69,.09,.37,1.36);
+//    animation:0.5s lightSpeedOut cubic-bezier(.69,.09,.37,1.36);
+//}
+//
+//.jump.ng-hide-remove      {
+//     -webkit-animation:0.5s appear cubic-bezier(.69,.09,.37,1.36);
+//     animation:0.5s flipInX cubic-bezier(.69,.09,.37,1.36);
+//}
 
 
 
@@ -992,8 +1045,129 @@ span.jump {
     &:hover {opacity: 1;}
 }
 
-.ang.ng-hide {
-  /* standard transition code */
-  transition: 1s linear all;
+.simple {
+        font-size: rem-calc(14);
+        border: 0;
+        border-collapse: collapse;
+        padding: 5px;
+    tr:nth-child(odd){
+        background: white;
+    }
+    tr:hover {background: #eee; cursor: auto;}
+    td {
+        border-top: 1px solid #ddd !important;
+        border-bottom: 1px solid #ddd !important;
+        vertical-align: top;
+    }
+}
+.simple {
+    th {
+    background: white;
+    color: white;
+    padding: 3px;
+    cursor: pointer;
+    &:hover {
+    color: #555;
+    }
+
+    }
+}
+
+.fade {
+    opacity: .3;
+    &:hover {opacity: 1;}
+    }
+.settings {
+    font-family: $SegLight;
+    font-size: rem-calc(14);
+    display: block;
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    img {opacity: .3}
+    span {visibility: hidden;}
+    &:hover{
+        color: white;
+        img {opacity:1;}
+        span {visibility: visible;}
+    }
+}
+
+
+
+.myTabSmall {
+    background: white;
+    padding: 1rem;
+    ul {list-style: none; margin: 0;}
+    li {border-bottom: 1px solid #ccc;
+        &:hover {
+            background: rgba(black, 0.1);
+        }
+    }
+    a {
+        display: block;
+        color: #333;
+        padding: 10px;
+    }
+}
+
+.leftPanel {
+    background: $darkblue;
+    width: 250px;
+    margin-bottom: -50px;
+    height: 100vh;
+    overflow: auto;
+}
+
+
+
+
+//repeat animation **************************************************
+
+.repeat-animation {
+  position:relative;
+}
+
+.repeat-animation.ng-enter-stagger,
+.repeat-animation.ng-leave-stagger,
+.repeat-animation.ng-move-stagger {
+  /* notice how we're using animation instead of transition here */
+  -webkit-animation-delay:0.1s;
+  animation-delay:0.1s;
+
+  /* yes we still need to do this too */
+  -webkit-animation-duration:0;
+  animation-duration:0;
+}
+
+.repeat-animation.ng-move,
+.repeat-animation.ng-enter {
   opacity:0;
+  -webkit-animation:enter_animation 0.3s;
+  animation:enter_animation 0.3s;
+}
+
+.repeat-animation.ng-leave {
+  -webkit-animation:leave_animation 0.3s;
+  animation:leave_animation 0.3s;
+}
+
+@-webkit-keyframes enter_animation {
+  from { opacity:0; left: -30px;}
+  to { opacity:1; left: 0;}
+}
+
+@keyframes enter_animation {
+  from { opacity:0; left: -30px;}
+  to { opacity:1; left: 0; }
+}
+
+@-webkit-keyframes leave_animation {
+  from { opacity:1; left: 0; }
+  to { opacity:0; left: -30px;}
+}
+
+@keyframes leave_animation {
+  from { opacity:1; left: 0; }
+  to { opacity:0; left: -30px;}
 }

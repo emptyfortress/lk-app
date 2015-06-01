@@ -1,0 +1,23 @@
+<section class="small-bar">
+    <ul>
+        <li class="back" ng-show="{{vars.back}}"><a href=""><img src="../../img/back.png" alt="">Назад</a></li>
+        <li class="add">
+            <a href="#" zf-open="addModal"><img src="img/plus.png" alt="">&nbsp;&nbsp;Добавить</a>
+        </li>
+        <li ng-hide="{{vars.back}}">
+            <a href="#"><img src="img/filter.png" alt="">&nbsp;&nbsp;Фильтр</a>
+        </li>
+    </ul>
+    <ul class="view" ng-show="{{vars.view}}">
+        <li>Вид:&nbsp;&nbsp;</li>
+        <li>
+            <select name="viewDropdown" id="">
+                <option value="">УД Входящие</option>
+                <option value="">Bacon Pancakes</option>
+                <option value="">Mountain Dew</option>
+                <option value="">mozzarella</option>
+            </select>
+        </li>
+        <li>&nbsp;&nbsp;&nbsp;</li>
+    </ul>
+</section>

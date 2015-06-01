@@ -13,32 +13,28 @@
                                      <span class="arrow" ng-hide="showEtap1">&and;</span>
                                      Этап 1. Последовательное согласование
                                 </div>
-                               <div ng-hide="showEtap1" class="myslide">
-                                        <table class="medium-size">
+                               <div ng-hide="showEtap1" class="myslide etap">
+                                        <table class="simple">
                                            <tr>
                                                <td>Гордеева С.</td>
                                                <td><img src="../../img/check.png" alt="">&nbsp;&nbsp;Согласовано</td>
-                                               <td>Орфографию поправь, пожалуйста</td>
-                                               <td>
-                                                   <a href=""><img src="../../img/document.png" alt="">&nbsp;&nbsp;Договор c Транснефтью.doc</a><br>
-                                                   <a href=""><img src="../../img/document.png" alt="">&nbsp;&nbsp;Приложение 1.txt</a>
+                                               <td class="text-right">
+                                                   <img src="../../img/comment.png" alt="">
+                                                   <img src="../../img/document.png" alt="">
                                                 </td>
                                            </tr>
                                            <tr>
                                                <td>Волков А.</td>
                                                <td><img src="../../img/check.png" alt="">&nbsp;&nbsp;Согласовано</td>
-                                               <td></td>
-                                               <td>
-                                                   <a href=""><img src="../../img/document.png" alt="">&nbsp;&nbsp;Приложение 1.txt</a>
+                                               <td class="text-right">
+
                                                 </td>
                                            </tr>
                                            <tr>
                                                <td>Сидоров</td>
                                                <td><img src="../../img/check.png" alt="">&nbsp;&nbsp;Согласовано</td>
-                                               <td></td>
-                                               <td>
-                                                   <a href=""><img src="../../img/document.png" alt="">&nbsp;&nbsp;Договор c Транснефтью.doc</a><br>
-                                                   <a href=""><img src="../../img/document.png" alt="">&nbsp;&nbsp;Приложение 1.txt</a>
+                                               <td class="text-right">
+                                                   <a href=""><img src="../../img/document.png" alt=""></a><br>
                                                 </td>
                                            </tr>
                                        </table>
@@ -50,32 +46,27 @@
                                      <span class="arrow" ng-hide="showEtap2">&and;</span>
                                      Этап 2. Согласование с отделами
                                     </div>
-                                    <div ng-hide="showEtap2" class="myslide">
-                                        <table class="medium-size">
+                                    <div ng-hide="showEtap2" class="myslide etap">
+                                        <table class="simple">
                                            <tr>
                                                <td>Гордеева С.</td>
                                                <td><img src="../../img/check.png" alt="">&nbsp;&nbsp;Согласовано</td>
-                                               <td>Орфографию поправь, пожалуйста</td>
-                                               <td>
-                                                   <a href=""><img src="../../img/document.png" alt="">&nbsp;&nbsp;Договор c Транснефтью.doc</a><br>
-                                                   <a href=""><img src="../../img/document.png" alt="">&nbsp;&nbsp;Приложение 1.txt</a>
+                                               <td class="text-right">
+                                                   <a href=""><img src="../../img/document.png" alt=""></a>
                                                 </td>
                                            </tr>
                                            <tr>
                                                <td>Волков А.</td>
                                                <td><img src="../../img/check.png" alt="">&nbsp;&nbsp;Согласовано</td>
-                                               <td></td>
-                                               <td>
-                                                   <a href=""><img src="../../img/document.png" alt="">&nbsp;&nbsp;Приложение 1.txt</a>
+                                               <td class="text-right">
+                                                   <a href=""><img src="../../img/comment.png" alt=""> </a>
                                                 </td>
                                            </tr>
                                            <tr>
                                                <td>Сидоров К.</td>
                                                <td><img src="../../img/close-red.png" alt="">&nbsp;&nbsp;Отклонено</td>
-                                               <td></td>
-                                               <td>
-                                                   <a href=""><img src="../../img/document.png" alt="">&nbsp;&nbsp;Договор c Транснефтью.doc</a><br>
-                                                   <a href=""><img src="../../img/document.png" alt="">&nbsp;&nbsp;Приложение 1.txt</a>
+                                               <td class="text-right">
+                                                   <a href=""><img src="../../img/comment.png" alt=""> </a>
                                                 </td>
                                            </tr>
                                        </table>
@@ -84,15 +75,46 @@
                                    </div>
                             </div>
 
-
                             <div class="tree" ng-click="showCycle2 = !showCycle2">
                                 <span ng-show="showCycle2" class="arrow">&or;</span>
                                 <span ng-hide="showCycle2" class="arrow">&and;</span>
                                 Цикл 2
                             </div>
                             <div class="myslide" ng-hide="showCycle2">
+                                <div class="etap" ng-click="showEtap3 = !showEtap3">
+                                     <span class="arrow" ng-show="showEtap3">&or;</span>
+                                     <span class="arrow" ng-hide="showEtap3">&and;</span>
+                                     Этап 1. Последовательное согласование
+                                </div>
+                               <div ng-hide="showEtap3" class="myslide etap">
+                                        <table class="simple">
+                                           <tr>
+                                               <td>Гордеева С.</td>
+                                               <td><img src="../../img/check.png" alt="">&nbsp;&nbsp;Согласовано</td>
+                                               <td class="text-right">
+                                                   <img src="../../img/comment.png" alt="">
+                                                   <img src="../../img/document.png" alt="">
+                                                </td>
+                                           </tr>
+                                           <tr>
+                                               <td>Волков А.</td>
+                                               <td><img src="../../img/check.png" alt="">&nbsp;&nbsp;Согласовано</td>
+                                               <td class="text-right">
 
-                             <p class="medium-size">Здесь будет цикл 2. <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quod ex voluptatibus est consequatur, animi tempora unde omnis, error, accusamus ratione sed quam, porro. Saepe, beatae. Facilis repellendus porro dolores!</p>
+                                                </td>
+                                           </tr>
+                                           <tr>
+                                               <td>Сидоров</td>
+                                               <td><img src="../../img/check.png" alt="">&nbsp;&nbsp;Согласовано</td>
+                                               <td class="text-right">
+                                                   <a href=""><img src="../../img/document.png" alt=""></a><br>
+                                                </td>
+                                           </tr>
+                                       </table>
+                                       <br><br>
+
+                                   </div>
+
                             </div>
 
 

@@ -6,31 +6,32 @@ welcome: true
 header: welcome
 ---
 
-<div ng-include="'templates/partials/header.html'" class="{{vars.header}}"></div>
+<div ng-include="'templates/partials/header.html'" class="{{vars.header}} slide-top"></div>
+<div ng-include="'templates/partials/smallbar.html'" class="folder slide-top"></div>
 
- <div class="grid-container">
+ <div class="grid-container grid-content">
   <br>
-  <h3>Последние карточки</h3>
-  <ul>
-      <li><a ui-sref="">Здесь</a></li>
-      <li><a ui-sref="">будем</a></li>
-      <li><a ui-sref="">выводить</a></li>
-      <li><a ui-sref="">последние</a></li>
-      <li><a ui-sref="">карточки</a></li>
-      <li><a ui-sref="">с которыми</a></li>
-      <li><a ui-sref="">работал</a></li>
-      <li><a ui-sref="">пользователь</a></li>
+  <br>
+  <br>
+  <h3 class="">Последние карточки</h3>
+
+<div ng-include="'templates/partials/table2.html'" class="{{vars.header}} show-for-medium bouncy-slide-right"></div>
+
+
+
+
+
+  <ul class="block-list show-for-small-only" ng-controller="DocCtrl">
+      <li ng-repeat="doc in docs"><a ui-sref="На согласование">{{doc.title}}</a></li>
   </ul>
   <br><br>
-  <p>
-      Работает гамбургер-навигация, breadcrumbs, Добавить > задание > <a ui-sref="Выдать задание">на исполнение</a>
-  </p>
 
-  <p>
-      Увидеть карточку согласования: Документы > Входящие > <a ui-sref="На согласование">Первая строка в таблице (Извещение о выселении)</a>
-  </p>
-  <p>Ссылка для мобильных устройств:</p>
+
+
+
+  <p>Ссылка для мобильных устройств: <br>
   <img src="../img/qr-code.gif" alt="">
+  </p>
 
   
 </div>

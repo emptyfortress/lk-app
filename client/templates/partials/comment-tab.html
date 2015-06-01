@@ -1,21 +1,23 @@
 
-      <a href="" class="dotted" ng-click="showComment = !showComment">7 комментариев</a>
-          <span class="arrow" ng-hide="showComment">&or;</span>
-          <span class="arrow" ng-show="showComment">&and;</span>
-<br><br>
 
 <div class="grid-block">
     <div class="grid-content small-12 medium-9 large-10">
 
-        <div class="comment grid-block" ng-repeat="i in [0,1,2,3]" ng-hide="showComment" class="ang">
+      <a href="" class="dotted" ng-click="showComment = !showComment">7 комментариев</a>
+          <span class="arrow" ng-hide="showComment">&or;</span>
+          <span class="arrow" ng-show="showComment">&and;</span>
+<br><br>
+<!--
+        <div class="comment grid-block" ng-repeat="i in [0,1,2,3]" ng-hide="showComment">
             <div class="grid-content medium-12 large-4 fio nowrap"><img src="../../img/user16.png" alt="" class="user">&nbsp;Константинопольский И.</div>
             <div class="grid-content medium-12 large-8">
                 <div class="time">13 августа 20:43</div>
                 <p>Адаптация создает позитивизм. Ощущение мира, по определению, осмысляет конфликт. Язык образов прост.</p>
             </div>
         </div>
+-->
 
-        <div class="comment grid-block" ng-repeat="i in [0,1,2,3,4,5,6]" ng-show="showComment" class="ang">
+        <div class="comment grid-block" ng-repeat="i in [0,1,2,3,4,5,6] | limitTo:3">
             <div class="grid-content medium-12 large-4 fio nowrap"><img src="../../img/user16.png" alt="" class="user">&nbsp;Константинопольский И.</div>
             <div class="grid-content medium-12 large-8">
                 <div class="time">13 августа 20:43</div>
@@ -31,7 +33,7 @@
                   ...
             </textarea>
 
-            <div ng-show="showTextArea">
+            <div ng-show="showTextArea" class="slide-down">
                 <a href="" class="button" ng-click="showTextArea = !showTextArea">Отмена</a>
                 <a href="" class="button primary">Отправить</a>
             </div>

@@ -1,9 +1,11 @@
 <footer>
-    <div class="grid-block">
-        <div class="grid-block">Компания "Доксвижн"</div>
+    <div class="grid-block" ng-controller="TimeCtrl">
+        <div class="grid-block show-for-medium">Компания "Доксвижн"</div>
         <div class="grid-block">Пользователь: Волков А.</div>
-        <div class="grid-block">20 марта 2014</div>
-        <div class="grid-block show-for-medium">this is test message</div>
+        <div class="grid-block show-for-medium">{{date | date:'dd MMM yyyy'}}</div>
+        <div class="grid-block show-for-large">Large screen</div>
+        <div class="grid-block show-for-medium-only">Medium screen</div>
+        <div class="grid-block show-for-small-only">Small screen</div>
     </div>
 
 </footer>
