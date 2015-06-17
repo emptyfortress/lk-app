@@ -1,0 +1,64 @@
+
+
+
+<div class="table-container task">
+        <table class="" ng-controller="TaskCtrl">
+            <tbody>
+                <tr class="table-header">
+                    <th ng-click="orderByField='state'; reverseSort = !reverseSort">
+                        Состояние&nbsp;
+                        <span ng-show="orderByField == 'state'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                    </th>
+                    <th ng-click="orderByField='title'; reverseSort = !reverseSort">
+                        Тема
+                        <span ng-show="orderByField == 'title'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                    </th>
+                    <th ng-click="orderByField='from'; reverseSort = !reverseSort">
+                        Отправитель
+                        <span ng-show="orderByField == 'from'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                    </th>
+                    <th ng-click="orderByField='to'; reverseSort = !reverseSort">
+                        Исполнитель
+                        <span ng-show="orderByField == 'to'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                    </th>
+                    <th ng-click="orderByField='deadline'; reverseSort = !reverseSort">
+                        Срок исполнения
+                        <span ng-show="orderByField == 'deadline'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                    </th>
+                </tr>
+                <tr ng-repeat-start="task in tasks | orderBy:orderByField:reverseSort | filter:{name:query1}" class="repeat-animation" ng-click="showRow = !showRow">
+                    <td>{{task.state}}</td>
+                    <td><a ui-sref="Список">{{task.title}}</a></td>
+                    <td class="nowrap">{{task.from}}</td>
+                    <td class="nowrap">{{task.to}}</td>
+                    <td class="nowrap">{{task.deadline}}</td>
+                </tr>
+                <tr ng-repeat-end  ng-show="showRow">
+                    <td colspan="7" class="showRow">
+                        <div class="grid-block">
+                            <div class="grid-content">
+                               <a class="decision primary">Завершить</a>
+                            </div>
+                            <div class="grid-content">
+                                <a class="decision">Делегировать</a>
+                            </div>
+                           <div class="grid-content">
+                                <a class="decision">Отозвать</a>
+                            </div>
+                            <div class="grid-content">
+                                <a class="decision">Перейти</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+<input type="text" ng-model="query1">

@@ -3,43 +3,34 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Docsvision Light Client</title>
+    <title>Docsvision Light Client Prototype</title>
     <link href="/assets/css/app.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="/assets/js/foundation.js"></script>
     <script src="/assets/js/templates.js"></script>
     <script src="/assets/js/routes.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="/assets/js/app.js"></script>
   </head>
   <body>
-    
-     
 
     <zf-offcanvas id="off-canvas-menu" position="left" class="detached">
         
         <div ng-include="'templates/partials/navigation.html'"></div>
     
     </zf-offcanvas>
-
-    
     
 <!--main content **********************************************************************-->
-    
 
     <div class="grid-frame vertical">
         <div ui-view class="grid-content p0"></div>
         <div ng-include="'templates/partials/footer.html'" class="scale-fade"></div>
+
     </div>
 
 <!--add Modal *******************************************************************    -->
-
     <div ng-include="'templates/partials/add.html'"></div>
 
-
 </div>
-
-
-
 
 
   </body>

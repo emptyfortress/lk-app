@@ -3,6 +3,9 @@ name: Служебные записки
 url: /docs/notes
 par: Документы
 title: Служебные записки
+main:
+    - Задания
+    - Документы
 list:
     - Последние
     - Входящие
@@ -10,6 +13,7 @@ list:
     - ОРД
     - Заявки
     - Служебные записки
+view: true
 ---
 
 <div ng-include="'templates/partials/header.html'" class="doc slide-top"></div>
@@ -19,6 +23,6 @@ list:
    <div class="grid-content">
        <br>
         <h3>{{ vars.title }}</h3>
-        <p>{{vars}}</p>
+        <div ng-include="'templates/partials/table3.html'"></div>
    </div>
 </div>

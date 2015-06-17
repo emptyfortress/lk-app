@@ -1,0 +1,139 @@
+<div class="grid-block">
+    <div class="grid-content small-12 medium-9 large-10">
+                        <img src="../../img/print.png" alt="" class="print float-right">
+                        <div class="tree" ng-click="showCycle1 = !showCycle1">
+                             <span ng-show="showCycle1" class="arrow">&or;</span>
+                             <span ng-hide="showCycle1" class="arrow">&and;</span>
+                             Цикл 1
+                        </div>
+
+                            <div class="myslide" ng-hide="showCycle1">
+                                 <div class="etap" ng-click="showEtap1 = !showEtap1">
+                                     <span class="arrow" ng-show="showEtap1">&or;</span>
+                                     <span class="arrow" ng-hide="showEtap1">&and;</span>
+                                     Этап 1. Последовательное согласование
+                                </div>
+                               <div ng-hide="showEtap1" class="myslide etap">
+                                        <table class="simple">
+                                           <tr>
+                                               <td>Гордеева С.</td>
+                                               <td><img src="../../img/check.png" alt="">&nbsp;&nbsp;Согласовано</td>
+                                               <td class="text-right">
+                                                   <img src="../../img/comment.png" alt="">
+                                                   <img src="../../img/document.png" alt="">
+                                                </td>
+                                           </tr>
+                                           <tr>
+                                               <td>Волков А.</td>
+                                               <td><img src="../../img/check.png" alt="">&nbsp;&nbsp;Согласовано</td>
+                                               <td class="text-right">
+
+                                                </td>
+                                           </tr>
+                                           <tr>
+                                               <td>Сидоров</td>
+                                               <td><img src="../../img/check.png" alt="">&nbsp;&nbsp;Согласовано</td>
+                                               <td class="text-right">
+                                                   <a href=""><img src="../../img/document.png" alt=""></a><br>
+                                                </td>
+                                           </tr>
+                                       </table>
+                                       <br><br>
+
+                                   </div>
+                                   <div class="etap" ng-click="showEtap2 = !showEtap2">
+                                     <span class="arrow" ng-show="showEtap2">&or;</span>
+                                     <span class="arrow" ng-hide="showEtap2">&and;</span>
+                                     Этап 2. Согласование с отделами
+                                    </div>
+                                    <div ng-hide="showEtap2" class="myslide etap">
+                                        <table class="simple">
+                                           <tr>
+                                               <td>Гордеева С.</td>
+                                               <td><img src="../../img/check.png" alt="">&nbsp;&nbsp;Согласовано</td>
+                                               <td class="text-right">
+                                                   <a href=""><img src="../../img/document.png" alt=""></a>
+                                                </td>
+                                           </tr>
+                                           <tr>
+                                               <td>Волков А.</td>
+                                               <td><img src="../../img/check.png" alt="">&nbsp;&nbsp;Согласовано</td>
+                                               <td class="text-right">
+                                                   <a href=""><img src="../../img/comment.png" alt=""> </a>
+                                                </td>
+                                           </tr>
+                                           <tr>
+                                               <td>Сидоров К.</td>
+                                               <td><img src="../../img/close-red.png" alt="">&nbsp;&nbsp;Отклонено</td>
+                                               <td class="text-right">
+                                                   <a href=""><img src="../../img/comment.png" alt=""> </a>
+                                                </td>
+                                           </tr>
+                                       </table>
+                                       <br><br>
+
+                                   </div>
+                            </div>
+
+                            <div class="tree" ng-click="showCycle2 = !showCycle2">
+                                <span ng-show="showCycle2" class="arrow">&or;</span>
+                                <span ng-hide="showCycle2" class="arrow">&and;</span>
+                                Цикл 2
+                            </div>
+                            <div class="myslide" ng-hide="showCycle2">
+                                <div class="etap" ng-click="showEtap3 = !showEtap3">
+                                     <span class="arrow" ng-show="showEtap3">&or;</span>
+                                     <span class="arrow" ng-hide="showEtap3">&and;</span>
+                                     Этап 1. Последовательное согласование
+                                </div>
+                               <div ng-hide="showEtap3" class="myslide etap">
+                                        <table class="simple">
+                                           <tr>
+                                               <td>Гордеева С.</td>
+                                               <td><img src="../../img/check.png" alt="">&nbsp;&nbsp;Согласовано</td>
+                                               <td class="text-right">
+                                                   <img src="../../img/comment.png" alt="">
+                                                   <img src="../../img/document.png" alt="">
+                                                </td>
+                                           </tr>
+                                           <tr>
+                                               <td>Волков А.</td>
+                                               <td><img src="../../img/check.png" alt="">&nbsp;&nbsp;Согласовано</td>
+                                               <td class="text-right">
+
+                                                </td>
+                                           </tr>
+                                           <tr>
+                                               <td>Сидоров</td>
+                                               <td><img src="../../img/check.png" alt="">&nbsp;&nbsp;Согласовано</td>
+                                               <td class="text-right">
+                                                   <a href=""><img src="../../img/document.png" alt=""></a><br>
+                                                </td>
+                                           </tr>
+                                       </table>
+                                       <br><br>
+
+                                   </div>
+
+                            </div>
+
+
+
+
+
+    </div>
+
+
+
+       <div class="grid-content p0 small-12 medium-3 large-2 down">
+        <div class="report" ng-mouseover="overDrop == true" ng-mouseleave="overDrop == false">
+               <img src="../../img/attach.png" alt=""><br>
+            <span ng-hide="overDrop">Прикрепить отчет</span>
+            <span ng-show="overDrop">Перетащите сюда файлы</span>
+        </div>
+        <a class="decision primary" href="#">Согласовать</a>
+        <a class="decision" href="#">Отклонить</a>
+        <a class="decision more" zf-toggle="buttPanel">...</a>
+
+    </div>
+</div>

@@ -1,54 +1,79 @@
-<section class="container">
-  <div class="fcard" ng-class="{'flipped':isFlipped}">
-<!--    front face  ********************************-->
-    <div class="face front">
-      <div class="grid-block">
-           <div class="grid-block medium-12 large-3 small-order-3 medium-order-3 large-order-1">
 
-            <div class="grid-block">
-                <div class="zag" slide-toggle="#attr1" ng-click="hideAttr = !hideAttr;">Атрибуты<span class="arrow" ng-show="hideAttr">&and;</span><span ng-show="!hideAttr" class="arrow">&or;</span></div>
-                <ul id="attr1" class="light slideable">
-                    <li>Номер: ОРГ-3</li>
-                    <li>Вид: ОРД</li>
 
-                    <li class="mt-10">Автор: Константинопольский К.</li>
-                    <li>Исполнитель: Пуцин С.</li>
+   <div class="grid-block" ng-controller="flipCtrl">
 
-                    <li class="mt-10">Создан: 23.10.2015</li>
-                </ul>
-                <br>
-            </div>
-        </div>
-        <div class="grid-content medium-9  large-7 small-order-2 medium-order-1 large-order-2">
-            <div class="zag medium-size" ng-click="hideDescription = !hideDescription;">Описание<span class="arrow" ng-show="!hideDescription">&and;</span><span ng-show="hideDescription" class="arrow">&or;</span></div>
-                <div class="myslide" ng-hide="hideDescription">
-                    <p class="medium-size">
-                        Если принять во внимание огромный вес Гималайев, разлом драгирован. Извержение, так как не наследует древние поднятия, подпитывает ийолит-уртит.                 </p>
+        <div class="grid-content p0 small-12 medium-9 small-order-2 medium-order-1 large-order-1">
+                <div class="fpanel" ng-class="{'flip':isFlipped}">
+                    <div class="ffront fcard">
+                         <div class="grid-block">
+                            <div class="grid-content small-12 medium-12 large-3 small-order-2 medium-order-2 large-order-1">
+                                <div class="zag" ng-click="hideAttr = !hideAttr;">Атрибуты<span class="arrow" ng-show="!hideAttr">&and;</span><span ng-show="hideAttr" class="arrow">&or;</span></div>
+                                    <ul class="light" slide-toggle="hideAttr">
+                                        <li>Вид: ОРД</li>
+                                        <li>Автор: Андреев В.</li>
+                                        <li>Номер: ОРГ-3</li>
+                                        <li class="mt-10">Создан: 23.10.2015</li>
+                                        <li>&nbsp;</li>
+                                    </ul>
+                            </div>
+                            <div class="grid-content small-12 medium-12 large-9 small-order-1 medium-order-1 large-order-2">
+                                <div ng-include="'templates/partials/files.html'"></div>
+
+                                <div class="zag medium-size" ng-click="hideDescription = !hideDescription;">Описание<span ng-show="!hideDescription" class="arrow">&and;</span><span ng-show="hideDescription" class="arrow">&or;</span></div>
+                                    <div slide-toggle="hideDescription">
+                                        <p class="medium-size">
+                                        Движение гасит близкий параметр, но кольца видны только при 40–50. Газопылевое облако, это удалось установить по характеру спектра, меняет керн. </p>                                       </p>
+                                    </div>
+<!--
+                                <div ng-init="limit = 150; moreShown = false" ng-controller="textCtrl" ng-hide="hideDescription">
+                                    <div class="myslide">
+                                        <p class="medium-size">
+                                        {{text | limitTo: limit}}{{text.length > limit ? '...' : ''}}
+                                        <a ng-show="text.length > limit"
+                                          href ng-click="limit=text.length; moreShown = true">  More
+                                        </a>
+                                        <a ng-show="moreShown" href ng-click="limit=150; moreShown =    false"> Less </a>
+                                        </p>
+                                    </div>
+                                </div>
+-->
+
+                            </div>
+                        </div>
+                    </div>
+<!-- ******************** back *****************************-->
+                    <div class="fback fcard">
+                       <form class="myForm">
+                        <select name="" id="">
+                            <option value="">Последовательное согласование</option>
+                            <option value="">Параллельное согласование с консолидацией</option>
+                            <option value="">Простое согласование</option>
+                            <option value="">Гибкий маршрут</option>
+                        </select>
+                            <h5>Этап: согласование</h5>
+                            <div class="input">
+                                <input id="sogl1" ng-model="sogl1" ng-class="{'empty': !sogl1.length }"/>
+                                <label for="sogl1" class="lb">Участник 1</label>
+                            </div>
+                            <a href="">Добавить</a>
+                            <br>
+                            <br>
+                            <br>
+                            <h5>Этап: Подписание</h5>
+                            <div class="input">
+                                <input id="sign1" ng-model="sign1" ng-class="{'empty': !sign1.length }"/>
+                                <label for="sign1" class="lb">Подписант 1</label>
+                            </div>
+                            <a href="">Добавить</a>
+
+                         </form>
+                    </div>
                 </div>
-
-            <div ng-include="'templates/partials/files.html'"></div>
-
-               <div>
-            </div>
-
         </div>
-    <!--button panel *******************************************-->
-
-        <div class="grid-content p0 medium-3 large-2 small-order-1 medium-order-2 large-order-3">
-            <a class="decision primary" href="#" ng-click="isFlipped=!isFlipped">На согласование</a>
-            <a class="decision" href="#">Кнопка</a>
-            <a class="decision more" zf-toggle="buttPanel">...</a>
+        <div class="grid-content p0 small-12 medium-3 small-order-1 medium-order-2 large-order-2">
+            <a class="decision" ng-click="isFlipped=!isFlipped" ng-show="isFlipped">Назад</a>
+            <a class="decision primary" ui-sref="doc sogl" ng-show="isFlipped">Отправить</a>
+        <a class="decision primary" ng-click="isFlipped=!isFlipped" ng-hide="isFlipped">На согласование</a>
         </div>
+
     </div>
-    </div>
-
-
-
-
-<!--    back face  ********************************-->
-    <div class="face back">
-        <h5>Настройка маршрута</h5>
-    </div>
-  </div>
-</section>
-  <br><br>

@@ -3,6 +3,9 @@ name: Исходящие
 url: /docs/outbox
 par: Документы
 title: Исходящие
+main:
+    - Задания
+    - Документы
 list:
     - Последние
     - Входящие
@@ -10,6 +13,7 @@ list:
     - ОРД
     - Заявки
     - Служебные записки
+view: true
 ---
 
 <div ng-include="'templates/partials/header.html'" class="doc slide-top"></div>
@@ -20,6 +24,6 @@ list:
        <br>
         <h3>{{ vars.title }}</h3>
 <!--        <p>{{vars}}</p>-->
-          <div ng-include="'templates/partials/table2.html'"></div>
+          <div ng-include="'templates/partials/table3.html'"></div>
    </div>
 </div>

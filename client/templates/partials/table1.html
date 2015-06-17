@@ -1,49 +1,98 @@
 
 
 
-<table class="responsive" ng-controller="DocCtrl">
-    <tbody>
-        <tr class="table-header">
-            <th ng-click="orderByField='state'; reverseSort = !reverseSort">
-                Состояние&nbsp;
-                <span ng-show="orderByField == 'state'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
-            </th>
-            <th ng-click="orderByField='name'; reverseSort = !reverseSort">
-                Отправитель
-                <span ng-show="orderByField == 'name'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
-            </th>
-            <th ng-click="orderByField='created'; reverseSort = !reverseSort">
-                Создано
-                <span ng-show="orderByField == 'created'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
-            </th>
-            <th ng-click="orderByField='modified'; reverseSort = !reverseSort">
-                Изменено
-                <span ng-show="orderByField == 'modified'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
-            </th>
-            <th ng-click="orderByField='registeredBy'; reverseSort = !reverseSort">
-                Регистратор
-                <span ng-show="orderByField == 'registeredBy'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
-            </th>
-            <th ng-click="orderByField='number'; reverseSort = !reverseSort">
-                Номер
-                <span ng-show="orderByField == 'number'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
-            </th>
-            <th ng-click="orderByField='title'; reverseSort = !reverseSort">
-                Тема
-                <span ng-show="orderByField == 'title'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
-            </th>
-        </tr>
-        <tr ng-repeat="doc in docs | orderBy:orderByField:reverseSort | filter:{name:query1}" class="repeat-animation" ui-sref="На согласование">
-            <td>{{doc.state}}</td>
-            <td>{{doc.name}}</td>
-            <td>{{doc.created}}</td>
-            <td>{{doc.modified}}</td>
-            <td>{{doc.registeredBy}}</td>
-            <td>{{doc.number}}</td>
-            <td>{{doc.title}}</td>
-        </tr>
+    <table class="responsive" ng-controller="DocCtrl">
+        <tbody>
+            <tr class="table-header">
+                <th ng-click="orderByField='state'; reverseSort = !reverseSort">
+                    Состояние&nbsp;
+                    <span ng-show="orderByField == 'state'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                </th>
+                <th ng-click="orderByField='title'; reverseSort = !reverseSort">
+                    Тема
+                    <span ng-show="orderByField == 'title'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                </th>
+                <th ng-click="orderByField='name'; reverseSort = !reverseSort">
+                    Отправитель
+                    <span ng-show="orderByField == 'name'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                </th>
+                <th ng-click="orderByField='created'; reverseSort = !reverseSort">
+                    Создано
+                    <span ng-show="orderByField == 'created'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                </th>
+                <th ng-click="orderByField='modified'; reverseSort = !reverseSort">
+                    Изменено
+                    <span ng-show="orderByField == 'modified'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                </th>
+                <th ng-click="orderByField='registeredBy'; reverseSort = !reverseSort">
+                    Регистратор
+                    <span ng-show="orderByField == 'registeredBy'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                </th>
+                <th ng-click="orderByField='number'; reverseSort = !reverseSort">
+                    Номер
+                    <span ng-show="orderByField == 'number'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                </th>
+            </tr>
+            <tr ng-repeat="doc in docs | orderBy:orderByField:reverseSort | filter:{name:query1}" class="repeat-animation" ng-click="showRow = !showRow">
+
+                <td>{{doc.state}}</td>
+                <td><a ui-sref="Список">{{doc.title}}</a>
+                    <div ng-show="showRow" class="cssSlideUp attr">
+                        Вид: ОРД <br>
+                        Номер: Вх-1234 <br>
+                        Автор: Иванов И. <br>
+                        Создано: 23.10.2015
+                    </div>
+                </td>
+                <td>{{doc.name}}</td>
+                <td>{{doc.created}}</td>
+                <td>{{doc.modified}}</td>
+                <td>{{doc.registeredBy}}</td>
+                <td>{{doc.number}}</td>
 
 
-    </tbody>
-</table>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+
+<!--
+<div ng-controller="DocCtrl" >
+    <div ng-click="orderByField='title'; reverseSort = !reverseSort">sort</div>
+    <div class="grid-block" ng-repeat="doc in docs  | orderBy:orderByField:reverseSort">
+        <div class="grid-block rowList" ng-click="showRow = !showRow">
+            <div class="pad5 red hide-for-small-only">{{doc.number}}</div>
+            <div class="pad5 grid-content">{{doc.title}}</div>
+            <div class="pad5 show-for-medium">{{doc.name}}</div>
+            <div class="pad5">{{doc.state}}</div>
+        </div>
+        <div  class="grid-block medium-12 cssSlideUp attr" ng-show="showRow">
+             Вид: ОРД <br>
+                Номер: Вх-1234 <br>
+                Автор: Иванов И. <br>
+                Создано: 23.10.2015
+        </div>
+    </div>
+</div>
+-->
+<!--
+<ul ng-controller="DocCtrl">
+   <li ng-click="orderByField='state'; reverseSort = !reverseSort">sort</li>
+    <li ng-repeat="doc in docs | orderBy:orderByField:reverseSort">
+        <div class="grid-block">
+            <div class="grid-content">{{doc.title}}</div>
+            <div class="grid-content">{{doc.state}}</div>
+            <div class="grid-content">{{doc.name}}</div>
+            <div class="grid-content">{{doc.created}}</div>
+            <div class="grid-content">{{doc.modified}}</div>
+            <div class="grid-content">{{doc.registeredBy}}</div>
+            <div class="grid-content">{{doc.number}}</div>
+        </div>
+    </li>
+</ul>
+-->
+
+
 <input type="text" ng-model="query1">

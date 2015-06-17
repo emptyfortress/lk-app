@@ -1,13 +1,51 @@
-<section class="small-bar">
+<section class="small-bar rel">
     <ul>
         <li class="back" ng-show="{{vars.back}}"><a href=""><img src="../../img/back.png" alt="">Назад</a></li>
-        <li class="add">
+        <li class="hide-for-small-only add">
             <a href="#" zf-open="addModal"><img src="img/plus.png" alt="">&nbsp;&nbsp;Добавить</a>
         </li>
+        <li class="show-for-small-only">
+            <a href="#" zf-open="addModal"><img src="img/plus.png" alt="">&nbsp;</a>
+        </li>
         <li ng-hide="{{vars.back}}">
-            <a href="#"><img src="img/filter.png" alt="">&nbsp;&nbsp;Фильтр</a>
+            <zf-action-sheet>
+                <zf-as-button>
+                    <a href=""><img src="img/filter.png" alt="">&nbsp;&nbsp;Все</a>
+                </zf-as-button>
+                <ul zf-as-content="" position="bottom" class="filters">
+                    <li><a href="">Все</a></li>
+                    <li><a href="">Актуальные</a></li>
+                    <li><a href="">История</a></li>
+                </ul>
+            </zf-action-sheet>
+
         </li>
     </ul>
+    <div class="selectView" ng-show="{{vars.view}}">
+        <zf-action-sheet>
+                <zf-as-button>
+                    <a href="">Custom view&nbsp;&nbsp;<img src="img/select-w.png" alt=""></a>
+                </zf-as-button>
+                <ul zf-as-content="" position="bottom" class="filters">
+                    <li><a href="">Custom view</a></li>
+                    <li><a href="">УД Входящие</a></li>
+                    <li><a href="">УД Исходящие</a></li>
+                    <li><a href="">Список</a></li>
+                    <li><a href="">Моцарелла</a></li>
+                </ul>
+            </zf-action-sheet>
+    </div>
+<!--
+    <div class="selectView">
+        <select name="viewDropdown">
+            <option value="">My custom view</option>
+            <option value="">УД Входящие</option>
+            <option value="">УД Исходящие</option>
+            <option value="">Mozzarella</option>
+        </select>
+    </div>
+-->
+<!--
     <ul class="view" ng-show="{{vars.view}}">
         <li>Вид:&nbsp;&nbsp;</li>
         <li>
@@ -20,4 +58,8 @@
         </li>
         <li>&nbsp;&nbsp;&nbsp;</li>
     </ul>
+-->
 </section>
+
+
+

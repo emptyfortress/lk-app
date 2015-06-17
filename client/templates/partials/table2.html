@@ -14,11 +14,18 @@
                 <span ng-show="orderByField == 'modified'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
             </th>
         </tr>
-        <tr ng-repeat="doc in docs | orderBy:orderByField:reverseSort | filter:{name:query1}" class="repeat-animation" ui-sref="На согласование">
-            <td>{{doc.title}}</td>
+        <tr ng-repeat="doc in docs | orderBy:orderByField:reverseSort | filter:{name:query1}" class="repeat-animation" ng-click="showRow = !showRow;">
+            <td><a ui-sref="Список">{{doc.title}}</a>
+            <div ng-show="showRow" class="cssSlideUp attr">
+                Вид: ОРД <br>
+                Номер: Вх-1234 <br>
+                Автор: Иванов И. <br>
+                Создано: 23.10.2015
+            </div>
+            </td>
             <td>{{doc.name}}</td>
             <td>{{doc.modified}}</td>
-        </tr>
 
+        </tr>
     </tbody>
 </table>

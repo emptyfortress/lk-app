@@ -10,11 +10,13 @@ view: true
 ---
 
 <div ng-include="'templates/partials/header.html'" class="task"></div>
+<div ng-include="'templates/partials/smallbar.html'" class="show-for-medium task slide-top"></div>
+
 
 <div class="grid-container task">
 <br>
 <h3 class="ml-20">Новое задание</h3>
-
+    <br>
 
 <form action="" class="myForm">
     <select name="" id="">
@@ -25,15 +27,36 @@ view: true
 
 
 
-
       <div class="grid-block">
-          <input id="title1" ng-model="title1" ng-class="{'empty': !title1.length }"/>
-           <label for="title1" class="lb">Название</label>
+            <input id="title1" ng-model="title1" ng-class="{'empty': !title1.length }"/>
+            <label for="title1" class="lb">Название</label>
       </div>
+
+<!--
       <div class="grid-block">
           <input id="description" ng-model="descr"  ng-class="{'empty': !descr.length }"/>
                <label for="description" class="lb">Описание</label>
       </div>
+-->
+
+      <div class="grid-block">
+            <input id="comment" ng-model="comment" ng-class="{'empty': !comment.length }" ng-click="showTextArea = !showTextArea" ng-hide="showTextArea" />
+                 <label for="comment" class="lb" ng-hide="showTextArea">Описание</label>
+
+             <textarea class="msd-elastic: \n; grow" ng-model="bar" ng-show="showTextArea">
+                  ...
+            </textarea>
+
+            <div ng-show="showTextArea" class="slide-down">
+                <a class="button" ng-click="showTextArea = !showTextArea">Отмена</a>
+                <a class="button primary" ng-click="showTextArea = !showTextArea">Добавить описание</a>
+            </div>
+        </div>
+
+
+
+
+
       <div class="grid-block">
           <div class="grid-block">
                <input id="to" ng-model="to" ng-class="{'empty': !to.length }"/>
@@ -41,8 +64,9 @@ view: true
           </div>
           &nbsp;&nbsp;&nbsp;
           <div class="grid-block">
-              <input id="to1" ng-model="to1" ng-class="{'empty': !to1.length }"/>
-               <label for="to1" class="lb">Срок</label>
+
+              <input id="time" ng-model="time" ng-class="{'empty': !time.length }"/>
+                <label for="time" class="lb">Срок</label>
           </div>
       </div>
       <input id="controler" type="checkbox" ng-model="showCont"><label for="controler">Назначить контролера</label>
@@ -54,25 +78,24 @@ view: true
           </div>
           &nbsp;&nbsp;&nbsp;
           <div class="grid-block">
-              <input id="to2" ng-model="to2" ng-class="{'empty': !to2.length }"/>
-               <label for="to2" class="lb">Срок</label>
+              <input id="time1" ng-model="time1" ng-class="{'empty': !time1.length }"/>
+                <label for="time1" class="lb">Срок</label>
           </div>
       </div>
+<!--                <input type="text" date-time="" ng-model="start" required="true" view="date" partial="true">-->
+
       <input id="priem" type="checkbox" ><label for="priem">Требуется приемка</label>
 
-      <br><br>
       <div class="grid-block">
           <div class="grid-block">
             <a class="button" href="#">Отменить</a>
           </div>
            <div class="grid-block align-right">
             <a class="button" href="#">Сохранить</a>
-            <a class="button primary" ui-sref="Исходящие задания">Отправить</a>
+            <a class="button primary" ui-sref="Исходящие задания">Старт</a>
           </div>
       </div>
 
-
     </form>
-
 
 </div>

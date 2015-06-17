@@ -10,10 +10,8 @@
                 <li>Вид: ОРД</li>
 
                 <li class="mt-10">Автор: Константинопольский К.</li>
-                <li>Исполнитель: Пуцин С.</li>
 
-                <li class="mt-10">Создан: 23.10.2015</li>
-                <li class="red-color">Срок: 25.10.2015</li>
+                <li>Создан: 23.10.2015</li>
             </ul>
             <br>
             <div class="zag" ng-click="hideAttr1 = !hideAttr1;">Связанные задания<span class="arrow" ng-show="!hideAttr1">&and;</span><span ng-show="hideAttr1" class="arrow">&or;</span></div>
@@ -24,16 +22,14 @@
         </div>
     </div>
     <div class="grid-content small-12 medium-9  large-7 small-order-2 medium-order-1 large-order-2">
+            <div ng-include="'templates/partials/files.html'"></div>
         <div class="zag medium-size" ng-click="hideDescription = !hideDescription;">Описание<span ng-show="!hideDescription" class="arrow">&and;</span><span ng-show="hideDescription" class="arrow">&or;</span></div>
             <div slide-toggle="hideDescription">
                 <p class="medium-size">
                     Кластерное вибрато, по определению, начинает звукосниматель. Плавно-мобильное голосовое поле просветляет аккорд. Адажио, следовательно, продолжает флюгель-горн. Арпеджио продолжает мелодический сет, это и есть одномоментная вертикаль в сверхмногоголосной полифонической ткани. Процессуальное изменение монотонно иллюстрирует позиционный динамический эллипсис.
-                    Кластерное вибрато, по определению, начинает звукосниматель. Плавно-мобильное голосовое поле просветляет аккорд. Адажио, следовательно, продолжает флюгель-горн. Арпеджио продолжает мелодический сет, это и есть одномоментная вертикаль в сверхмногоголосной полифонической ткани. Процессуальное изменение монотонно иллюстрирует позиционный динамический эллипсис.
-                    Кластерное вибрато, по определению, начинает звукосниматель. Плавно-мобильное голосовое поле просветляет аккорд. Адажио, следовательно, продолжает флюгель-горн. Арпеджио продолжает мелодический сет, это и есть одномоментная вертикаль в сверхмногоголосной полифонической ткани. Процессуальное изменение монотонно иллюстрирует позиционный динамический эллипсис.
                 </p>
             </div>
 
-            <div ng-include="'templates/partials/files.html'"></div>
 
 
        <div>
@@ -46,13 +42,8 @@
 <!--button panel *******************************************-->
 
     <div class="grid-content p0 medium-3 large-2 small-order-1 medium-order-2 large-order-3">
-        <div class="report" ng-mouseover="overDrop = true" ng-mouseleave="overDrop = false">
-               <img src="../../img/attach.png" alt=""><br>
-            <span ng-hide="overDrop">Прикрепить отчет</span>
-            <span ng-show="overDrop">Перетащите сюда файлы</span>
-        </div>
-        <a class="decision primary" href="#">Согласовать</a>
-        <a class="decision" href="#">Отклонить</a>
+        <a class="decision primary" ui-sref="Маршрут" >Завершить</a>
+        <a class="decision" ui-sref="Маршрут" >Отозвать</a>
         <a class="decision more" zf-toggle="buttPanel">...</a>
     </div>
 </div>

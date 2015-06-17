@@ -3,6 +3,9 @@ name: Последние
 url: /docs/last
 par: Документы
 title: Последние
+main:
+    - Документы
+    - Задания
 list:
     - Последние
     - Входящие
@@ -10,15 +13,16 @@ list:
     - ОРД
     - Заявки
     - Служебные записки
+view: true
 ---
 
 <div ng-include="'templates/partials/header.html'" class="doc slide-top"></div>
 <div ng-include="'templates/partials/smallbar.html'" class="doc slide-top"></div>
 
-<div class="grid-container">
-   <div class="grid-content">
-       <br>
-        <h3>{{ vars.title }}</h3>
-        <p>{{vars}}</p>
-   </div>
+<div class="grid-content">
+    <div class="grid-container">
+           <br>
+            <h3>{{ vars.title }}</h3>
+            <div ng-include="'templates/partials/table3.html'"></div>
+    </div>
 </div>

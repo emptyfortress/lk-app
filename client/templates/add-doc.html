@@ -14,7 +14,6 @@ view: true
 <br>
 <h3 class="ml-20">Новый документ</h3>
 
-
 <form action="" class="myForm">
     <div class="grid-block">
         <div class="grid-content">
@@ -47,26 +46,29 @@ view: true
            <label for="title1" class="lb">Название</label>
       </div>
       <div class="grid-block">
-          <input id="description" ng-model="descr"  ng-class="{'empty': !descr.length }"/>
-               <label for="description" class="lb">Описание</label>
-      </div>
+            <input id="comment" ng-model="comment" ng-class="{'empty': !comment.length }" ng-click="showTextArea = !showTextArea" ng-hide="showTextArea" />
+                 <label for="comment" class="lb" ng-hide="showTextArea">Описание</label>
+
+             <textarea class="msd-elastic: \n; grow" ng-model="bar" ng-show="showTextArea">
+                  ...
+            </textarea>
+
+            <div ng-show="showTextArea" class="slide-down">
+                <a class="button" ng-click="showTextArea = !showTextArea">Отмена</a>
+                <a class="button primary" ng-click="showTextArea = !showTextArea">Добавить описание</a>
+            </div>
+    </div>
 
       <div class="grid-content p0">
         <div class="upload" ng-mouseover="overDrop = true" ng-mouseleave="overDrop = false">
                <img src="../../img/attach.png" alt=""><br>
-            <span ng-hide="overDrop">Выбрать файл</span>
+            <span ng-hide="overDrop">Добавить файл</span>
             <span ng-show="overDrop">Перетащите сюда файлы</span>
         </div>
     </div>
 
-
-
-
-
-      <br><br>
       <div class="grid-block">
           <div class="grid-block">
-<!--            <a class="button" href="#">Отменить</a>-->
           </div>
            <div class="grid-block align-right">
             <a class="button" href="#">Отменить</a>

@@ -5,6 +5,7 @@ title: Главная
 welcome: true
 header: welcome
 fixed: true
+view: true
 ---
 
 <!--<div ng-include="'templates/partials/smallbar.html'" class="folder slide-top"></div>-->
@@ -21,13 +22,16 @@ fixed: true
 -->
 <!--left panel  *******************************************************-->
 <div class="grid-block">
-    <div class="leftPanel">
+    <div ng-class="{'leftPanel1':vars.fixed || 'leftPanel'}">
+
+        <div ng-include="'templates/partials/header-small.html'" class="{{vars.header}} slide-top"></div>
+        <div ng-include="'templates/partials/smallbar-left.html'" class="folder slide-top"></div>
         <div ng-include="'templates/partials/navigation.html'"></div>
     </div>
 
 <!--    right panel **********************************************************-->
     <div class="grid-content p0">
-        <div ng-include="'templates/partials/header.html'" class="{{vars.header}} slide-top"></div>
+        <div ng-include="'templates/partials/header-middle.html'" class="{{vars.header}} slide-top"></div>
         <div ng-include="'templates/partials/smallbar.html'" class="folder slide-top"></div>
 
         <div class="grid-container grid-content">
@@ -39,7 +43,6 @@ fixed: true
           <img src="../img/qr-code.gif" alt="">
           </p>
         </div>
-
 
     </div>
 </div>

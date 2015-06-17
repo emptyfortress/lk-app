@@ -122,13 +122,13 @@
 // - - - - - - - - - - - - - - -
 
 // These are our named breakpoints. You can use them in our breakpoint function like this: @include breakpoint(medium) { // Medium and larger styles }
-// $breakpoints: (
-//   small: rem-calc(0),
-//   medium: rem-calc(640),
-//   large: rem-calc(1200),
-//   xlarge: rem-calc(1440),
-//   xxlarge: rem-calc(1920),
-// );
+ $breakpoints: (
+   small: rem-calc(0),
+   medium: rem-calc(600),
+   large: rem-calc(1200),
+   xlarge: rem-calc(1440),
+   xxlarge: rem-calc(1920),
+ );
 
 // All of the names in this list will be output as classes in your CSS, like small-12, medium-6, and so on.
 // $breakpoint-classes: (small medium large); 
@@ -157,7 +157,7 @@
 // We use these to control header size reduction on small screens
 // $h1-font-reduction: rem-calc(10);
 // $h2-font-reduction: rem-calc(10);
- $h3-font-reduction: rem-calc(0);
+ $h3-font-reduction: rem-calc(7);
 // $h4-font-reduction: rem-calc(3);
 // $h5-font-reduction: 0;
 // $h6-font-reduction: 0;

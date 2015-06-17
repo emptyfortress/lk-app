@@ -4,6 +4,7 @@ url: /
 title: Главная
 welcome: true
 header: welcome
+view: true
 ---
 
 <div ng-include="'templates/partials/header.html'" class="{{vars.header}} slide-top"></div>
@@ -11,28 +12,44 @@ header: welcome
 
  <div class="grid-container grid-content">
   <br>
+  <div class="grid-block"  ng-controller="chartCtrl">
+    <div class="grid-content text-center">
+        <div easypiechart options="options" percent="68" class="chart" ui-sref="В работе">
+            <span>68</span>
+        </div>
+        <p>В работе</p>
+    </div>
+    <div class="grid-content text-center">
+        <div easypiechart options="options" percent="5" class="chart" ui-sref="Исполнение">
+            <span>5</span>
+        </div>
+        <p>Ожидает решения</p>
+    </div>
+    <div class="grid-content text-center">
+        <div easypiechart options="options" percent="17" class="chart"  ui-sref="На контроле">
+            <span>17</span>
+        </div>
+        <p>На контроле</p>
+    </div>
+</div>
   <br>
   <br>
   <h3 class="">Последние карточки</h3>
 
-<div ng-include="'templates/partials/table2.html'" class="{{vars.header}} show-for-medium bouncy-slide-right"></div>
-
-
-
-
+<div ng-include="'templates/partials/table3.html'" class="{{vars.header}} show-for-medium bouncy-slide-right"></div>
 
   <ul class="block-list show-for-small-only" ng-controller="DocCtrl">
-      <li ng-repeat="doc in docs"><a ui-sref="На согласование">{{doc.title}}</a></li>
+      <li ng-repeat="doc in docs"><a ui-sref="Список">{{doc.title}}</a></li>
   </ul>
   <br><br>
-
-
-
 
   <p>Ссылка для мобильных устройств: <br>
   <img src="../img/qr-code.gif" alt="">
   </p>
 
+
   
 </div>
+
+
 

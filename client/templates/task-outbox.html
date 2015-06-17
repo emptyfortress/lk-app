@@ -3,12 +3,13 @@ name: Исходящие задания
 url: /tasks/outbox
 par: Задания
 title: Исходящие задания
-list:
+main:
     - Входящие задания
     - Исходящие задания
-    - Согласование
-    - Контроль
-    - Доработка
+list:
+    - Делегировано
+    - Завершено
+view: true
 ---
 
 <div ng-include="'templates/partials/header.html'" class="task slide-top"></div>
@@ -18,6 +19,6 @@ list:
    <div class="grid-content">
        <br>
         <h3>{{ vars.title }}</h3>
-        <p>{{vars}}</p>
+        <div ng-include="'templates/partials/table-task.html'"></div>
    </div>
 </div>

@@ -1,14 +1,16 @@
 ---
 name: В работе
 url: /tasks/working
-par: Задания
+par: Входящие задания
 title: В работе
-list:
+main:
     - Входящие задания
     - Исходящие задания
-    - Согласование
-    - Контроль
-    - Доработка
+list:
+    - В работе
+    - На контроле
+    - Исполнение
+view: true
 ---
 
 <div ng-include="'templates/partials/header.html'" class="task slide-top"></div>
@@ -18,6 +20,6 @@ list:
    <div class="grid-content">
        <br>
         <h3>{{ vars.title }}</h3>
-        <p>{{vars}}</p>
+        <div ng-include="'templates/partials/table-task.html'"></div>
    </div>
 </div>

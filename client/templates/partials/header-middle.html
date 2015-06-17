@@ -1,9 +1,8 @@
-<div class="grid-block header">
+<div class="grid-block header clean">
+<!--
     <div class="grid-block shrink"><a href="" zf-toggle="off-canvas-menu"><img src="img/hm.png" alt="">
         </a></div>
-    <div class="main-nav" ng-show={{vars.welcome}}>
-        <span ng-hide="showSearch">Доксвижн</span>
-    </div>
+-->
     <div class="main-nav show-for-medium" ng-show={{vars.welcome}} ng-controller="TimeCtrl">
         <span ng-hide="showSearch">{{date | date:'dd MMM yyyy'}}</span>
     </div>
@@ -19,7 +18,7 @@
              </zf-as-content>
         </zf-action-sheet>
     </div>
-    <div class="grid-block shrink  main-nav hide-for-small-only" ng-hide="{{vars.welcome}}"><span ng-hide="showSearch">&gt;</span></div>
+    <div class="grid-block shrink  main-nav hide-for-small-only" ng-hide="{{vars.welcome}}"><span ng-hide="showSearch">&nbsp;&nbsp;&gt;&nbsp;</span></div>
     <div class="grid-block shrink  main-nav" ng-hide="{{vars.welcome}}">
         <zf-action-sheet>
             <zf-as-button>
@@ -36,12 +35,10 @@
     <div class="grid-block align-right main-nav" ng-hide="{{vars.back}}">
         <a ng-click="showSearch = !showSearch;">
             <img src="img/search-w.png" alt=""  ng-hide="{{vars.back}}"></a>
-            <input type="text" class="search rel" ng-show="showSearch" placeholder="Search in current view" ng-model="query">
-                <img src="../../img/close-dark.png" class="search-close" alt="" ng-show="query.length">
-            </input>
+            <input type="text" class="search" ng-show="showSearch" placeholder="Search in current view" ng-model="query">
     </div>
-    <div class="grid-block shrink main-nav user"><a href="#"><img src="img/user.png" alt=""></a></div>
-    <div class="grid-block shrink main-nav help"><a href="#"><img src="img/help.png" alt=""></a></div>
+    <div class="grid-block shrink main-nav hide-for-small-only"><a href="#"><img src="img/user.png" alt=""></a></div>
+    <div class="grid-block shrink main-nav hide-for-small-only"><a href="#"><img src="img/help.png" alt=""></a></div>
 </div>
 
 <!--

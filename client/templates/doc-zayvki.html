@@ -3,6 +3,9 @@ name: Заявки
 url: /docs/zay
 par: Документы
 title: Заявки
+main:
+    - Задания
+    - Документы
 list:
     - Последние
     - Входящие
@@ -10,6 +13,7 @@ list:
     - ОРД
     - Заявки
     - Служебные записки
+view: true
 ---
 
 <div ng-include="'templates/partials/header.html'" class="doc slide-top"></div>
@@ -21,64 +25,13 @@ list:
             
             
                 <h3>{{ vars.title }}</h3>
-                <br>
-                
-<!--form ************************************************************-->
-<form>
- <h5>Параметры поиска</h5>
- <br>
-<!--
-<label>
-Input Label
-<input type="text" placeholder="Text field">
-</label>
--->
-<div class="grid-block"  ng-controller="MyCtrl">
-<div class="small-6 grid-content">
-<label>Период</label>
-<select name="" id="">
-<!--<option value="">-- задайте период --</option>-->
-<option value="">Произвольный период</option>
-<option value="">-------------</option>
-<option value="">Прошлая неделя</option>
-<option value="">Текущая неделя</option>
-<option value="">-------------</option>
-<option value="">Прошлый месяц</option>
-<option value="">Текущий месяц</option>
-</select>
-</div>
-<div class="small-3 grid-content">
-<label>
-Начало
-<input type="date" placeholder="Выберите дату" ng-model="date">
-</label>
-</div>
-<div class="small-3 grid-content">
-<label>
-Конец
-<input type="date" placeholder="Выберите дату" ng-model="date">
-</label>
-</div>
-<div class="small-12 grid-content">
-    <label>Искать
-        <input type="text" placeholder="Что будем искать?">
-    </label>
-</div>
-<div class="small-12 grid-block align-right">
-            <a class="button secondary" href="#">Закрыть</a>
-            <a class="button secondary" href="#">Сбросить все</a>
-            <a class="button secondary" href="#">Обновить</a>
-            <a class="button" href="#">Искать</a>
-</div>
+                <div ng-include="'templates/partials/table3.html'"></div>
+                <br><br>
+                <div ng-include="'templates/partials/table2.html'"></div>
+                <br><br>
+                <div ng-include="'templates/partials/table1.html'"></div>
 
 
-</div>
-</form>              
-                
-                
-                
-                
-<!-- end form ******************************************               -->
         </div>
 
 

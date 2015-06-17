@@ -1,115 +1,162 @@
-<div class="grid-block">
-    <div class="zag1 medium-size rel" ng-click="hideFile = !hideFile;">
-        Вложения (3)
-        <span class="arrow" ng-show="hideFile">&and;</span>
-        <span ng-show="!hideFile" class="arrow">&or;</span>
-    </div>
-       <table class="simple" ng-hide="hideFile">
-        <tbody>
-          <tr class="table-header">
-              <th>вид</th>
-              <th>имя</th>
-              <th>тип</th>
-              <th></th>
-          </tr>
-            <tr>
-                <td><img src="../../img/anchor.png" alt="" class="fade"></td>
-                <td><a href="">dv-design.digdes.com</a></td>
-                <td class="italic">Ссылка</td>
-                <td class="text-right">
-                    <a href=""><img src="../../img/info-black.png" alt="" class="fade"></a>
-                    &nbsp;&nbsp;
-                    <a href=""><img src="../../img/kebab.png" alt="" class="fade"></a>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="../../img/skrepka.png" alt="" class="fade"></td>
-                <td><a href="">Исходящее письмо.doc</a></td>
-                <td class="italic">Документ</td>
-                <td class="text-right">
-                    <a href=""><img src="../../img/info-black.png" alt="" class="fade"></a>
-                    &nbsp;&nbsp;
-                    <a href=""><img src="../../img/kebab.png" alt="" class="fade"></a>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="../../img/dv.png" alt="" class="fade"></td>
-                <td><a href="">Карточка Приказ о выселении</a></td>
-                <td class="italic">Связанная карточка</td>
-                <td class="text-right">
-                    <a href=""><img src="../../img/info-black.png" alt="" class="fade"></a>
-                    &nbsp;&nbsp;
-                    <a href=""><img src="../../img/kebab.png" alt="" class="fade"></a>
-                </td>
-            </tr>
-
-        </tbody>
-    </table>
-    <br><br>
+<div class="zag medium-size">Основные файлы&nbsp;<a href=""><img src="../../img/plus-dark.png" class="fade float-right" alt=""></a></div>
 
 
+<div class="show-for-small-only">
+        <ul class="fileList">
+            <li ng-click="showRow = !showRow"><img src="../../img/word.png" width="32" alt="">
+                <a href="">Description_of_the_co...doc</a>
+                <span ng-show="showRow">
+                    <p class="cssSlideUp attr">
+                     Версия: 1.1<br>
+                        Автор: Иванов И. <br>
+                        Электронная подпись отсутствует<br>
+                    <a>Скачать</a>&nbsp;&nbsp;<a>Просмотр</a></span>
+            </li>
+            <li  ng-click="showRow1 = !showRow1"><img src="../../img/excel.png" width="32" alt="">
+                <a href="">Price_calculation.xsl</a>
+                <span ng-show="showRow1">
+                    <p class="cssSlideUp attr">
+                     Версия: 1.1<br>
+                        Автор: Иванов И. <br>
+                        Электронная подпись отсутствует<br>
+                    <a>Скачать</a>&nbsp;&nbsp;<a>Просмотр</a></span>
+            </li>
+        </ul>
 
-    <div class="plus">
-        <img src="../../img/plus-dark.png" alt="" ng-hide="showSubMenu" ng-click="showSubMenu = !showSubMenu">
-        <img src="../../img/close-dark.png" alt="" class="close"  ng-show="showSubMenu" ng-click="showSubMenu = !showSubMenu">
-        <div ng-show="showSubMenu" class="jump slide-right">
-            <div zf-action-sheet="">
-                <div zf-as-button="">
-                    <img src="../../img/url.png" alt="">
-                </div>
-                <div zf-as-content="" position="bottom" class="custom-as">
-                <p>Прикрепить URL</p>
-                <ul>
-                <li zf-as-button=""><a href="#" >Дополнение</a></li>
-                <li zf-as-button=""><a href="#" >Ссылается на</a></li>
-                <li zf-as-button=""><a href="#" >Связано с</a></li>
-                </ul>
-                </div>
-            </div>
-            <div zf-action-sheet="" >
-                <div zf-as-button="">
-                    <img src="../../img/link-attach.png" alt="">
-                </div>
-                <div zf-as-content="" position="bottom" class="custom-as">
-                <p>Прикрепить файл</p>
-                <ul>
-                <li zf-as-button=""><a href="#" >Основной документ</a></li>
-                <li zf-as-button=""><a href="#" >Дополнение</a></li>
-                <li zf-as-button=""><a href="#" >Отчет</a></li>
-                </ul>
-                </div>
-            </div>
-            <div zf-action-sheet="" >
-                <div zf-as-button="">
-                    <img src="../../img/link.png" alt="">
-                </div>
-                <div zf-as-content="" position="bottom" class="custom-as">
-                <p>Прикрепить ссылку</p>
-                <ul>
-                <li zf-as-button=""><a href="#" >Отчет</a></li>
-                <li zf-as-button=""><a href="#" >Дополнение</a></li>
-                <li zf-as-button=""><a href="#" >Ссылается на</a></li>
-                <li zf-as-button=""><a href="#" >В ответ на</a></li>
-                </ul>
-                </div>
-            </div>
-            <div zf-action-sheet="" >
-                <div zf-as-button="">
-                    <img src="../../img/add-link.png" alt="">
-                </div>
-                <div zf-as-content="" position="bottom" class="custom-as">
-                <p>Создать</p>
-                <ul>
-                <li zf-as-button=""><a href="#" >Отчет</a></li>
-                <li zf-as-button=""><a href="#" >Дополнение</a></li>
-                <li zf-as-button=""><a href="#" >Ссылается на</a></li>
-                <li zf-as-button=""><a href="#" >В ответ на</a></li>
-                </ul>
-                </div>
-            </div>
+</div>
+
+
+<div class="grid-block show-for-medium">
+    <div class="custom-card">
+        <img src="../../img/word.png"  ng-click="showDet = !showDet" ng-hide="showDet">
+        <div class="fileDetails" ng-click="showDet = !showDet" ng-show="showDet">
+            <p>Версия: 1.0 <br>
+            Автор: Петров С. <br>
+            Электронная подпись: отсутствует</p>
+            <p><a>Скачать</a>&nbsp;&nbsp;<a>Просмотр</a></p>
 
         </div>
+        <div class="custom-card-divider">
+            <a href="">This_is_file_name.doc</a>
+        </div>
     </div>
+    <div class="custom-card">
+        <img src="../../img/excel.png"  ng-click="showDet1 = !showDet1" ng-hide="showDet1">
+        <div class="fileDetails" ng-click="showDet1 = !showDet1" ng-show="showDet1">
+            <p>Версия: 1.0 <br>
+            Автор: Петров С. <br>
+            Электронная подпись: отсутствует</p>
+            <p><a>Скачать</a>&nbsp;&nbsp;<a>Просмотр</a></p>
+        </div>
+        <div class="custom-card-divider">
+            <a href="">This_is_file_name.xsl</a>
+        </div>
+    </div>
+
+</div>
+<br>
+
+
+        <div class="rel">
+            <div class="zag medium-size" ng-click="hideFile = !hideFile;">
+                <span  ng-hide="showSubMenu">Дополнительные файлы (3)</span>
+                <span class="arrow" ng-hide="hideFile">&and;</span>
+                <span ng-hide="!hideFile" class="arrow">&or;</span>
+            </div>
+            <div class="plus">
+            <img src="../../img/plus-dark.png" alt="" ng-hide="showSubMenu" ng-click="showSubMenu = !showSubMenu">
+            <img src="../../img/close-dark.png" alt="" class="close"  ng-show="showSubMenu" ng-click="showSubMenu = !showSubMenu">
+            <div ng-show="showSubMenu" class="jump slide-right">
+                <div zf-action-sheet="">
+                    <div zf-as-button="">
+                        <img src="../../img/url.png" alt="">
+                    </div>
+                    <div zf-as-content="" position="bottom" class="custom-as">
+                    <p>Прикрепить URL</p>
+                    <ul>
+                    <li zf-as-button=""><a href="#" >Дополнение</a></li>
+                    <li zf-as-button=""><a href="#" >Ссылается на</a></li>
+                    <li zf-as-button=""><a href="#" >Связано с</a></li>
+                    </ul>
+                    </div>
+                </div>
+                <div zf-action-sheet="" >
+                    <div zf-as-button="">
+                        <img src="../../img/link-attach.png" alt="">
+                    </div>
+                    <div zf-as-content="" position="bottom" class="custom-as">
+                    <p>Прикрепить файл</p>
+                    <ul>
+                    <li zf-as-button=""><a href="#" >Основной документ</a></li>
+                    <li zf-as-button=""><a href="#" >Дополнение</a></li>
+                    <li zf-as-button=""><a href="#" >Отчет</a></li>
+                    </ul>
+                    </div>
+                </div>
+                <div zf-action-sheet="" >
+                    <div zf-as-button="">
+                        <img src="../../img/link.png" alt="">
+                    </div>
+                    <div zf-as-content="" position="bottom" class="custom-as">
+                    <p>Прикрепить ссылку</p>
+                    <ul>
+                    <li zf-as-button=""><a href="#" >Отчет</a></li>
+                    <li zf-as-button=""><a href="#" >Дополнение</a></li>
+                    <li zf-as-button=""><a href="#" >Ссылается на</a></li>
+                    <li zf-as-button=""><a href="#" >В ответ на</a></li>
+                    </ul>
+                    </div>
+                </div>
+                <div zf-action-sheet="" >
+                    <div zf-as-button="">
+                        <img src="../../img/add-link.png" alt="">
+                    </div>
+                    <div zf-as-content="" position="bottom" class="custom-as">
+                    <p>Создать</p>
+                    <ul>
+                    <li zf-as-button=""><a href="#" >Отчет</a></li>
+                    <li zf-as-button=""><a href="#" >Дополнение</a></li>
+                    <li zf-as-button=""><a href="#" >Ссылается на</a></li>
+                    <li zf-as-button=""><a href="#" >В ответ на</a></li>
+                    </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+               <div ng-controller="FileCtrl">
+                   <div slide-toggle="!hideFile" >
+                       <table class="simple">
+                        <tbody>
+                          <tr class="table-header">
+                              <th ng-click="orderByField='img'; reverseSort = !reverseSort">вид</th>
+                              <th ng-click="orderByField='name'; reverseSort = !reverseSort">имя</th>
+                              <th ng-click="orderByField='type'; reverseSort = !reverseSort">тип</th>
+                              <th></th>
+                          </tr>
+                          <tr ng-repeat="file in files | orderBy:orderByField:reverseSort" class="repeat-animation">
+                              <td><img ng-src="{{file.img}}" class="fade"></td>
+                              <td><a href="">{{file.name}}</a></td>
+                              <td class="italic">{{file.type}}</td>
+                              <td class="text-right">
+                                    <a href=""><img src="../../img/info-black.png" alt="" class="fade"></a>
+                                        &nbsp;&nbsp;
+                                    <a href=""><img src="../../img/kebab.png" alt="" class="fade"></a>
+                              </td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                   </div>
+               </div>
+            <br><br>
+        </div>
+
+
+
+
 
 </div>
 

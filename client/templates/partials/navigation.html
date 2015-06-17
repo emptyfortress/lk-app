@@ -1,5 +1,5 @@
 <div class="rel">
-            <div class="back clearfix">
+            <div class="back clearfix" ng-hide="{{vars.fixed}}">
                         <div class="float-left">
                             <a href="#" zf-close="off-canvas-menu"><img src="img/close.png" alt=""></a>
                         </div>
@@ -19,24 +19,24 @@
 
                 <zf-accordion-item title="Задания">
                     <ul class="block-list">
-                        <li><a ui-sref="Входящие задания">Входящие</a><span class="alert badge">1</span></li>
-                                <li class="pad-l italic"><a ui-sref="В работе">В работе</a></li>
-                                <li class="pad-l italic"><a ui-sref="На контроле">На контроле</a></li>
-                                <li class="pad-l italic"><a ui-sref="Исполнение">Ответственное исполнение</a></li>
+                        <li><a ui-sref="Входящие задания" zf-close="off-canvas-menu">Входящие</a><span class="alert badge">1</span></li>
+                                <li class="pad-l italic"><a ui-sref="В работе" zf-close="off-canvas-menu">В работе</a></li>
+                                <li class="pad-l italic"><a ui-sref="На контроле" zf-close="off-canvas-menu">На контроле</a></li>
+                                <li class="pad-l italic"><a ui-sref="Исполнение" zf-close="off-canvas-menu">Ответственное исполнение</a></li>
 
-                        <li><a ui-sref="Исходящие задания">Исходящие</a></li>
-                            <li class="pad-l italic"><a ui-sref="Делегировано">Делегировано</a><span class=" badge">1</span></li>
-                            <li class="pad-l italic"><a  ui-sref="Завершено">Завершено</a></li>
+                        <li><a ui-sref="Исходящие задания" zf-close="off-canvas-menu">Исходящие</a></li>
+                            <li class="pad-l italic"><a ui-sref="Делегировано" zf-close="off-canvas-menu">Делегировано</a><span class=" badge">1</span></li>
+                            <li class="pad-l italic"><a  ui-sref="Завершено" zf-close="off-canvas-menu">Завершено</a></li>
                     </ul>
                 </zf-accordion-item>
                 <zf-accordion-item title="Документы">
                     <ul class="block-list accordion">
-                        <li><a ui-sref="Последние">Последние</a></li>
-                        <li><a ui-sref="Входящие">Входящие</a></li>
-                        <li><a ui-sref="Исходящие">Исходящие</a></li>
-                        <li><a ui-sref="ОРД">ОРД</a></li>
-                        <li><a ui-sref="Заявки">Заявки</a></li>
-                        <li><a ui-sref="Служебные записки">Служебные записки</a></li>
+                        <li><a ui-sref="Последние" zf-close="off-canvas-menu">Последние</a></li>
+                        <li><a ui-sref="Входящие" zf-close="off-canvas-menu">Входящие</a></li>
+                        <li><a ui-sref="Исходящие" zf-close="off-canvas-menu">Исходящие</a></li>
+                        <li><a ui-sref="ОРД" zf-close="off-canvas-menu">ОРД</a></li>
+                        <li><a ui-sref="Заявки" zf-close="off-canvas-menu">Заявки</a></li>
+                        <li><a ui-sref="Служебные записки" zf-close="off-canvas-menu">Служебные записки</a></li>
                     </ul>
                 </zf-accordion-item>
                 <zf-accordion-item title="Папки">
