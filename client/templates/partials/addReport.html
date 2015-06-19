@@ -1,0 +1,17 @@
+<div zf-modal="" id="reportModal">
+    <a zf-close="" class="close-button">×</a>
+    <h3>Прикрепить отчет</h3>
+    <p>Ваш комментарий:
+
+            <textarea class="msd-elastic: \n; grow" ng-model="bar" ng-show="true">
+                  ...
+            </textarea>
+    </p>
+        <label for="link"><input type="checkbox" id="link">Добавить ссылку</label>
+        <label for="repp"><input type="checkbox" id="repp" ng-model="showRepFile">Прикрепить файл отчета</label>
+    <div ng-include="'templates/partials/add-file-report.html'" ng-show="showRepFile"></div>
+    <div class="text-right">
+        <a zf-close="" class="button">Отменить</a>
+        <a zf-close="" class="button bg-green">Отправить</a>
+    </div>
+</div>

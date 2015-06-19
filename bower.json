@@ -25,6 +25,7 @@
   "dependencies": {
     "foundation-apps": "~1.1.0",
     "slick.js": "~1.5.5",
-    "angular-datepicker": "~1.0.6"
+    "angular-datepicker": "~1.0.6",
+    "angular-tooltips": "~0.1.11"
   }
 }

@@ -1,0 +1,30 @@
+<div class="grid-content p0">
+    <br>
+    <div class="upload" ng-click="progress = true" ng-hide="progress">
+            <img src="../../img/attach.png" alt=""><br>
+            <span ng-hide="overDrop">Перетащите сюда файл</span>
+    </div>
+    <div class="grid-block upload1" ng-show="progress">
+           <h5>Очередь загрузки</h5>
+            <div class="table-container">
+                <table class="simple middle">
+
+                    <tr>
+                        <td colspan="3">
+                            <progress value="50" max="100"></progress>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Договор с Ленэнерго.doc</td>
+                        <td class="text-right nowrap">117 kb</td>
+                        <td class="text-right nowrap">
+                            <a href="" ng-click="progress = false" tooltips="" tooltip-speed="fast" tooltip-delay="1000" tooltip-title="Остановить загрузку"><img zf-iconic="" icon="ban" size="small"></a>
+                            <a href="" ng-click="progress = false" tooltips="" tooltip-speed="fast" tooltip-delay="1000" tooltip-title="Удалить"><img src="../../img/xdelete.png" alt=""></a>
+                            <a href="" ng-click="progress = false" tooltips="" tooltip-speed="fast" tooltip-delay="1000" tooltip-title="Начать загрузку"><img src="../../img/upload.png" alt=""></a>
+                        </td>
+                </table>
+            </div>
+
+        </div>
+</div>
+   <br>

@@ -14,20 +14,20 @@ view: true
   <br>
   <div class="grid-block"  ng-controller="chartCtrl">
     <div class="grid-content text-center">
-        <div easypiechart options="options" percent="68" class="chart" ui-sref="В работе">
-            <span>68</span>
+        <div easypiechart options="options" percent="68" class="chart" ui-sref="Входящие задания">
+            <span class="meter">68</span><span class="alert badge">1</span>
         </div>
-        <p>В работе</p>
+        <p>Входящие</p>
     </div>
     <div class="grid-content text-center">
         <div easypiechart options="options" percent="5" class="chart" ui-sref="Исполнение">
-            <span>5</span>
+            <span class="meter">5</span>
         </div>
-        <p>Ожидает решения</p>
+        <p>Документы на подпись</p>
     </div>
     <div class="grid-content text-center">
         <div easypiechart options="options" percent="17" class="chart"  ui-sref="На контроле">
-            <span>17</span>
+            <span class="meter">17</span>
         </div>
         <p>На контроле</p>
     </div>
@@ -44,7 +44,7 @@ view: true
   <br><br>
 
   <p>Ссылка для мобильных устройств: <br>
-  <img src="../img/qr-code.gif" alt="">
+  <a href="../img/qr-code-big.gif" target="_blank"><img src="../img/qr-code.gif" alt=""></a>
   </p>
 
 

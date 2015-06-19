@@ -6,7 +6,7 @@ title: Выдать задание
 animationIn: zoomIn
 animationOut: slideOutBottom
 back: true
-view: true
+view: false
 ---
 
 <div ng-include="'templates/partials/header.html'" class="task"></div>
@@ -16,7 +16,6 @@ view: true
 <div class="grid-container task">
 <br>
 <h3 class="ml-20">Новое задание</h3>
-    <br>
 
 <form action="" class="myForm">
     <select name="" id="">
@@ -48,7 +47,7 @@ view: true
             </textarea>
 
             <div ng-show="showTextArea" class="slide-down">
-                <a class="button" ng-click="showTextArea = !showTextArea">Отмена</a>
+                <a class="button" ng-click="showTextArea = !showTextArea">Отменить</a>
                 <a class="button primary" ng-click="showTextArea = !showTextArea">Добавить описание</a>
             </div>
         </div>
@@ -69,8 +68,18 @@ view: true
                 <label for="time" class="lb">Срок</label>
           </div>
       </div>
-      <input id="controler" type="checkbox" ng-model="showCont"><label for="controler">Назначить контролера</label>
 
+      <div>
+          <input id="file" type="checkbox" ng-model="showFile"><label for="file">Прикрепить файлы</label>
+              <div ng-include="'templates/partials/add-file.html'" ng-show="showFile"></div>
+      </div>
+      <br>
+      <input id="priem" type="checkbox" ><label for="priem">Требуется приемка</label>
+      <br class="show-for-small-only">
+      <br class="show-for-small-only">
+      <input id="controler" type="checkbox" ng-model="showCont"><label for="controler">Назначить контролера</label>
+      <br class="show-for-small-only">
+      <br class="show-for-small-only">
       <div class="grid-block animate-show" ng-show="showCont">
           <div class="grid-block">
                <input id="cont" ng-model="cont" ng-class="{'empty': !cont.length }"/>
@@ -82,19 +91,16 @@ view: true
                 <label for="time1" class="lb">Срок</label>
           </div>
       </div>
-<!--                <input type="text" date-time="" ng-model="start" required="true" view="date" partial="true">-->
 
-      <input id="priem" type="checkbox" ><label for="priem">Требуется приемка</label>
 
-      <div class="grid-block">
-          <div class="grid-block">
-            <a class="button" href="#">Отменить</a>
-          </div>
-           <div class="grid-block align-right">
-            <a class="button" href="#">Сохранить</a>
-            <a class="button primary" ui-sref="Исходящие задания">Старт</a>
-          </div>
+
+
+      <div class="mt-30">
+            <a class="button float-left" ui-sref="home">Отменить</a>
+            <a class="button primary float-right" ui-sref="Задание на согласование">Старт</a>
+            <a class="button float-right" >Сохранить</a>
       </div>
+
 
     </form>
 

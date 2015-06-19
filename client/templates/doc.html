@@ -1,6 +1,6 @@
 ---
-name: Задание на согласование
-url: /task/soglas
+name: Согласование
+url: /doc/soglas
 par: Документ
 title: Согласование
 back: true
@@ -8,9 +8,9 @@ view: true
 ---
 <div  ng-controller="TabController as tab">
 
-<div ng-include="'templates/partials/header.html'" class="task slide-top"></div>
-<div ng-include="'templates/partials/smallbar.html'" class="show-for-medium task slide-top"></div>
-<div ng-include="'templates/partials/smallbar2.html'" class="show-for-small-only task slide-top"></div>
+<div ng-include="'templates/partials/header.html'" class="doc slide-top"></div>
+<div ng-include="'templates/partials/smallbar.html'" class="show-for-medium doc slide-top"></div>
+<div ng-include="'templates/partials/smallbar2.html'" class="show-for-small-only doc slide-top"></div>
 
 
 
@@ -23,28 +23,32 @@ view: true
                     <div class="grid-content">
                         <p class="nomer">ОРГ-3</p>
                         <h3><span class="important">&uarr;&nbsp;</span>Заявка на покупку кондиционеров<a href=""><img src="../img/edit.png" alt="" class="edit"></a> </h3>
-                        <h5 class="show-for-small-only">Ожидает решения</h5>
+                        <h5 class="show-for-small-only">На согласовании</h5>
                     </div>
-                    <div class="grid-content shrink bottom hide-for-small-only"><h5>Ожидает решения</h5></div>
+                    <div class="grid-content shrink bottom hide-for-small-only"><h5>На согласовании</h5></div>
                 </div>
         </div>
 
 
                 <div zf-tabs="" class="custom-tabs hide-for-small-only">
                     <div zf-tab="" title="Главное">
-                        <div ng-include="'templates/partials/main-tab.html'"></div>
+                        <div ng-include="'templates/partials/main-tab1.html'"></div>
                     </div>
+<!--
                     <div zf-tab="" title="Комментарии">
                         <div ng-include="'templates/partials/comment-tab.html'"></div>
                     </div>
+-->
                     <div zf-tab="" title="Ход согласования">
                         <div ng-include="'templates/partials/sogl-tab.html'"></div>
                     </div>
+<!--
                    <div zf-tab="" title="Дерево версий">
                         <div ng-include="'templates/partials/tree-tab.html'"></div>
                     </div>
+-->
                     <div zf-tab="" title="История" class="slide-right">
-                        Здесь будет таблица со всеми действиями в карточке
+                        История
                     </div>
                 </div>
 
@@ -61,9 +65,9 @@ view: true
 
 
                  <div ng-include="'templates/partials/main-tab1.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(1)"></div>
-                 <div ng-include="'templates/partials/comment-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(2)"></div>
+<!--                 <div ng-include="'templates/partials/comment-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(2)"></div>-->
                  <div ng-include="'templates/partials/sogl-tab1.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(2)"></div>
-                 <div ng-include="'templates/partials/tree-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(4)"></div>
+<!--                 <div ng-include="'templates/partials/tree-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(4)"></div>-->
                  <div ng-include="'templates/partials/history-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(3)"></div>
 
 <!--        <div class="prev">&lsaquo;</div>-->
@@ -73,7 +77,6 @@ view: true
 
 
         <div ng-include="'templates/partials/button-panel.html'"></div>
-        <div ng-include="'templates/partials/addReport.html'"></div>
     </div>
 
 

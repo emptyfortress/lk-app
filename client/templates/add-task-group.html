@@ -1,0 +1,169 @@
+---
+name: Новая группа заданий
+url: /tasks/add/group
+par: Задания
+title: Группа
+animationIn: zoomIn
+animationOut: slideOutBottom
+back: true
+view: false
+---
+
+<div ng-include="'templates/partials/header.html'" class="task"></div>
+<div ng-include="'templates/partials/smallbar.html'" class="show-for-medium task slide-top"></div>
+
+
+<div class="grid-container task">
+<br>
+<h3 class="ml-20">Новая группа заданий</h3>
+
+<form action="" class="myForm">
+<!--
+    <select name="" id="">
+        <option value="">Группа заданий</option>
+        <option value="">Задание / Задание УД / Согласование</option>
+        <option value="">Задание / Задание УД / Задание</option>
+    </select>
+-->
+
+
+
+      <div class="grid-block">
+            <input id="title1" ng-model="title1" ng-class="{'empty': !title1.length }"/>
+            <label for="title1" class="lb">Название</label>
+      </div>
+
+      <div class="grid-block">
+            <input id="comment" ng-model="comment" ng-class="{'empty': !comment.length }" ng-click="showTextArea = !showTextArea" ng-hide="showTextArea" />
+                 <label for="comment" class="lb" ng-hide="showTextArea">Описание</label>
+
+             <textarea class="msd-elastic: \n; grow" ng-model="bar" ng-show="showTextArea">
+                  ...
+            </textarea>
+
+            <div ng-show="showTextArea" class="slide-down">
+                <a class="button" ng-click="showTextArea = !showTextArea">Отмена</a>
+                <a class="button primary" ng-click="showTextArea = !showTextArea">Добавить описание</a>
+            </div>
+        </div>
+
+    <div class="grid-block">
+              <div class="grid-block">
+                  <input id="time" ng-model="time" ng-class="{'empty': !time.length }"/>
+                    <label for="time" class="lb">Начать</label>
+              </div>
+              &nbsp;&nbsp;&nbsp;
+              <div class="grid-block">
+                  <input id="time1" ng-model="time1" ng-class="{'empty': !time1.length }"/>
+                    <label for="time1" class="lb">Завершить</label>
+              </div>
+              &nbsp;&nbsp;&nbsp;
+              <div class="grid-block">
+                  <input id="time2" ng-model="time2" ng-class="{'empty': !time2.length }"/>
+                    <label for="time2" class="lb">Длительность</label>
+              </div>
+      </div>
+      <div class="grid-block radio">
+            <div class="grid-block">
+                <div class="switch">
+                    <input type="checkbox" id="posl">
+                    <label for="posl"></label>
+                </div>
+                    <label for="posl">Последовательное <br> исполнение</label>
+            </div>
+            <div class="grid-block">
+                <div class="switch">
+                    <input type="checkbox" id="par">
+                    <label for="par"></label>
+                </div>
+                    <label for="par">Параллельное <br> исполнение</label>
+            </div>
+      </div>
+
+<!--table *******************************************    -->
+<div class="table-contasasgainer"  ng-show="isp.length">
+        <h5>Исполнители</h5>
+        <table class="" ng-controller="ManCtrl">
+            <tbody>
+                <tr class="table-header">
+                    <th ng-click="orderByField='state'; reverseSort = !reverseSort">
+                        ФИО&nbsp;
+                        <span ng-show="orderByField == 'state'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                    </th>
+                    <th ng-click="orderByField='title'; reverseSort = !reverseSort">
+                        Срок
+                        <span ng-show="orderByField == 'title'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                    </th>
+                    <th ng-click="orderByField='name'; reverseSort = !reverseSort">
+                        Длительность
+                        <span ng-show="orderByField == 'name'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                    </th>
+                    <th ng-click="orderByField='created'; reverseSort = !reverseSort">
+                        Описание
+                        <span ng-show="orderByField == 'created'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                    </th>
+                    <th ng-click="orderByField='modified'; reverseSort = !reverseSort">
+                        Ответственный
+                        <span ng-show="orderByField == 'modified'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                    </th>
+                </tr>
+                <tr ng-repeat="man in mans | orderBy:orderByField:reverseSort | filter:{name:query1}" class="repeat-animation" ng-show="isp.length">
+                    <td class="nowrap">{{man.name}}</td>
+                    <td class="nowrap">{{man.deadline}}</td>
+                    <td class="nowrap">{{man.duration}}</td>
+                    <td>{{man.desc}}</td>
+                    <td>{{man.name1}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+<!--  end table ********************************************  -->
+
+
+
+
+      <div class="grid-block">
+           <input ng-model="isp" ng-class="{'empty': !isp.length }"/>
+            <label class="lb">Исполнитель</label>
+      </div>
+
+
+    <div>
+          <input id="file" type="checkbox" ng-model="showFile"><label for="file">Прикрепить файлы</label>
+          <div ng-include="'templates/partials/add-file.html'" ng-show="showFile"></div>
+      </div>
+
+      <br>
+      <input id="priem" type="checkbox" ><label for="priem">Требуется приемка</label>
+      <br class="show-for-small-only">
+      <br class="show-for-small-only">
+      <input id="controler" type="checkbox" ng-model="showCont"><label for="controler">Назначить контролера</label>
+      <br class="show-for-small-only">
+      <br class="show-for-small-only">
+      <div class="grid-block animate-show" ng-show="showCont">
+          <div class="grid-block">
+               <input id="cont" ng-model="cont" ng-class="{'empty': !cont.length }"/>
+                <label for="cont" class="lb">Контролер</label>
+          </div>
+          &nbsp;&nbsp;&nbsp;
+          <div class="grid-block">
+              <input id="time1" ng-model="time1" ng-class="{'empty': !time1.length }"/>
+                <label for="time1" class="lb">Срок</label>
+          </div>
+      </div>
+
+
+
+
+      <div class="mt-30">
+            <a class="button float-left" ui-sref="home">Отменить</a>
+            <a class="button primary float-right" ui-sref="Исходящие задания">Старт</a>
+            <a class="button float-right" >Сохранить</a>
+      </div>
+
+
+    </form>
+
+</div>

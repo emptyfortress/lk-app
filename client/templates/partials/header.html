@@ -22,7 +22,10 @@
     <div class="grid-block shrink  main-nav hide-for-small-only" ng-hide="{{vars.welcome}}"><span ng-hide="showSearch">&gt;</span></div>
     <div class="grid-block shrink  main-nav" ng-hide="{{vars.welcome}}">
         <zf-action-sheet>
-            <zf-as-button>
+            <zf-as-button class="hide-for-small-only">
+                <a href="">{{vars.name}}</a>
+            </zf-as-button>
+            <zf-as-button class="show-for-small-only">
                 <a href="">{{vars.title}}</a>
             </zf-as-button>
             <zf-as-content position="bottom">

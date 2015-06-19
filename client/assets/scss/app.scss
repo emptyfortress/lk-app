@@ -7,6 +7,8 @@
 @import "slick";
 @import "slick-theme";
 @import "loading-bar";
+@import "angular-tooltips";
+//@import "xeditable";
 //@import "datepicker";
 
 
@@ -48,6 +50,7 @@
 .mr-20 { margin-right: 20px; }
 .ml-20 { margin-left: 20px; }
 .mt-10 {margin-top: 10px; }
+.mt-30 {margin-top: 30px; }
 .bottom { align-self: flex-end; }
 .grid-content .grid-block {
     margin-left: 0;
@@ -887,7 +890,6 @@ span.arrow {
     padding: 1rem;
     display: block;
     position: relative;
-//    top: -40px;
     border-radius: 10px;
     text-align: center;
     font-size: 0.9rem;
@@ -904,7 +906,12 @@ span.arrow {
     & img {
         opacity: 0.3;
     }
-     @include breakpoint(medium down) {display: none;}
+}
+.upload1 {
+    border: 3px dotted #ccc;
+    padding: 1rem;
+    display: block;
+    border-radius: 10px;
 }
 
 //comment *****************************************
@@ -1161,6 +1168,10 @@ textarea.grow {
         vertical-align: top;
     }
 }
+.simple.middle td {
+    vertical-align: middle;
+    border: none !important;
+}
 .simple {
     th {
     text-align: center;
@@ -1358,7 +1369,7 @@ td.nowrap {white-space: nowrap;}
     cursor: pointer;
     text-align: center;
     margin: 0 30px;
-    span {
+    span.meter {
         width:2rem;
         height:2rem;
 //        border: 1px solid red;
@@ -1372,6 +1383,12 @@ td.nowrap {white-space: nowrap;}
 
     }
     &:hover span {color: $darkblue;}
+}
+.chart span.badge {
+    font-size: 1rem;
+    position: absolute;
+    top: 5px;
+    right: 5px;
 }
 //.easyPieChart {
 //  position: relative;
@@ -1482,4 +1499,13 @@ $padding: 1rem
         background: rgba(black,.2);
     }
     }
+}
+.radio label {
+    font-size: rem-calc(18);
+    margin-left: 1rem;
+}
+progress {
+    height: 4px;
+//    width: 200px;
+    margin-bottom: -1rem;
 }

@@ -1,0 +1,74 @@
+<div class="grid-content p0">
+    <br>
+    <div class="upload" ng-mouseover="overDrop = true" ng-mouseleave="overDrop = false" ng-click="progress = true" ng-hide="progress">
+            <img src="../../img/attach.png" alt=""><br>
+            <span ng-hide="overDrop">Добавить файл</span>
+            <span ng-show="overDrop">Перетащите сюда файлы</span>
+    </div>
+    <div class="grid-block upload1" ng-show="progress">
+           <h5>Очередь загрузки</h5>
+            <div class="table-container">
+                <table class="simple middle">
+
+                    <tr>
+                        <td colspan="4">
+                            <progress value="50" max="100"></progress>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Договор с Ленэнерго.doc</td>
+                        <td class="text-right nowrap">117 kb</td>
+                        <td class="nowrap">
+                            <input type="checkbox"><label for="">Дополнительный файл</label>
+                        </td>
+                        <td class="text-right nowrap">
+                            <a href="" ng-click="progress = false" tooltips="" tooltip-speed="fast" tooltip-delay="1000" tooltip-title="Остановить загрузку"><img zf-iconic="" icon="ban" size="small"></a>
+                            <a href="" ng-click="progress = false" tooltips="" tooltip-speed="fast" tooltip-delay="1000" tooltip-title="Удалить"><img src="../../img/xdelete.png" alt=""></a>
+                            <a href="" ng-click="progress = false" tooltips="" tooltip-speed="fast" tooltip-delay="1000" tooltip-title="Начать загрузку"><img src="../../img/upload.png" alt=""></a>
+                        </td>
+                    <tr>
+                        <td colspan="4">
+                            <progress></progress>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Readme.txt</td>
+                        <td class="text-right nowrap">4 kb</td>
+                        <td>
+                            <input type="checkbox" checked><label for="">Дополнительный файл</label>
+                        </td>
+                         <td class="text-right nowrap">
+                            <a href="" ng-click="progress = false" tooltips="" tooltip-speed="fast" tooltip-delay="1000" tooltip-title="Удалить"><img src="../../img/xdelete.png" alt=""></a>
+                            <a href="" ng-click="progress = false" tooltips="" tooltip-speed="fast" tooltip-delay="1000" tooltip-title="Начать загрузку"><img src="../../img/upload.png" alt=""></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <progress></progress>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pricelist.xsl</td>
+                        <td class="text-right nowrap">56 kb</td>
+                        <td>
+                            <input type="checkbox" checked><label for="">Дополнительный файл</label>
+                        </td>
+                         <td class="text-right nowrap">
+                            <a href="" ng-click="progress = false" tooltips="" tooltip-speed="fast" tooltip-delay="1000" tooltip-title="Удалить"><img src="../../img/xdelete.png" alt=""></a>
+                            <a href="" ng-click="progress = false" tooltips="" tooltip-speed="fast" tooltip-delay="1000" tooltip-title="Начать загрузку"><img src="../../img/upload.png" alt=""></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="text-center">
+<!--                            <hr>-->
+                            <a href="" ng-click="progress = false" class="button">Пауза для всех</a>
+                            <a href="" ng-click="progress = false" class="button">Удалить все</a>
+                            <a href="" ng-click="progress = false" class="button primary">Загрузить все</a>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+</div>
