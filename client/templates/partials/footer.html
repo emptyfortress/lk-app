@@ -1,6 +1,11 @@
 <footer ng-controller="TestBarCtrl">
     <div class="grid-block" ng-controller="TimeCtrl">
-        <div class="grid-content show-for-medium">Компания "Доксвижн"</div>
+        <div class="grid-content show-for-medium">
+            <a href="http://simpoll.ru/run/survey/17e41012" target="_blank" ng-mouseenter="over=true" ng-mouseleave="over=false">
+                <span ng-hide="over">Компания "Доксвижн"</span>
+                <span ng-show="over">Опрос пользователей</span>
+            </a>
+        </div>
         <div class="grid-content" ng-click="start()">Пользователь: Волков А.</div>
         <div class="grid-content show-for-medium" ng-click="complete()">{{date | date:'dd MMM yyyy'}}</div>
         <div class="grid-content show-for-large">Large screen</div>
@@ -8,3 +13,4 @@
         <div class="grid-content show-for-small-only">Small screen</div>
     </div>
 </footer>
+

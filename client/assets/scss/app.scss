@@ -179,9 +179,7 @@ footer {
     line-height: 30px;
     background-color: #ccc;
     font-size: rem-calc(13);
-    & .grid-block {
-//        padding: rem-calc(5);
-    }
+    a {color: black;}
 }
 
 //header *****************************************************
@@ -258,7 +256,7 @@ input.search.ng-hide {
 
 .search::-webkit-input-placeholder {
     color: white;
-    font-family: "Segoe UI Light";
+    font-family: "Segoe UI Light", "Helvetica", sans-serif;
 }
 
 .search-close {
@@ -441,7 +439,13 @@ input.search.ng-hide {
 }
 .block-list li.with-chevron::after {
     top: 20px;
+    color: white;
+    }
+.fixed .block-list li.with-chevron::after {
+    color:$darkblue;
 }
+
+
 .block-list li .badge {
     position: absolute;
     top:10px;
@@ -809,6 +813,14 @@ img.edit {
         line-height: 120%;
     }
 }
+.panel {
+    background: $darkblue;
+    .fixed & {
+        background: white;
+    }
+}
+
+
 
 //chevron *********************************
 span.arrow {

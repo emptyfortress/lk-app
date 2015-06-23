@@ -11,8 +11,8 @@
     'angularSlideables',
     'monospaced.elastic',
     'slick',
-    '720kb.tooltips',
-    'easypiechart'
+    '720kb.tooltips'
+//    'easypiechart'
 //    'xeditable'
 //    'angularFileUpload'
 //    'datePicker'
