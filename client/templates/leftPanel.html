@@ -22,11 +22,12 @@ view: true
 -->
 <!--left panel  *******************************************************-->
 <div class="grid-block">
-    <div ng-class="{'leftPanel1':vars.fixed || 'leftPanel'}">
+<!--    <div ng-class="{'leftPanel1':vars.fixed || 'leftPanel'}">-->
+    <div class="leftPanel">
 
         <div ng-include="'templates/partials/header-small.html'" class="{{vars.header}} slide-top"></div>
         <div ng-include="'templates/partials/smallbar-left.html'" class="folder slide-top"></div>
-        <div ng-include="'templates/partials/navigation.html'" class="fixed"></div>
+        <div ng-include="'templates/partials/navigation.html'"></div>
     </div>
 
 <!--    right panel **********************************************************-->

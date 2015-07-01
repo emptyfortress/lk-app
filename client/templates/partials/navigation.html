@@ -7,17 +7,6 @@
                         </div>
             </div>
 
-                <ul class="side-links">
-                    <li><a ui-sref="home" zf-close="off-canvas-menu">
-                        <img src="img/history.png" alt="" ng-hide="{{vars.fixed}}">
-                        <img src="img/history-b.png" alt="" ng-show="{{vars.fixed}}">
-                        &nbsp;&nbsp;Последние</a></li>
-                    <li><a href="">
-                        <img src="img/search-w.png" alt="" ng-hide="{{vars.fixed}}">
-                        <img src="img/search-b.png" alt="" ng-show="{{vars.fixed}}">
-                        &nbsp;&nbsp;Поиск</a></li>
-                </ul>
-
             <zf-accordion auto-open="false" collapsible="true" multi-open="true">
 
                 <zf-accordion-item title="Задания">
@@ -45,8 +34,8 @@
                 <zf-accordion-item title="Папки">
                     <ul class="block-list">
                         <li class="with-chevron"><a zf-open="panel1">
-                                   <img src="img/folder-dark.png" alt="" ng-show="{{vars.fixed}}">
-                                   <img src="img/folder-w.png" alt="" ng-hide="{{vars.fixed}}">
+<!--                                   <img src="img/folder-dark.png" alt="" ng-show="{{vars.fixed}}">-->
+                                   <img src="img/folder-w.png" alt="">
                                     &nbsp;&nbsp;Распоряжения</a></li>
                             <div zf-panel="" id="panel1">
                                 <div class="back">
@@ -74,20 +63,31 @@
                                 </ul>
                             </div>
                         <li><a ui-sref="">
-                            <img src="img/folder-dark.png" alt="" ng-show="{{vars.fixed}}">
-                           <img src="img/folder-w.png" alt="" ng-hide="{{vars.fixed}}">
+<!--                            <img src="img/folder-dark.png" alt="" ng-show="{{vars.fixed}}">-->
+                           <img src="img/folder-w.png" alt="">
                             &nbsp;&nbsp;Temp</a></li>
                         <li><a ui-sref="">
-                            <img src="img/folder-dark.png" alt="" ng-show="{{vars.fixed}}">
-                           <img src="img/folder-w.png" alt="" ng-hide="{{vars.fixed}}">
+<!--                            <img src="img/folder-dark.png" alt="" ng-show="{{vars.fixed}}">-->
+                           <img src="img/folder-w.png" alt="">
                             &nbsp;&nbsp;ОРД Доксвижн</a></li>
                         <li><a ui-sref="">
-                            <img src="img/folder-dark.png" alt="" ng-show="{{vars.fixed}}">
-                               <img src="img/folder-w.png" alt="" ng-hide="{{vars.fixed}}">
+<!--                            <img src="img/folder-dark.png" alt="" ng-show="{{vars.fixed}}">-->
+                               <img src="img/folder-w.png" alt="">
                             &nbsp;&nbsp;My folder</a></li>
                     </ul>
                 </zf-accordion-item>
             </zf-accordion>
+            <ul class="side-links">
+                        <li><a href="">
+                        <img src="img/search-w.png" alt="">
+<!--                        <img src="img/search-b.png" alt="" ng-show="{{vars.fixed}}">-->
+                        &nbsp;&nbsp;Поиск</a></li>
+                       <li><a ui-sref="home" zf-close="off-canvas-menu">
+                        <img src="img/history.png" alt="">
+<!--                        <img src="img/history-b.png" alt="" ng-show="{{vars.fixed}}">-->
+                        &nbsp;&nbsp;Последние</a></li>
+
+                </ul>
             <br>
             <ul class="side-links show-for-small-only">
                 <li><br><br></li>

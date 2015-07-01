@@ -1,0 +1,58 @@
+---
+name: test
+url: /test
+title: Опрос
+fixed: false
+---
+
+<div ng-include="'templates/partials/header.html'" class="{{vars.header}} slide-top"></div>
+<div ng-include="'templates/partials/smallbar.html'" class="folder slide-top"></div>
+
+ <div class="grid-container grid-content">
+  <br>
+<h1>
+  Оценка прототипа ЛК
+</h1>
+<div class="survey_view">
+  <form id="survey_form" action="http://simpoll.ru/run/post" method="post" enctype="multipart/form-data" name="survey_form">
+    <input type="hidden" name="survey_key" value="17e41012" class="input" id="survey_key" /> <input type="hidden" name="page" value="1" class="input" id="page" />
+    <div class="survey_questions question q_view" id="q396606">
+      <input type="hidden" class="type_alias" value="single" />
+      <div class="number">
+        1
+      </div>
+      <div class="wrapper">
+        <h3>
+          При работе с ЛК ваш браузер:
+        </h3>
+        <div class="body variants">
+          <div class="variant">
+            <label><input type="radio" name="quest[396606]" value="926151" class="input_radio" id="opt-926151" onclick="toggleFreeRadio(396606)" tabindex="-1" /> Распахнут во весь экран</label>
+          </div>
+          <div class="variant">
+            <label><input type="radio" name="quest[396606]" value="926152" class="input_radio" id="opt-926152" onclick="toggleFreeRadio(396606)" tabindex="-1" /> Находится в окне, но занимает большую
+            часть экрана</label>
+          </div>
+          <div class="variant">
+            <label><input type="radio" name="quest[396606]" value="926153" class="input_radio" id="opt-926153" onclick="toggleFreeRadio(396606)" tabindex="-1" /> Находится в окне, но занимает меньшую
+            часть экрана</label>
+          </div>
+          <div class="variant">
+            <label><input type="radio" name="quest[396606]" value="0" class="input_radio" id="" onclick="toggleFreeRadio(396606)" tabindex="-1" /> Другое...</label>
+            <div class="variant_free c1">
+              <input type="text" name="free[396606]" value="" class="input" id="free396606" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="survey_submit">
+      <input type="submit" class="submit" value="Продолжить" />
+    </div>
+  </form>
+</div>
+
+</div>
+
+
+

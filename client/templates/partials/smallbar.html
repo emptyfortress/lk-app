@@ -7,7 +7,7 @@
         <li class="show-for-small-only">
             <a href="#" zf-open="addModal"><img src="img/plus.png" alt="">&nbsp;</a>
         </li>
-        <li ng-hide="{{vars.back}}">
+        <li ng-show="{{vars.filter}}">
             <zf-action-sheet>
                 <zf-as-button>
                     <a href=""><img src="img/filter.png" alt="">&nbsp;&nbsp;Все</a>
@@ -21,7 +21,7 @@
 
         </li>
     </ul>
-    <div class="selectView" ng-show="{{vars.view}}">
+    <div class="selectView hide-for-small-only" ng-show="{{vars.view}}">
         <zf-action-sheet>
                 <zf-as-button>
                     <a href="">Custom view&nbsp;&nbsp;<img src="img/select-w.png" alt=""></a>
