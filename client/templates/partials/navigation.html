@@ -7,48 +7,61 @@
                         </div>
             </div>
 
+            <ul class="side-links">
+                        <li><a ui-sref="home" zf-close="off-canvas-menu">
+                        <img src="img/home.png" alt="">
+                        &nbsp;&nbsp;Главная</a></li>
+                </ul>
+
+
             <zf-accordion auto-open="false" collapsible="true" multi-open="true">
 
-                <zf-accordion-item title="Задания">
+                <zf-accordion-item title="Мои задания">
                     <ul class="block-list">
-                        <li><a ui-sref="Входящие задания" zf-close="off-canvas-menu">Входящие</a><span class="alert badge">1</span></li>
-                                <li class="pad-l italic"><a ui-sref="В работе" zf-close="off-canvas-menu">В работе</a></li>
-                                <li class="pad-l italic"><a ui-sref="На контроле" zf-close="off-canvas-menu">На контроле</a></li>
-                                <li class="pad-l italic"><a ui-sref="Исполнение" zf-close="off-canvas-menu">Ответственное исполнение</a></li>
+                        <li><a ui-sref="Входящие задания" zf-close="off-canvas-menu">Входящие</a><span class="badge">1</span></li>
+                                <li class="pad-l"><a ui-sref="В работе" zf-close="off-canvas-menu" class="active">В работе</a></li>
+                                <li class="pad-l"><a ui-sref="На контроле" zf-close="off-canvas-menu">На контроле</a></li>
+                                <li class="pad-l"><a ui-sref="Исполнение" zf-close="off-canvas-menu">Ответственное исполнение</a></li>
 
                         <li><a ui-sref="Исходящие задания" zf-close="off-canvas-menu">Исходящие</a></li>
-                            <li class="pad-l italic"><a ui-sref="Делегировано" zf-close="off-canvas-menu">Делегировано</a><span class=" badge">1</span></li>
-                            <li class="pad-l italic"><a  ui-sref="Завершено" zf-close="off-canvas-menu">Завершено</a></li>
+                            <li class="pad-l"><a ui-sref="Делегировано" zf-close="off-canvas-menu">Делегировано</a><span class=" badge">1</span></li>
+                            <li class="pad-l"><a  ui-sref="Завершено" zf-close="off-canvas-menu">Завершено</a></li>
                     </ul>
                 </zf-accordion-item>
-                <zf-accordion-item title="Документы">
+                <zf-accordion-item title="Мои документы">
                     <ul class="block-list accordion">
-                        <li><a ui-sref="Последние" zf-close="off-canvas-menu">Последние</a></li>
-                        <li><a ui-sref="Входящие" zf-close="off-canvas-menu">Входящие</a></li>
-                        <li><a ui-sref="Исходящие" zf-close="off-canvas-menu">Исходящие</a></li>
-                        <li><a ui-sref="ОРД" zf-close="off-canvas-menu">ОРД</a></li>
-                        <li><a ui-sref="Заявки" zf-close="off-canvas-menu">Заявки</a></li>
-                        <li><a ui-sref="Служебные записки" zf-close="off-canvas-menu">Служебные записки</a></li>
+                        <li><a ui-sref="">Я – автор</a></li>
                     </ul>
                 </zf-accordion-item>
                 <zf-accordion-item title="Папки">
                     <ul class="block-list">
-                        <li class="with-chevron"><a zf-open="panel1">
-<!--                                   <img src="img/folder-dark.png" alt="" ng-show="{{vars.fixed}}">-->
-                                   <img src="img/folder-w.png" alt="">
-                                    &nbsp;&nbsp;Распоряжения</a></li>
+                        <li>
+                          <a ui-sref="Папка">
+                           <span zf-open="panel1" class="mr-10"><img src="img/folder-w.png" alt=""></span>
+                            Распоряжения
+                            </a>
+                        </li>
                             <div zf-panel="" id="panel1">
                                 <div class="back">
-                                    <a href="#" zf-close=""><img src="img/back.png" alt="">
+                                    <a zf-close=""><img src="img/back.png" alt="">
+                                      <img src="img/folder-w-open.png" alt="" class="folder">
                                        Распоряжения
                                     </a>
                                 </div>
                                 <ul class="block-list m0 p0">
-                                    <li><a href=""><img src="img/folder-w.png" alt="">&nbsp;&nbsp;Важные распоряжения</a></li>
-                                    <li class="with-chevron"><a zf-open="panel2"><img src="img/folder-w.png" alt="">&nbsp;&nbsp;Обычные разобычные распоряжения</a></li>
+                                    <li>
+                                        <a ui-sref="Папка">
+                                            <span zf-open="panel2" class="mr-10"><img src="img/folder-w.png" alt=""></span>
+                                            Важные распоряжения</a></li>
+                                    <li>
+                                       <a ui-sref="Папка">
+                                           <span zf-open="panel2" class="mr-10"><img src="img/folder-w.png" alt=""></span>
+                                           Обычные распоряжения</a></li>
                                         <div zf-panel="" id="panel2">
                                             <div class="back">
-                                                <a href="#" zf-close=""><img src="img/back.png" alt="">Обычные разобычные распоряжения
+                                                <a href="#" zf-close=""><img src="img/back.png" alt="">
+                                                <img src="img/folder-w-open.png" alt="" class="folder">
+                                                Обычные разобычные распоряжения
                                                 </a>
                                             </div>
                                              <ul class="block-list m0 p0">
@@ -62,30 +75,30 @@
                                     <li><a href=""><img src="img/folder-w.png" alt="">&nbsp;&nbsp;Неважные распоряжения</a></li>
                                 </ul>
                             </div>
-                        <li><a ui-sref="">
-<!--                            <img src="img/folder-dark.png" alt="" ng-show="{{vars.fixed}}">-->
-                           <img src="img/folder-w.png" alt="">
-                            &nbsp;&nbsp;Temp</a></li>
-                        <li><a ui-sref="">
-<!--                            <img src="img/folder-dark.png" alt="" ng-show="{{vars.fixed}}">-->
-                           <img src="img/folder-w.png" alt="">
-                            &nbsp;&nbsp;ОРД Доксвижн</a></li>
-                        <li><a ui-sref="">
-<!--                            <img src="img/folder-dark.png" alt="" ng-show="{{vars.fixed}}">-->
-                               <img src="img/folder-w.png" alt="">
-                            &nbsp;&nbsp;My folder</a></li>
+                        <li><a ui-sref="Папка таблица">
+                           <span zf-open="panel1" class="mr-10"><img src="img/folder-w.png" alt=""></span>
+                            Temp</a>
+                        </li>
+                        <li><a ui-sref="Папка">
+                           <span zf-open="panel1" class="mr-10"><img src="img/folder-w.png" alt=""></span>
+                            ОРД Доксвижн</a></li>
+                        <li><a ui-sref="Папка">
+                            <span zf-open="panel1" class="mr-10"><img src="img/folder-w.png" alt=""></span>
+                            My folder</a></li>
                     </ul>
                 </zf-accordion-item>
             </zf-accordion>
             <ul class="side-links">
+<!--
+                        <li><a ui-sref="home" zf-close="off-canvas-menu">
+                        <img src="img/history.png" alt="">
+                        &nbsp;&nbsp;Последние</a></li>
+-->
                         <li><a href="">
                         <img src="img/search-w.png" alt="">
 <!--                        <img src="img/search-b.png" alt="" ng-show="{{vars.fixed}}">-->
                         &nbsp;&nbsp;Поиск</a></li>
-                       <li><a ui-sref="home" zf-close="off-canvas-menu">
-                        <img src="img/history.png" alt="">
-<!--                        <img src="img/history-b.png" alt="" ng-show="{{vars.fixed}}">-->
-                        &nbsp;&nbsp;Последние</a></li>
+
 
                 </ul>
             <br>

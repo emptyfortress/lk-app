@@ -6,6 +6,9 @@ title: Подготовка
 animationIn: slideInBottom
 animationOut: slideOutBottom
 back: true
+buttons:
+    - На согласование
+    - Удалить карточку
 ---
 
 <div ng-include="'templates/partials/header.html'" class="doc slide-top"></div>
@@ -18,9 +21,14 @@ back: true
         <div class="grid-block nowrap">
             <div class="grid-content">
                 <p class="nomer">ОРГ-3</p>
-                <h3>
+                <h3 ng-mouseover="showEdit=true" ng-mouseleave="showEdit=false">
 <!--                    <span class="important">&uarr;&nbsp;</span>-->
-                    Заявка на покупку кондиционеров<a href=""><img src="../img/edit.png" alt="" class="edit"></a> </h3>
+                    Заявка на покупку кондиционеров
+                    <span ng-show="showEdit">
+                        <a href=""><img src="../img/edit.png" alt="" class="edit"></a>
+                        <a href=""><img src="../img/refresh.png" alt=""  class="fade"></a>
+                    </span>
+                </h3>
                 <h5 class="show-for-small-only">Подготовка</h5>
             </div>
             <div class="grid-content shrink bottom hide-for-small-only"><h5>Подготовка</h5></div>

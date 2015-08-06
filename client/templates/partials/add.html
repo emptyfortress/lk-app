@@ -1,30 +1,87 @@
 <div zf-modal="addModal" id="addModal" class="addModal">
     <div class="contentModal">
         <a zf-close="" class="close-button">&times;</a>
-        <h3>Добавить</h3>
-        <div class="vertical medium-horizontal grid-block">
-            <div class="grid-block">
-                <ul class="block-list">
-                    <li class="bg-green"><a href="">Задание:</a></li>
-                    <li class="bg-green1"><a ui-sref="Выдать задание" zf-close="">На исполнение</a></li>
-                    <li class="bg-green1"><a ui-sref="Выдать задание" zf-close="">На согласование</a> </li>
-                    <li>&nbsp;</li>
-                    <li class="bg-green"><a ui-sref="Новая группа заданий" zf-close="">Группа заданий</a></li>
-                </ul>
+
+        <div zf-tabs="" class="templateTab p0">
+            <div zf-tab="" title="Добавить">
+                        <ul class="block-list">
+                            <li class="bg-green clearfix">
+                                <img src="../../img/left-arrow-w.png" alt="" zf-open="addModalTask" zf-close="addModal">
+                                <div class="float-right" ui-sref="Выдать задание" zf-close="">Задание  / На исполнение</div>
+                            </li>
+                            <li class="bg-green">
+                                <img src="../../img/left-arrow-w.png" alt="" class="" zf-open="addModalGroup" zf-close="addModal">
+                                <div class="float-right" ui-sref="Новая группа заданий" zf-close="">Группа заданий УД</div>
+                           </li>
+                           <li class="bg-blue">
+                                <img src="../../img/left-arrow-w.png" alt="" class="" zf-close="" zf-open="addModalDoc">
+                                <div class="float-right" ui-sref="Новый документ" zf-close="">Документ УД / Рабочий</div>
+                           </li>
+                        </ul>
+
             </div>
-            <div class="grid-block">
-                <ul class="block-list">
-                       <li class="bg-blue"><a href="">Файл</a></li>
-                       <li class="bg-blue"><a href="">Документ УД:</a></li>
-                       <li class="bg-blue1"><a ui-sref="Новый документ" zf-close="">Входящий</a></li>
-                       <li class="bg-blue1"><a  ui-sref="Новый документ" zf-close="">Исходящий</a></li>
-                       <li class="bg-blue1"><a  ui-sref="Новый документ" zf-close="">Заявка</a></li>
-                       <li class="bg-blue1"><a  ui-sref="Новый документ" zf-close="">ОРД</a></li>
-                       <li class="bg-blue1"><a  ui-sref="Новый документ" zf-close="">Рабочий</a></li>
-                       <li class="bg-blue1"><a  ui-sref="Новый документ" zf-close="">Служебная записка</a></li>
-                </ul>
+            <div zf-tab="" title="Создать по шаблону">
+                 <ul class="block-list">
+                            <li class="bg-blue">Шаблон документа №1</li>
+                            <li class="bg-blue">Шаблон документа №2</li>
+                            <li class="bg-blue">Шаблон документа №3</li>
+                            <li class="bg-green mt-30">Шаблон задания №1</li>
+                            <li class="bg-green">Шаблон группы заданий №1</li>
+
+                        </ul>
             </div>
         </div>
-    </div>
 
+
+
+
+
+
+
+    </div>
+</div>
+
+<div zf-modal="addModalDoc" id="addModalDoc" class="addModal">
+    <div class="contentModal">
+        <a zf-close="" class="close-button">&times;</a>
+       <h3>Документы</h3>
+       <ul class="block-list">
+        <li class="bg-blue" ui-sref="Новый документ" zf-close="">Документ №</li>
+        <li class="bg-blue ml-20" ui-sref="Новый документ" zf-close="">Документ №</li>
+        <li class="bg-blue ml-20" ui-sref="Новый документ" zf-close="">Документ №</li>
+        <li class="bg-blue ml-40" ui-sref="Новый документ" zf-close="">Документ №</li>
+        <li class="bg-blue" ui-sref="Новый документ" zf-close="">Документ №</li>
+        <li class="bg-blue ml-20" ui-sref="Новый документ" zf-close="">Документ №</li>
+        </ul>
+    </div>
+</div>
+
+
+<div zf-modal="addModalTask" id="addModalTask" class="addModal">
+    <div class="contentModal">
+        <a zf-close="" class="close-button">&times;</a>
+       <h3>Задания</h3>
+       <ul class="block-list">
+        <li class="bg-green" ui-sref="Выдать задание" zf-close="">Тип задания №</li>
+        <li class="bg-green ml-20" ui-sref="Выдать задание" zf-close="">Тип задания №</li>
+        <li class="bg-green ml-20" ui-sref="Выдать задание" zf-close="">Тип задания №</li>
+        <li class="bg-green ml-40" ui-sref="Выдать задание" zf-close="">Тип задания №</li>
+        <li class="bg-green" ui-sref="Выдать задание" zf-close="">Тип задания №</li>
+        <li class="bg-green ml-20" ui-sref="Выдать задание" zf-close="">Тип задания №</li>
+        </ul>
+    </div>
+</div>
+
+
+<div zf-modal="addModalGroup" id="addModalGroup" class="addModal">
+    <div class="contentModal">
+        <a zf-close="" class="close-button">&times;</a>
+       <h3>Группа заданий</h3>
+       <ul class="block-list">
+            <li class="bg-green" ui-sref="Новая группа заданий" zf-close="">Группа № раз</li>
+            <li class="bg-green ml-20" ui-sref="Новая группа заданий" zf-close="">Группа № раз</li>
+            <li class="bg-green ml-20" ui-sref="Новая группа заданий" zf-close="">Группа № раз</li>
+            <li class="bg-green" ui-sref="Новая группа заданий" zf-close="">Группа № раз</li>
+        </ul>
+    </div>
 </div>

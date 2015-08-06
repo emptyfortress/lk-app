@@ -1,8 +1,9 @@
 
 
 
-<div class="table-container task">
-        <table class="" ng-controller="TaskCtrl">
+<div ng-controller="TaskCtrl">
+    <div class="table-container task hide-for-small-only">
+        <table>
             <tbody>
                 <tr class="table-header">
                     <th ng-click="orderByField='state'; reverseSort = !reverseSort">
@@ -57,8 +58,22 @@
         </table>
     </div>
 
+    <div class="grid-block show-for-small-only vertical">
+        <div ng-repeat="task in tasks" class="digest">
+            <div class="grid-block title">
+                <a ui-sref="Список">{{task.title}}</a>
+            </div>
+            <div class="grid-block name">От: {{task.from}}</div>
+            <div class="grid-block time">Срок: {{task.deadline}}</div>
+        </div>
+    </div>
 
 
 
 
-<input type="text" ng-model="query1">
+</div>
+
+
+
+
+<!--<input type="text" ng-model="query1">-->

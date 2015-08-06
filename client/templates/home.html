@@ -6,6 +6,7 @@ welcome: true
 header: welcome
 view: true
 fixed: false
+bt: false
 ---
 
 <div ng-include="'templates/partials/header.html'" class="{{vars.header}} slide-top"></div>
@@ -13,42 +14,93 @@ fixed: false
 
  <div class="grid-container grid-content">
   <br>
+
+
+    <div class="grid-block hide-for-small-only">
+        <div class="grid-content dash medium-3">
+            <h3><a ui-sref="Входящие задания">Входящие задания <span class="badge float-right">5</span></a></h3>
+            <ul class="myList">
+                <li><a ui-sref="В работе">В работе</a></li>
+                <li><a ui-sref="На контроле" class="bold">На контроле<span class="badge">1</span></a></li>
+                <li><a ui-sref="Исполнение" class="bold">Ответств. исполнение<span class="badge">2</span></a></li>
+            </ul>
+        </div>
+        <div class="grid-content dash  medium-3">
+            <h3><a ui-sref="Исходящие задания">Исходящие задания</a></h3>
+            <ul  class="myList">
+                <li><a ui-sref="">Делегировано<span class="badge">3</span></a></li>
+                <li><a ui-sref="">Завершено</a></li>
+            </ul>
+        </div>
+        <div class="grid-content dash medium-3">
+            <h3><a ui-sref="">Мои документы</a></h3>
+            <ul  class="myList">
+                <li><a ui-sref="">Я – автор</a></li>
+            </ul>
+        </div>
+        <div class="grid-content dash medium-3">
+            <h3>Папки</h3>
+            <ul  class="myList">
+                <li><a ui-sref=""><img src="../img/folder-dark.png" alt="">Клиенты</a></li>
+                <li><a ui-sref=""><img src="../img/folder-dark.png" alt="">Проекты</a></li>
+                <li><a ui-sref=""><img src="../img/folder-dark.png" alt="">Договора</a></li>
+            </ul>
+                <p class="text-right">
+                    <a zf-open="off-canvas-menu">Еще...</a>
+                </p>
+        </div>
+        <div class="grid-content dash">
+            <h3>Последние</h3>
+            <ul  class="myList">
+                <li><a href=""><img src="../img/dv.png" alt="">Ссылка на карточку 1</a></li>
+                <li><a href=""><img src="../img/dv.png" alt="">Ссылка на карточку 2</a></li>
+                <li><a href=""><img src="../img/dv.png" alt="">Ссылка на карточку 3</a></li>
+                <li><a href=""><img src="../img/dv.png" alt="">Ссылка на карточку 4</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="grid-block vertical show-for-small-only">
+        <ul class="dash1">
+            <li class="green"><a ui-sref="Входящие задания">Входящие задания <span class="badge float-right">5</span></a></li>
+            <li class="green"><a ui-sref="Исходящие задания">Исходящие задания</a></li>
+            <li class="blue"><a ui-sref="">Мои документы</a></li>
+            <li class="dark hide-for-small-only"><a zf-open="off-canvas-menu">Папки</a></li>
+        </ul>
+         <br>
+              <h3>Последние</h3>
+                <ul class="myList">
+                    <li><a href=""><img src="../img/dv.png" alt="">Ссылка на карточку 1</a></li>
+                    <li><a href=""><img src="../img/dv.png" alt="">Ссылка на карточку 2</a></li>
+                    <li><a href=""><img src="../img/dv.png" alt="">Ссылка на карточку 3</a></li>
+                    <li><a href=""><img src="../img/dv.png" alt="">Ссылка на карточку 4</a></li>
+                </ul>
+
+    </div>
+
+
 <!--
-  <div class="grid-block"  ng-controller="chartCtrl">
-    <div class="grid-content text-center">
-        <div easypiechart options="options" percent="68" class="chart" ui-sref="Входящие задания">
-            <span class="meter">68</span><span class="alert badge">1</span>
-        </div>
-        <p>Входящие</p>
+     <div class="grid-block show-for-small-only">
+        <ul class="dash1">
+            <li><a ui-sref="Входящие задания">Входящие задания <span class="badge float-right">5</span></a></li>
+            <li><a ui-sref="Исходящие задания">Исходящие задания</a></li>
+            <li><a ui-sref="">Мои документы</a></li>
+            <li><a zf-open="off-canvas-menu">Папки</a></li>
+        </ul>
+          <div class="grid-content">
+            <br>
+            <br>
+              <h3>Последние</h3>
+                <ul  class="myList">
+                    <li><a href=""><img src="../img/dv.png" alt="">Ссылка на карточку 1</a></li>
+                    <li><a href=""><img src="../img/dv.png" alt="">Ссылка на карточку 2</a></li>
+                    <li><a href=""><img src="../img/dv.png" alt="">Ссылка на карточку 3</a></li>
+                    <li><a href=""><img src="../img/dv.png" alt="">Ссылка на карточку 4</a></li>
+                </ul>
+          </div>
+
     </div>
-    <div class="grid-content text-center">
-        <div easypiechart options="options" percent="5" class="chart" ui-sref="Исполнение">
-            <span class="meter">5</span>
-        </div>
-        <p>Документы на подпись</p>
-    </div>
-    <div class="grid-content text-center">
-        <div easypiechart options="options" percent="17" class="chart"  ui-sref="На контроле">
-            <span class="meter">17</span>
-        </div>
-        <p>На контроле</p>
-    </div>
-</div>
 -->
-  <h3 class="">Последние карточки</h3>
-
-<div ng-include="'templates/partials/table3.html'" class="{{vars.header}} show-for-medium bouncy-slide-right"></div>
-
-  <ul class="block-list show-for-small-only" ng-controller="DocCtrl">
-      <li ng-repeat="doc in docs"><a ui-sref="Список">{{doc.title}}</a></li>
-  </ul>
-  <br>
-
-  <p>Ссылка для мобильных устройств: <br>
-  <a href="http://qrcoder.ru/code/?http%3A%2F%2Fdvdesign.docsvision.com&10&0" target="_blank"><img src="../img/qr-code1.gif" alt=""></a>
-  </p>
-  <a href="http://surveus.polldaddy.com/s/Оценка-прототипа-ЛК">Оценка прототипа ЛК</a>
-</div>
-
-
 

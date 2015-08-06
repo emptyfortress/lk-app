@@ -8,10 +8,12 @@ main:
     - Задания
 list:
     - Входящие задания
+    - В работе
+    - На контроле
+    - Ответственное исполнение
     - Исходящие задания
-    - Согласование
-    - Контроль
-    - Доработка
+    - Делегировано
+    - Завершено
 view: true
 ---
 
@@ -24,10 +26,10 @@ view: true
     
    <div class="grid-content">
          <h3>{{ vars.title }}</h3>
-        <section class="block-list">
+        <section class="block-list dark">
         <ul>
-            <li class="with-chevron rel" ng-repeat="item in vars.list"><a ui-sref="{{ item }}">{{ item }}</a>
-            <span class="alert badge">1</span>
+            <li class="rel" ng-repeat="item in vars.list"><a ui-sref="{{ item }}">{{ item }}</a>
+            <span class="badge">1</span>
             </li>
     
         </ul>

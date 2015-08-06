@@ -5,8 +5,13 @@
         <br>
         <br>
         <br>
+        <h5>Примите решение</h5>
+        <div ng-repeat="button in vars.buttons">
+            <a class="decision" zf-close="">{{button}}</a>
+        </div>
+        <a href="" class="decision" ng-show="isFlipped">Отправить</a>
 
-            <h5>Примите решение</h5>
+<!--
         <br>
             <a class="decision" zf-close="">Прикрепить отчет</a>
             <a class="decision primary" zf-close="">Согласовать</a>
@@ -20,5 +25,6 @@
              <a class="decision" zf-close="">Отозвать</a>
              <a class="decision" zf-close="">Удалить</a>
              <a class="decision" zf-close="">Сообщить о проблеме</a>
+-->
 
 </zf-panel>

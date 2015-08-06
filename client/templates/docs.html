@@ -1,0 +1,29 @@
+---
+name: Мои документы
+url: /mydocs
+title: Документы
+par: Главная
+main:
+    - Документы
+    - Задания
+view: true
+---
+
+<div ng-include="'templates/partials/header.html'" class="doc slide-top"></div>
+<div ng-include="'templates/partials/smallbar.html'" class="doc slide-top"></div>
+
+    <div class="grid-container">
+        <br>
+
+
+   <div class="grid-content">
+         <h3>{{ vars.title }}</h3>
+        <ul class="block-list dark">
+            <li class="rel" ><a ui-sref="">Я - автор </a></li>
+
+        </ul>
+
+    </div>
+
+
+    </div>

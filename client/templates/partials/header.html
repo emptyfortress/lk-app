@@ -1,12 +1,14 @@
 <div class="grid-block header">
-    <div class="grid-block shrink"><a href="" zf-toggle="off-canvas-menu"><img src="img/hm.png" alt="">
+    <div class="grid-block shrink"><a zf-toggle="off-canvas-menu"><img src="img/hm.png" alt="">
         </a></div>
+
     <div class="main-nav" ng-show={{vars.welcome}}>
-        <span ng-hide="showSearch">Доксвижн</span>
+        <span ng-hide="showSearch">Docsvision</span>
     </div>
     <div class="main-nav show-for-medium" ng-show={{vars.welcome}} ng-controller="TimeCtrl">
         <span ng-hide="showSearch">{{date | date:'dd MMM yyyy'}}</span>
     </div>
+<!--
     <div class="grid-block shrink  main-nav" ng-hide="{{vars.welcome}}">
         <zf-action-sheet>
             <zf-as-button ng-hide="showSearch" class="hide-for-small-only">
@@ -19,8 +21,11 @@
              </zf-as-content>
         </zf-action-sheet>
     </div>
-    <div class="grid-block shrink  main-nav hide-for-small-only" ng-hide="{{vars.welcome}}"><span ng-hide="showSearch">&gt;</span></div>
-    <div class="grid-block shrink  main-nav" ng-hide="{{vars.welcome}}">
+-->
+<!--    <div class="grid-block shrink  main-nav hide-for-small-only" ng-hide="{{vars.welcome}}"><span ng-hide="showSearch">&gt;</span></div>-->
+    <div class="shrink  main-nav" ng-hide="{{vars.welcome}}">
+        <span ng-hide="showSearch">{{vars.name}}</span>
+<!--
         <zf-action-sheet>
             <zf-as-button class="hide-for-small-only">
                 <a href="">{{vars.name}}</a>
@@ -34,18 +39,29 @@
                 </ul>
             </zf-as-content>
         </zf-action-sheet>
+-->
     </div>
     <div class="grid-block" ng-show="{{vars.back}}"></div>
     <div class="grid-block align-right main-nav" ng-hide="{{vars.back}}">
         <a ng-click="showSearch = !showSearch;">
             <img src="img/search-w.png" alt=""  ng-hide="{{vars.back}}"></a>
-            <input type="text" class="search rel" ng-show="showSearch" placeholder="Search in current view" ng-model="query">
+            <input type="text" autofocus class="search rel" ng-show="showSearch" placeholder="Search in current view" ng-model="query">
                 <img src="../../img/close-dark.png" class="search-close" alt="" ng-show="query.length">
             </input>
     </div>
-    <div class="grid-block shrink main-nav user"><a href="#"><img src="img/user.png" alt=""></a></div>
-    <div class="grid-block shrink main-nav help"><a href="#"><img src="img/help.png" alt=""></a></div>
+    <div class="grid-block shrink main-nav user"><a><img src="img/user.png" alt=""></a></div>
+    <div class="grid-block shrink main-nav help"><a><img src="img/help.png" alt=""></a></div>
+
+<!--button panel for small screen *******************************************    -->
+    <div class="grid-block shrink main-nav show-for-small-only btbt" ng-if="bt"><a zf-open="buttPanel">&rsaquo;</a></div>
+<!--    <div class="grid-block shrink main-nav show-for-small-only"><a zf-open="buttPanel"><img src="../../img/kebab-w.png" alt=""></a></div>-->
 </div>
+
+
+
+
+
+
 
 <!--
 <section class="small-bar" ng-hide="{{vars.welcome}}">
