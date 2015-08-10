@@ -8,6 +8,7 @@
 @import "slick-theme";
 @import "loading-bar";
 @import "angular-tooltips";
+@import "tree-control";
 //@import "xeditable";
 //@import "datepicker";
 
@@ -1714,6 +1715,7 @@ progress {
     color: white;
     font-size: rem-calc(16);
     @include breakpoint(medium up) {font-size: rem-calc(22);}
+    &.dark {color:black;}
     li {
     margin-bottom: 2px;
     padding: 1.2rem;
@@ -1780,3 +1782,67 @@ progress {
     z-index: 1000;
 }
 
+.tree .modal {
+    height: 100%;
+}
+
+
+
+.block-list .block-list {
+    margin-top: 0;
+}
+
+.block-list {
+    
+    &.green {
+        li {
+            background: $green;
+            &:hover {
+                background:lighten($green, 10%);    
+            }
+        }
+    }
+    &.white {
+        li {
+            background: white;
+            color: black;
+        }
+        &:hover {
+            background: #eee;
+        }
+    }
+}
+
+.user {position: relative;}
+.user-menu {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    width: 200px;
+//    height: 200px;
+    color: black;
+    background: white;
+//    border: 1px solid #ccc;
+    z-index: 100;
+    font-size: 16px;
+    -webkit-box-shadow: 0px 3px 3px 0 rgba(0,0,0,.3);
+    box-shadow: 0px 3px 3px 0 rgba(0,0,0,.3);
+//    background: white url(../../img/user-dark.png) no-repeat 158px 8px;
+    .block-list {
+        color: black;
+        margin: 0;
+        border: none;
+        li a {
+            border-bottom: 1px solid #ccc;
+            &:hover {
+                background: rgba(0, 82, 219, 0.1);
+                background: $sel;
+            }
+        }
+    }
+    .darkUser {
+        position: absolute;
+        top:5px;
+        right: 10px;
+    }
+}

@@ -49,7 +49,23 @@
                 <img src="../../img/close-dark.png" class="search-close" alt="" ng-show="query.length">
             </input>
     </div>
-    <div class="grid-block shrink main-nav user"><a><img src="img/user.png" alt=""></a></div>
+    <div class="grid-block shrink main-nav user">
+        <a ng-click="showUserMenu = true"><img src="img/user.png" alt=""></a>
+        <div class="user-menu" ng-show="showUserMenu" ng-click="showUserMenu = false" >
+            <ul class="block-list dark">
+                <li>
+                    <a >Пуцин С.</a>
+                    <a >Панель управления</a>
+                    <a >Сменить пользователя</a>
+                    <a >Выход</a>
+                    <a >О программе</a>
+                </li>
+            </ul>
+           <img src="../../img/user-dark.png" alt="" class="darkUser">
+        </div>
+    
+    
+    </div>
     <div class="grid-block shrink main-nav help"><a><img src="img/help.png" alt=""></a></div>
 
 <!--button panel for small screen *******************************************    -->
