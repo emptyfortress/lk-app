@@ -36,50 +36,132 @@
 
 <!--Document modal  ************************************************************-->
 
-<div zf-modal="addModalDoc" id="addModalDoc" class="addModal">
+<div zf-modal="addModalDoc" id="addModalDoc" class="addModal tree">
     <div class="contentModal">
         <a zf-close="" class="close-button">&times;</a>
        <h3>Документы</h3>
-       <ul class="block-list">
-        <li class="bg-blue" ui-sref="Новый документ" zf-close="">Документ №</li>
-        <li class="bg-blue ml-20" ui-sref="Новый документ" zf-close="">Документ №</li>
-        <li class="bg-blue ml-20" ui-sref="Новый документ" zf-close="">Документ №</li>
-        <li class="bg-blue ml-40" ui-sref="Новый документ" zf-close="">Документ №</li>
-        <li class="bg-blue" ui-sref="Новый документ" zf-close="">Документ №</li>
-        <li class="bg-blue ml-20" ui-sref="Новый документ" zf-close="">Документ №</li>
-        </ul>
+           <zf-accordion auto-open="true" collapsible="true" multi-open="true"  class="tree-accordion-title doc">
+            <zf-accordion-item title="Мои документы">
+                <ul class="block-list dark m0">
+                    <li>
+                        <a ui-sref="Новый документ" zf-close="">Документ</a>
+                        <a ui-sref="Новый документ" zf-close="">Документ</a>
+                        <a ui-sref="Новый документ" zf-close="">Документ</a>
+                        <a ui-sref="Новый документ" zf-close="">Документ</a>
+                        <a ui-sref="Новый документ" zf-close="">Документ</a>
+                    </li>
+                </ul>
+            </zf-accordion-item>
+            <zf-accordion-item title="Документы УД">
+               <ul class="block-list dark m0">
+                    <li>
+                        <a ui-sref="Новый документ" zf-close="">Документ</a>
+                        <a ui-sref="Новый документ" zf-close="">Документ</a>
+                        <a ui-sref="Новый документ" zf-close="">Документ</a>
+                        <a ui-sref="Новый документ" zf-close="">Документ</a>
+                        <a ui-sref="Новый документ" zf-close="">Документ</a>
+                    </li>
+                </ul>
+            </zf-accordion-item>
+            <zf-accordion-item title="Документы бухгалтерии">
+                <ul class="block-list dark m0">
+                    <li>
+                        <a ui-sref="Новый документ" zf-close="">Документ</a>
+                        <a ui-sref="Новый документ" zf-close="">Документ</a>
+                        <a ui-sref="Новый документ" zf-close="">Документ</a>
+                        <a ui-sref="Новый документ" zf-close="">Документ</a>
+                        <a ui-sref="Новый документ" zf-close="">Документ</a>
+                    </li>
+                </ul>
+            </zf-accordion-item>
+        </zf-accordion>
     </div>
 </div>
 
-<!--Task modal  ******************************************************************-->
+
 
 <div zf-modal="addModalTask" id="addModalTask" class="addModal tree">
     <div class="contentModal">
         <a zf-close="" class="close-button">&times;</a>
        <h3>Задания</h3>
-       <ul class="block-list green">
-        <li ng-click="showSub1=!showSub1">Тип задания №1</li>
-        <ul class="block-list white" ng-hide="showSub1">
-            <li class="ml-20" ui-sref="" zf-close="">Тип задания №</li>
-            <li class="ml-20" ui-sref="" zf-close="">Тип задания №</li>
-        </ul>
-        <li class="ml-20" ui-sref="" zf-close="">Тип задания №</li>
-        <li class="" ui-sref="" zf-close="">Тип задания №</li>
-        <li class="ml-20" ui-sref="" zf-close="">Тип задания №</li>
-        </ul>
+         <zf-accordion auto-open="true" collapsible="true" multi-open="true"  class="tree-accordion-title task">
+            <zf-accordion-item title="Задания УД">
+                <ul class="block-list dark m0">
+                    <li>
+                        <a ui-sref="Выдать задание" zf-close="">Задание на исполнение</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание на согласование</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание еще какое-то</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание для контроля</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание для проверки</a>
+                    </li>
+                </ul>
+            </zf-accordion-item>
+            <zf-accordion-item title="Задания Доксвижн">
+               <ul class="block-list dark m0">
+                    <li>
+                        <a ui-sref="Выдать задание" zf-close="">Задание на исполнение</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание на согласование</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание еще какое-то</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание для контроля</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание для проверки</a>
+                    </li>
+                </ul>
+            </zf-accordion-item>
+            <zf-accordion-item title="Задания остальные">
+                <ul class="block-list dark m0">
+                    <li>
+                        <a ui-sref="Выдать задание" zf-close="">Задание на исполнение</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание на согласование</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание еще какое-то</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание для контроля</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание для проверки</a>
+                    </li>
+                </ul>
+            </zf-accordion-item>
+        </zf-accordion>
     </div>
 </div>
 
 
-<div zf-modal="addModalGroup" id="addModalGroup" class="addModal">
+<div zf-modal="addModalGroup" id="addModalGroup" class="addModal tree">
     <div class="contentModal">
         <a zf-close="" class="close-button">&times;</a>
        <h3>Группа заданий</h3>
-       <ul class="block-list">
-            <li class="bg-green" ui-sref="Новая группа заданий" zf-close="">Группа № раз</li>
-            <li class="bg-green ml-20" ui-sref="Новая группа заданий" zf-close="">Группа № раз</li>
-            <li class="bg-green ml-20" ui-sref="Новая группа заданий" zf-close="">Группа № раз</li>
-            <li class="bg-green" ui-sref="Новая группа заданий" zf-close="">Группа № раз</li>
-        </ul>
+         <zf-accordion auto-open="true" collapsible="true" multi-open="true"  class="tree-accordion-title task">
+            <zf-accordion-item title="Квартальный отчет">
+                <ul class="block-list dark m0">
+                    <li>
+                        <a ui-sref="Выдать задание" zf-close="">Задание на исполнение</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание на согласование</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание еще какое-то</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание для контроля</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание для проверки</a>
+                    </li>
+                </ul>
+            </zf-accordion-item>
+            <zf-accordion-item title="Корпоратив">
+               <ul class="block-list dark m0">
+                    <li>
+                        <a ui-sref="Выдать задание" zf-close="">Задание на исполнение</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание на согласование</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание еще какое-то</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание для контроля</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание для проверки</a>
+                    </li>
+                </ul>
+            </zf-accordion-item>
+            <zf-accordion-item title="Закупка канцелярии">
+                <ul class="block-list dark m0">
+                    <li>
+                        <a ui-sref="Выдать задание" zf-close="">Задание на исполнение</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание на согласование</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание еще какое-то</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание для контроля</a>
+                        <a ui-sref="Выдать задание" zf-close="">Задание для проверки</a>
+                    </li>
+                </ul>
+            </zf-accordion-item>
+        </zf-accordion>
     </div>
 </div>
+
