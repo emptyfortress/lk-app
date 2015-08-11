@@ -1846,3 +1846,22 @@ progress {
         right: 10px;
     }
 }
+.border-no {
+    
+    td {
+    border-bottom: none;
+    border-top: none;
+    }
+}
+.read td:first-child  {
+    border-left: 2px solid $blue;
+}
+.readList {
+    padding-left: 1em;
+    border-left: 2px solid $blue;
+}
+.subrow {
+    background: #eee;
+    padding: .5em;
+    border-bottom:  1px solid #ccc;
+}
