@@ -2,10 +2,10 @@
 
 
 <div class="table-container">
-        <table class="" ng-controller="DocCtrl">
+        <table class="border-no" ng-controller="DocCtrl">
             <tbody>
                 <tr class="table-header">
-                    <th ng-click="orderByField='state'; reverseSort = !reverseSort">
+                   <th ng-click="orderByField='state'; reverseSort = !reverseSort">
                         Состояние&nbsp;
                         <span ng-show="orderByField == 'state'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
                     </th>
@@ -34,7 +34,10 @@
                         <span ng-show="orderByField == 'number'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
                     </th>
                 </tr>
-                <tr ng-repeat-start="doc in docs | orderBy:orderByField:reverseSort | filter:{name:query1}" class="repeat-animation" ng-click="showRow = !showRow">
+                <tr ng-repeat-start="doc in docs | orderBy:orderByField:reverseSort | filter:{name:query1}" 
+                   class="repeat-animation" ng-click="showRow = !showRow"
+                   ng-class="{read : $index == 2 || $index == 4}"
+                   >
                     <td>{{doc.state}}</td>
                     <td><a ui-sref="Список">{{doc.title}}</a></td>
                     <td class="nowrap">{{doc.name}}</td>
@@ -44,22 +47,53 @@
                     <td class="nowrap">{{doc.number}}</td>
                 </tr>
                 <tr ng-repeat-end  ng-show="showRow">
-                    <td colspan="7" class="showRow">
+                    <td colspan="8" class="showRow">
                         <div class="grid-block">
-                            <div class="grid-content">
-                                Создано: 11.10.2015 15:23 <br>
-                                Изменено: 11.10.2015 15:23 <br>
+                               <div class="grid-content medium-2">
+                                    <label><input type="checkbox" ng-model="string"> Прочитано</label>
+                                    <br>
+                                    <a zf-open="addModal" class="dotted">+ Создать задание</a>
+                               </div>
+                               <div class="grid-content">
+                                  
+                               </div>
+                                <div class="grid-content shrink">
+                                   Название: <br>
+                                   Автор:<br>
+                                   Исполнитель:  <br>
+                                   Срок:<br>
+                                   Создано:<br>
+                                   Изменено:
+                               </div>
+                               <div class="grid-content">
+                                   Подготовить презентацию для нового партнера <br>
+                                   Пуцин С. <br>
+                                   Курманова А. <br>
+                                   25.08.2015<br>
+                                   21.08.2015<br>
+                                   22.08.2015<br>
+                               </div>
+                           </div>
+                           
+                           
+                           <br><br>
+                           <div class="grid-block">
+                                <div class="grid-content">
+                                    <a class="decision">Перейти</a>
+                                </div>
+                                <div class="grid-content">
+                                    <a class="decision">Отклонить</a>
+                                </div>
+                                <div class="grid-content">
+                                    <a class="decision">Отозвать</a>
+                                </div>
+                                <div class="grid-content">
+                                    <a class="decision">Делегировать</a>
+                                </div>
+                                <div class="grid-content">
+                                   <a class="decision primary">Завершить</a>
+                                </div>
                             </div>
-                            <div class="grid-content">
-                                <a class="decision">Перейти</a>
-                            </div>
-                           <div class="grid-content">
-                                <a class="decision">Скачать</a>
-                            </div>
-                            <div class="grid-content">
-                                <a class="decision">Просмотреть</a>
-                            </div>
-                        </div>
                     </td>
                 </tr>
 

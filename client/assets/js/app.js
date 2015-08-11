@@ -12,6 +12,7 @@ var app = angular.module('application', [
     'monospaced.elastic',
     'slick',
     '720kb.tooltips'
+//    'treeControl'
 //    'easypiechart'
 //    'xeditable'
 //    'angularFileUpload'
@@ -23,6 +24,7 @@ var app = angular.module('application', [
 
   config.$inject = ['$urlRouterProvider', '$locationProvider'];
 
+//  angular.module('app', ['treeControl']);
 
 //my controllers*****************************************
 
@@ -261,9 +263,6 @@ app.controller('FileCtrl', ['$scope', function($scope){
 
         ];
   }]);
-
-
-
 
 
 

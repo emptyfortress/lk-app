@@ -6,15 +6,15 @@
             <div zf-tab="" title="Добавить">
                         <ul class="block-list">
                             <li class="bg-green clearfix">
-                                <img src="../../img/left-arrow-w.png" alt="" zf-open="addModalTask" zf-close="addModal">
+                                <img src="../../img/left-arrow-w.png" alt="" zf-open="addModalTask">
                                 <div class="float-right" ui-sref="Выдать задание" zf-close="">Задание  / На исполнение</div>
                             </li>
                             <li class="bg-green">
-                                <img src="../../img/left-arrow-w.png" alt="" class="" zf-open="addModalGroup" zf-close="addModal">
+                                <img src="../../img/left-arrow-w.png" alt="" class="" zf-open="addModalGroup">
                                 <div class="float-right" ui-sref="Новая группа заданий" zf-close="">Группа заданий УД</div>
                            </li>
                            <li class="bg-blue">
-                                <img src="../../img/left-arrow-w.png" alt="" class="" zf-close="" zf-open="addModalDoc">
+                                <img src="../../img/left-arrow-w.png" alt="" class="" zf-open="addModalDoc">
                                 <div class="float-right" ui-sref="Новый документ" zf-close="">Документ УД / Рабочий</div>
                            </li>
                         </ul>
@@ -31,15 +31,10 @@
                         </ul>
             </div>
         </div>
-
-
-
-
-
-
-
     </div>
 </div>
+
+<!--Document modal  ************************************************************-->
 
 <div zf-modal="addModalDoc" id="addModalDoc" class="addModal">
     <div class="contentModal">
@@ -56,18 +51,21 @@
     </div>
 </div>
 
+<!--Task modal  ******************************************************************-->
 
-<div zf-modal="addModalTask" id="addModalTask" class="addModal">
+<div zf-modal="addModalTask" id="addModalTask" class="addModal tree">
     <div class="contentModal">
         <a zf-close="" class="close-button">&times;</a>
        <h3>Задания</h3>
-       <ul class="block-list">
-        <li class="bg-green" ui-sref="Выдать задание" zf-close="">Тип задания №</li>
-        <li class="bg-green ml-20" ui-sref="Выдать задание" zf-close="">Тип задания №</li>
-        <li class="bg-green ml-20" ui-sref="Выдать задание" zf-close="">Тип задания №</li>
-        <li class="bg-green ml-40" ui-sref="Выдать задание" zf-close="">Тип задания №</li>
-        <li class="bg-green" ui-sref="Выдать задание" zf-close="">Тип задания №</li>
-        <li class="bg-green ml-20" ui-sref="Выдать задание" zf-close="">Тип задания №</li>
+       <ul class="block-list green">
+        <li ng-click="showSub1=!showSub1">Тип задания №1</li>
+        <ul class="block-list white" ng-hide="showSub1">
+            <li class="ml-20" ui-sref="" zf-close="">Тип задания №</li>
+            <li class="ml-20" ui-sref="" zf-close="">Тип задания №</li>
+        </ul>
+        <li class="ml-20" ui-sref="" zf-close="">Тип задания №</li>
+        <li class="" ui-sref="" zf-close="">Тип задания №</li>
+        <li class="ml-20" ui-sref="" zf-close="">Тип задания №</li>
         </ul>
     </div>
 </div>

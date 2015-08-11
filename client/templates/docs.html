@@ -1,8 +1,8 @@
 ---
-name: Мои документы
+name: Я - автор
 url: /mydocs
 title: Документы
-par: Главная
+par: Документы
 main:
     - Документы
     - Задания
@@ -17,12 +17,8 @@ view: true
 
 
    <div class="grid-content">
-         <h3>{{ vars.title }}</h3>
-        <ul class="block-list dark">
-            <li class="rel" ><a ui-sref="">Я - автор </a></li>
-
-        </ul>
-
+         <h3>{{vars.name}}</h3>
+        <div ng-include="'templates/partials/table3.html'"></div>
     </div>
 
 

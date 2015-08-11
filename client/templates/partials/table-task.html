@@ -6,13 +6,13 @@
         <table>
             <tbody>
                 <tr class="table-header">
-                    <th ng-click="orderByField='state'; reverseSort = !reverseSort">
-                        Состояние&nbsp;
-                        <span ng-show="orderByField == 'state'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
-                    </th>
                     <th ng-click="orderByField='title'; reverseSort = !reverseSort">
                         Тема
                         <span ng-show="orderByField == 'title'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
+                    </th>
+                    <th ng-click="orderByField='state'; reverseSort = !reverseSort">
+                        Состояние&nbsp;
+                        <span ng-show="orderByField == 'state'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
                     </th>
                     <th ng-click="orderByField='from'; reverseSort = !reverseSort">
                         Отправитель
@@ -27,44 +27,96 @@
                         <span ng-show="orderByField == 'deadline'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
                     </th>
                 </tr>
-                <tr ng-repeat-start="task in tasks | orderBy:orderByField:reverseSort | filter:{name:query1}" class="repeat-animation" ng-click="showRow = !showRow">
-                    <td>{{task.state}}</td>
+                <tr ng-repeat-start="task in tasks | orderBy:orderByField:reverseSort | filter:{name:query1}" 
+                   class="repeat-animation" ng-click="showRow = !showRow"
+                   ng-class="{read : $index == 2 || $index == 4}">
                     <td><a ui-sref="Список">{{task.title}}</a></td>
+                    <td>{{task.state}}</td>
                     <td class="nowrap">{{task.from}}</td>
                     <td class="nowrap">{{task.to}}</td>
                     <td class="nowrap">{{task.deadline}}</td>
                 </tr>
                 <tr ng-repeat-end  ng-show="showRow">
                     <td colspan="7" class="showRow">
-                        <div class="grid-block">
-                            <div class="grid-content">
-                               <a class="decision primary">Завершить</a>
+                           
+                           <div class="grid-block">
+                               <div class="grid-content medium-2">
+                                    <label><input type="checkbox" ng-model="string"> Прочитано</label>
+                                    <br>
+                                    <a zf-open="addModal" class="dotted">+ Создать задание</a>
+                               </div>
+                                <div class="grid-content shrink">
+                                   Название: <br>
+                                   Автор:<br>
+                                   Исполнитель:  <br>
+                                   Срок:
+                               </div>
+                               <div class="grid-content">
+                                   Подготовить презентацию для нового партнера <br>
+                                   Пуцин С. <br>
+                                   Курманова А. <br>
+                                   25.08.2015
+                               </div>
+                           </div>
+                           
+                           
+                           <br><br>
+                           <div class="grid-block">
+                                <div class="grid-content">
+                                    <a class="decision">Перейти</a>
+                                </div>
+                                <div class="grid-content">
+                                    <a class="decision">Отклонить</a>
+                                </div>
+                                <div class="grid-content">
+                                    <a class="decision">Отозвать</a>
+                                </div>
+                                <div class="grid-content">
+                                    <a class="decision">Делегировать</a>
+                                </div>
+                                <div class="grid-content">
+                                   <a class="decision primary">Завершить</a>
+                                </div>
                             </div>
-                            <div class="grid-content">
-                                <a class="decision">Делегировать</a>
-                            </div>
-                           <div class="grid-content">
-                                <a class="decision">Отозвать</a>
-                            </div>
-                            <div class="grid-content">
-                                <a class="decision">Перейти</a>
-                            </div>
-                        </div>
                     </td>
                 </tr>
-
-
             </tbody>
         </table>
     </div>
 
     <div class="grid-block show-for-small-only vertical">
-        <div ng-repeat="task in tasks" class="digest">
+        <div ng-repeat-start="task in tasks" 
+           class="digest" 
+           ng-class="{readList : $index == 2 || $index == 4}"
+           ng-click="showSubRow = !showSubRow"
+           >
             <div class="grid-block title">
                 <a ui-sref="Список">{{task.title}}</a>
             </div>
             <div class="grid-block name">От: {{task.from}}</div>
             <div class="grid-block time">Срок: {{task.deadline}}</div>
+        </div>
+        <div ng-repeat-end class="subrow" ng-show="showSubRow">
+            <label><input type="checkbox" ng-model="string">Прочитано</label>
+            
+            <div class="grid-block">
+                <div class="grid-content">
+                    <a class="decision">Перейти</a>
+                </div>
+                <div class="grid-content">
+                    <a class="decision">Отклонить</a>
+                </div>
+                <div class="grid-content">
+                    <a class="decision">Отозвать</a>
+                </div>
+                <div class="grid-content">
+                    <a class="decision">Делегировать</a>
+                </div>
+                <div class="grid-content">
+                   <a class="decision primary">Завершить</a>
+                </div>
+           </div>
+            
         </div>
     </div>
 
