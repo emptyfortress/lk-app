@@ -1865,3 +1865,10 @@ progress {
     padding: .5em;
     border-bottom:  1px solid #ccc;
 }
+.more {
+    margin-top: 20px;
+    padding: .5rem;
+    &:hover {
+        background: #eee;
+    }
+}
