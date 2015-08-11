@@ -13,9 +13,6 @@
 //@import "datepicker";
 
 
-
-
-
 //temp class *********************
 .red { border: 1px solid red;}
 
@@ -1783,7 +1780,9 @@ progress {
 }
 
 .tree .modal {
-    height: 100%;
+    @include breakpoint(medium up) {
+    height: 80%;
+    }
 }
 
 
@@ -1872,3 +1871,35 @@ progress {
         background: #eee;
     }
 }
+
+.tree-accordion-title.task {
+    .accordion-title {
+        background: rgba($green,0.5);
+        color: black;
+        border-bottom: 1px solid white;
+        &:hover {background: rgba($green,0.6);}
+    }
+    .accordion-content {
+        padding: 0;
+        margin: 0;
+        .block-list {margin: 0;
+            li {padding: 0; font-size: rem-calc(17);}
+        }
+    }
+}
+.tree-accordion-title.doc {
+    .accordion-title {
+        background: rgba($blue,0.5);
+        color: black;
+        border-bottom: 1px solid white;
+        &:hover {background: rgba($blue,0.6);}
+    }
+    .accordion-content {
+        padding: 0;
+        margin: 0;
+        .block-list {margin: 0;
+            li {padding: 0; font-size: rem-calc(17);}
+        }
+    }
+}
+
