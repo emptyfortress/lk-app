@@ -4,6 +4,7 @@
 
         <div zf-tabs="" class="templateTab p0">
             <div zf-tab="" title="Добавить">
+                    
                         <ul class="block-list">
                             <li class="bg-green clearfix">
                                 <img src="../../img/left-arrow-w.png" alt="" zf-open="addModalTask">
@@ -84,6 +85,13 @@
     <div class="contentModal">
         <a zf-close="" class="close-button">&times;</a>
        <h3>Задания</h3>
+       
+       <div ng-controller="TreeCtrl">
+                        <treecontrol class="tree-classic" tree-model="dataForTheTree" on-selection="showSelected(node)">
+                            <a ui-sref="Выдать задание"  zf-close="">{{node.name}}</a>
+                        </treecontrol>
+        </div>
+<!--
          <zf-accordion auto-open="true" collapsible="true" multi-open="true"  class="tree-accordion-title task">
             <zf-accordion-item title="Задания УД">
                 <ul class="block-list dark m0">
@@ -119,6 +127,7 @@
                 </ul>
             </zf-accordion-item>
         </zf-accordion>
+-->
     </div>
 </div>
 

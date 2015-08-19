@@ -7,7 +7,7 @@ treecontrol {
     user-select: none;
 
     /* default */
-    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-family: Calibri, Helvetica, Arial, sans-serif;
     font-size:13px;
     color: #555;
     text-decoration: none;
@@ -23,8 +23,14 @@ treecontrol ul {
 
 treecontrol li {
     position: relative;
-    padding: 0 0 0 20px;
-    line-height: 20px;
+    padding: 0 0 0 5px;
+    line-height: 30px;
+}
+
+treecontrol li a {
+    font-size: 20px;
+    padding: 5px;
+    &:hover {background: #eee;}
 }
 
 treecontrol li.tree-expanded i.tree-leaf-head, treecontrol li.tree-collapsed i.tree-leaf-head {display:none;}
@@ -46,18 +52,18 @@ treecontrol li .tree-unselectable {
 }
 
 treecontrol.tree-classic li.tree-expanded i.tree-branch-head {
-    padding: 1px 10px;
-    background: url("../images/folder.png") no-repeat;
+    padding: 3px 15px;
+    background: url("../../img/expanded.png") no-repeat;
 }
 
 treecontrol.tree-classic li.tree-collapsed i.tree-branch-head {
-    padding: 1px 10px;
-    background: url("../images/folder-closed.png") no-repeat;
+    padding: 3px 15px;
+    background: url("../../img/collapsed.png") no-repeat;
 }
 
 treecontrol.tree-classic li.tree-leaf i.tree-leaf-head {
-    padding: 1px 10px;
-    background: url("../images/file.png") no-repeat;
+    padding: 3px 15px;
+    background: url("../../img/docc.png") no-repeat;
 }
 
 treecontrol.tree-classic li .tree-selected {
@@ -70,18 +76,18 @@ treecontrol.tree-classic li .tree-unselectable {
 }
 
 treecontrol.tree-light li.tree-expanded i.tree-branch-head {
-    padding: 1px 10px;
+    padding: 5px 15px;
     background: url("../images/node-opened-2.png") no-repeat;
 }
 
 treecontrol.tree-light li.tree-collapsed i.tree-branch-head {
-    padding: 1px 10px;
+    padding: 1px 15px;
     background: url("../images/node-closed-2.png") no-repeat;
 }
 
 treecontrol.tree-light li.tree-leaf i.tree-leaf-head {
-    padding: 1px 10px;
-    width: 16px; height: 16px;
+    padding: 1px 15px;
+    width: 22px; height: 22px;
     background: none no-repeat;
 }
 
@@ -99,13 +105,13 @@ treecontrol.tree-dark li.tree-expanded i.tree-branch-head {
 }
 
 treecontrol.tree-dark li.tree-collapsed i.tree-branch-head {
-    padding: 1px 10px;
+    padding: 1px 15px;
     background: url("../images/node-closed-light.png") no-repeat;
 }
 
 treecontrol.tree-dark li.tree-leaf i.tree-leaf-head {
-    padding: 1px 10px;
-    width: 16px; height: 16px;
+    padding: 1px 15px;
+    width: 22px; height: 22px;
     background: none no-repeat;
 }
 

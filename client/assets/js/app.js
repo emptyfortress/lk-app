@@ -163,7 +163,7 @@ app.controller('ManCtrl', ['$scope', function($scope){
 
 app.controller('TaskCtrl', ['$scope', function($scope){
         $scope.class = "read";
-       $scope.changeClass = function(){
+        $scope.changeClass = function(){
         if ($scope.class === "read")
             $scope.class = "unread";
          else
@@ -203,7 +203,7 @@ app.controller('TaskCtrl', ['$scope', function($scope){
             'state' : 'Завершено',
             'created' : '12.10.2014 7:15',
             'deadline' : '12.10.2014 7:20',
-            'title' : 'Ознакомьтесь с приказом sfsddfgdfs'
+            'title' : 'Ознакомьтесь с приказом'
             },
             {
             'from' : 'Гордеева С.',
@@ -278,31 +278,56 @@ app.controller('FileCtrl', ['$scope', function($scope){
 app.controller('TreeCtrl', function ($scope){
     $scope.treeOptions = {
     nodeChildren: "children",
-    dirSelectable: true,
-    injectClasses: {
-        ul: "a1",
-        li: "a2",
-        liSelected: "a7",
-        iExpanded: "a3",
-        iCollapsed: "a4",
-        iLeaf: "a5",
-        label: "a6",
-        labelSelected: "a8"
-    }
+    dirSelectable: true
+//    injectClasses: {
+//        ul: "a1",
+//        li: "a2",
+//        liSelected: "a7",
+//        iExpanded: "a3",
+//        iCollapsed: "a4",
+//        iLeaf: "a5",
+//        label: "a6",
+//        labelSelected: "a8"
+//    }
 }
 $scope.dataForTheTree =
 [
-    { "name" : "Joe", "age" : "21", "children" : [
-        { "name" : "Smith", "age" : "42", "children" : [] },
-        { "name" : "Gary", "age" : "21", "children" : [
-            { "name" : "Jenifer", "age" : "23", "children" : [
-                { "name" : "Dani", "age" : "32", "children" : [] },
-                { "name" : "Max", "age" : "34", "children" : [] }
+    { "name" : "Задания УД", "children" : [
+        { "name" : "Задание на исполнение", "children" : [] },
+        { "name" : "Задание на согласование", "children" : [
+            { "name" : "Простое согласование", "children" : [
+                { "name" : "Последовательный маршрут", "children" : [] },
+                { "name" : "Параллельный маршрут", "children" : [] }
             ]}
-        ]}
+        ]},
+        { "name": "Еще какое-то задание"},
+        { "name": "Задание на контроль"},
+        { "name": "Задание для проверки"}
     ]},
-    { "name" : "Albert", "age" : "33", "children" : [] },
-    { "name" : "Ron", "age" : "29", "children" : [] }
+    { "name" : "Задания Доксвижн", "children" : [
+         { "name" : "Задание на исполнение1", "children" : [] },
+        { "name" : "Задание на согласование1", "children" : [
+            { "name" : "Простое согласование1", "children" : [
+                { "name" : "Последовательный маршрут1", "children" : [] },
+                { "name" : "Параллельный маршрут1", "children" : [] }
+            ]}
+        ]},
+        { "name": "Еще какое-то задание1"},
+        { "name": "Задание на контроль1"},
+        { "name": "Задание для проверки1"}
+    ] },
+    { "name" : "Другие Задания", "children" : [
+         { "name" : "Задание на исполнение2", "children" : [] },
+        { "name" : "Задание на согласование2", "children" : [
+            { "name" : "Простое согласование2", "children" : [
+                { "name" : "Последовательный маршрут2", "children" : [] },
+                { "name" : "Параллельный маршрут2", "children" : [] }
+            ]}
+        ]},
+        { "name": "Еще какое-то задание2"},
+        { "name": "Задание на контроль2"},
+        { "name": "Задание для проверки2"}
+    ] }
 ];
 });
     

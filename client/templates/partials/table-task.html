@@ -87,9 +87,9 @@
     <div class="show-for-small-only p0 m0">
         <div ng-repeat-start="task in tasks" 
            class="digest">
-                <div class="grid-block">
+                <div class="grid-block" ng-click="showSubRow = !showSubRow">
                     <div class="readd" ng-class="class" ng-click="changeClass()"></div>
-                    <div class="float-left" ng-click="showSubRow = !showSubRow">
+                    <div class="float-left">
                         <div class=" title">
                             <a ui-sref="Список">{{task.title}}</a>
                         </div>
@@ -100,30 +100,20 @@
         </div>
         <div ng-repeat-end class="subrow" ng-show="showSubRow">
             
-            <div class="grid-block">
-                <div class="grid-content">
+           <div class="grid-block small-bt">
                     <a class="decision">Перейти</a>
-                </div>
-                <div class="grid-content">
                     <a class="decision">Отклонить</a>
-                </div>
-                <div class="grid-content">
                     <a class="decision">Отозвать</a>
-                </div>
-                <div class="grid-content">
                     <a class="decision">Делегировать</a>
-                </div>
-                <div class="grid-content">
                    <a class="decision primary">Завершить</a>
-                </div>
            </div>
             
         </div>
     </div>
     
     <div class="grid-block align-right">
-            <a class="more">Еще...</a>
-            <a class="more">Показать все (53)</a>
+            <a class="morelist">Еще...</a>
+            <a class="morelist">Показать все (53)</a>
     </div>
 
 

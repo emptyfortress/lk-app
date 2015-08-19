@@ -9,6 +9,7 @@
 @import "loading-bar";
 @import "angular-tooltips";
 @import "tree-control";
+//@import "tree-control-attribute";
 //@import "xeditable";
 //@import "datepicker";
 
@@ -41,6 +42,10 @@
 //    max-width: rem-calc(1024);
 //    margin: 0 10px;
     padding: 0 10px;
+    @include breakpoint(medium down) {
+        padding: 0;
+        .grid-content {padding: 0 5px;}
+    }
 }
 //body { background: #aaa;}
 .bg-grey { background: #ccc; }
@@ -446,6 +451,9 @@ input.search.ng-hide {
 
 .block-list.show-for-small-only li a, .block-list.dark li a {color: black;}
 
+.addModal h3 {
+    font-size: 30px;
+}
 
 .addModal .block-list li {
     border-bottom: 1px solid white;
@@ -1873,11 +1881,12 @@ progress {
     border-left: 2px solid $blue;
 }
 .subrow {
+    width: 100%;
     background: #eee;
     padding: .5em;
     border-bottom:  1px solid #ccc;
 }
-.more {
+.morelist {
 //    margin-top: 20px;
     padding: .5rem;
     margin-left: 4em;
