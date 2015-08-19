@@ -1531,6 +1531,7 @@ $padding: 1rem
     padding: 1rem;
     font-size: rem-calc(14);
     line-height: 150%;
+    cursor: default;
 }
 
 .selectView {
@@ -1673,14 +1674,18 @@ progress {
 
 .digest {
     border-bottom: 1px solid #ccc;
-    padding: 1rem 0;
+//    padding: 1rem 0;
     .grid-block {
         padding: 5px 0;
     }
     .title {
         font-size: rem-calc(20);
+        white-space: normal;
+        margin-bottom: 1em;
+//        font-weight: bold;
     }
 }
+
 
 .templateTab .tab-contents {padding: 0; margin: 0;}
 .templateTab .tabs .tab-item {
@@ -1852,8 +1857,16 @@ progress {
     border-top: none;
     }
 }
-.read td:first-child  {
-    border-left: 2px solid $blue;
+.first {
+    width: 7px;
+    padding: 0;
+}
+.read, .readd {
+    background: rgba($blue, 0.1);
+}
+.readd {width: 10px; margin-right: 10px;}
+.unread, .unreadd {
+    background: $blue;
 }
 .readList {
     padding-left: 1em;
@@ -1865,8 +1878,9 @@ progress {
     border-bottom:  1px solid #ccc;
 }
 .more {
-    margin-top: 20px;
+//    margin-top: 20px;
     padding: .5rem;
+    margin-left: 4em;
     &:hover {
         background: #eee;
     }
@@ -1887,6 +1901,7 @@ progress {
         }
     }
 }
+    
 .tree-accordion-title.doc {
     .accordion-title {
         background: rgba($blue,0.5);
@@ -1902,4 +1917,6 @@ progress {
         }
     }
 }
-
+.has-off-canvas {
+    overflow-x: hidden;
+}

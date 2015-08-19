@@ -6,6 +6,7 @@
         <table>
             <tbody>
                 <tr class="table-header">
+                    <th class="first"></th>
                     <th ng-click="orderByField='title'; reverseSort = !reverseSort">
                         Тема
                         <span ng-show="orderByField == 'title'" class="float-right"><span ng-show="!reverseSort">&or;</span><span ng-show="reverseSort">&and;</span></span>
@@ -28,23 +29,18 @@
                     </th>
                 </tr>
                 <tr ng-repeat-start="task in tasks | orderBy:orderByField:reverseSort | filter:{name:query1}" 
-                   class="repeat-animation" ng-click="showRow = !showRow"
-                   ng-class="{read : $index == 2 || $index == 4}">
-                    <td><a ui-sref="Список">{{task.title}}</a></td>
-                    <td>{{task.state}}</td>
-                    <td class="nowrap">{{task.from}}</td>
-                    <td class="nowrap">{{task.to}}</td>
-                    <td class="nowrap">{{task.deadline}}</td>
+                   class="repeat-animation">
+                    <td class="first" ng-class="class" ng-click="changeClass()" tooltips title="Прочитано" tooltip-side="bottom"></td>
+                    <td ng-click="showRow = !showRow"><a ui-sref="Список">{{task.title}}</a></td>
+                    <td ng-click="showRow = !showRow">{{task.state}}</td>
+                    <td class="nowrap" ng-click="showRow = !showRow">{{task.from}}</td>
+                    <td class="nowrap" ng-click="showRow = !showRow">{{task.to}}</td>
+                    <td class="nowrap" ng-click="showRow = !showRow">{{task.deadline}}</td>
                 </tr>
                 <tr ng-repeat-end  ng-show="showRow">
-                    <td colspan="7" class="showRow">
+                    <td colspan="8" class="showRow">
                            
                            <div class="grid-block">
-                               <div class="grid-content medium-2">
-                                    <label><input type="checkbox" ng-model="string"> Прочитано</label>
-                                    <br>
-                                    <a zf-open="addModal" class="dotted">+ Создать задание</a>
-                               </div>
                                 <div class="grid-content shrink">
                                    Название: <br>
                                    Автор:<br>
@@ -56,6 +52,10 @@
                                    Пуцин С. <br>
                                    Курманова А. <br>
                                    25.08.2015
+                               </div>
+                               <div class="grid-content medium-2">
+                                    <br><br>
+                                    <a zf-open="addModal" class="dotted">+ Создать задание</a>
                                </div>
                            </div>
                            
@@ -84,20 +84,21 @@
         </table>
     </div>
 
-    <div class="grid-block show-for-small-only vertical">
+    <div class="show-for-small-only p0 m0">
         <div ng-repeat-start="task in tasks" 
-           class="digest" 
-           ng-class="{readList : $index == 2 || $index == 4}"
-           ng-click="showSubRow = !showSubRow"
-           >
-            <div class="grid-block title">
-                <a ui-sref="Список">{{task.title}}</a>
-            </div>
-            <div class="grid-block name">От: {{task.from}}</div>
-            <div class="grid-block time">Срок: {{task.deadline}}</div>
+           class="digest">
+                <div class="grid-block">
+                    <div class="readd" ng-class="class" ng-click="changeClass()"></div>
+                    <div class="float-left" ng-click="showSubRow = !showSubRow">
+                        <div class=" title">
+                            <a ui-sref="Список">{{task.title}}</a>
+                        </div>
+                        <div class=" name">От: {{task.from}}</div>
+                        <div class="time">Срок: {{task.deadline}}</div>
+                    </div>
+                </div>
         </div>
         <div ng-repeat-end class="subrow" ng-show="showSubRow">
-            <label><input type="checkbox" ng-model="string">Прочитано</label>
             
             <div class="grid-block">
                 <div class="grid-content">
@@ -120,9 +121,10 @@
         </div>
     </div>
     
-    <div class="grid-block align-center ">
+    <div class="grid-block align-right">
             <a class="more">Еще...</a>
-        </div>
+            <a class="more">Показать все (53)</a>
+    </div>
 
 
 
