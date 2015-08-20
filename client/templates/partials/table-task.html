@@ -30,7 +30,7 @@
                 </tr>
                 <tr ng-repeat-start="task in tasks | orderBy:orderByField:reverseSort | filter:{name:query1}" 
                    class="repeat-animation">
-                    <td class="first" ng-class="class" ng-click="changeClass()" tooltips title="Прочитано" tooltip-side="bottom"></td>
+                    <td class="first" ng-class="class" ng-click="changeClass()"></td>
                     <td ng-click="showRow = !showRow"><a ui-sref="Список">{{task.title}}</a></td>
                     <td ng-click="showRow = !showRow">{{task.state}}</td>
                     <td class="nowrap" ng-click="showRow = !showRow">{{task.from}}</td>

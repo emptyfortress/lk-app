@@ -37,6 +37,7 @@
 .rel {position: relative;}
 .no-float { float: none; }
 .italic {font-family: $SegLight; font-style: italic;}
+.inline {display: inline;}
 
 .grid-container {
 //    max-width: rem-calc(1024);
@@ -1012,11 +1013,31 @@ textarea.grow {
     }
 
 }
+.ecp {
+    position: absolute;
+    top:0;
+    right:30px;
+    img {
+        cursor: pointer;
+        opacity: .3;
+        float: right;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
 
 .jump {
     float: right;
     display: inline-block;
-    margin-right: 2rem;
+    margin-right: 1rem;
+    a {
+     padding: 5px;
+    font-size: 14px;
+    &:hover {
+        background: #eee;
+    }
+    }
 }
 
 
@@ -1223,6 +1244,16 @@ textarea.grow {
     color: #555;
     }
 
+    }
+}
+.no-border {
+        border: none;
+        border-collapse: collapse;
+        padding: 0;
+    margin: 0;
+    td {
+        border: none !important;
+        
     }
 }
 
@@ -1749,7 +1780,7 @@ progress {
 
 .subMenu {
     position: absolute;
-    top:2rem;
+    top:1rem;
     right: 1rem;
     z-index: 3;
     background: #fff;
@@ -1928,4 +1959,30 @@ progress {
 }
 .has-off-canvas {
     overflow-x: hidden;
+}
+h3.title {
+    a {
+        display: none;
+        @include breakpoint (medium up) {
+            display: inline-block;
+        }
+    }
+    @include breakpoint (medium up) {
+        margin-left: -30px;
+    }
+}
+.simple tr.transparent:hover {
+    background: none;
+}
+.narrow {
+    width: 20px;
+}
+.simple img {
+    max-width: none;
+    
+}
+li.shevron {
+    background-image: url(../../img/next-folder.png);
+    background-repeat: no-repeat;
+    background-position: right 15px;
 }

@@ -22,9 +22,12 @@ view: true
                 <div class="grid-block nowrap">
                     <div class="grid-content">
                     <br><br>
-<!--                        <p class="nomer">ОРГ-3</p>-->
-                        <h3><span class="important">&uarr;&nbsp;</span>Заявка на покупку кондиционеров
-<!--                        <a href=""><img src="../img/edit.png" alt="" class="edit"></a>-->
+                        <h3 class="title">
+<!--                            <span class="important">&uarr;&nbsp;</span>-->
+                            Заявка на покупку кондиционеров
+                            <a href=""><img src="../img/edit.png" alt="" class="edit"></a>
+                            <a href=""><img src="../img/refresh.png" alt="" class="fade"></a>
+                            <a href=""><img src="../img/bin.png" alt="" class="fade"></a>
                         </h3>
                         <h5 class="show-for-small-only" ng-click="completed = !completed" ng-hide="completed">Ожидает решения</h5>
                         <img class="show-for-small-only" src="../img/completed.png" alt="" ng-show="completed" ng-click="completed = !completed">
@@ -67,7 +70,7 @@ view: true
                 </zf-panel>
 
 
-                 <div ng-include="'templates/partials/main-tab1.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(1)"></div>
+                 <div ng-include="'templates/partials/main-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(1)"></div>
                  <div ng-include="'templates/partials/comment-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(2)"></div>
                  <div ng-include="'templates/partials/sogl-tab1.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(2)"></div>
                  <div ng-include="'templates/partials/tree-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(4)"></div>

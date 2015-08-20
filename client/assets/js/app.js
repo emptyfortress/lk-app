@@ -241,32 +241,30 @@ app.directive('slideToggle', function() {
 
 
 app.controller('FileCtrl', ['$scope', function($scope){
-        $scope.orderByField = 'type';
+        $scope.orderByField = 'img';
         $scope.reverseSort = false;
         $scope.files = [
             {
-            'name' : 'dv-design.digdes.com',
-            'type' : 'Ссылка',
-            'created' : '09.10.2014 7:15',
-            'modified' : '09.10.2014 7:20',
-            'number' : 'Вх-3',
-            'img' : '../../img/anchor.png'
-            },
-            {
             'name' : 'Исходящее письмо.doc',
-            'type' : 'Документ',
+            'type' : 'v.1.1',
             'created' : '09.10.2014 7:20',
             'modified' : '09.10.2014 7:20',
             'number' : 'Вх-4',
-            'img' : '../../img/skrepka.png'
+            'img' : '../../img/mainfile.png'
+            },
+            {
+            'name' : 'Примечания.txt',
+            'type' : '',
+            'created' : '09.10.2014 7:15',
+            'modified' : '09.10.2014 7:20',
+            'number' : 'Вх-3'
             },
             {
             'name' : 'Приказ о выселении',
-            'type' : 'Связанная карточка',
+            'type' : '',
             'created' : '09.10.2014 7:15',
             'modified' : '09.10.2014 7:20',
-            'number' : 'Вх-5',
-            'img' : '../../img/dv.png'
+            'number' : 'Вх-5'
             }
 
         ];
