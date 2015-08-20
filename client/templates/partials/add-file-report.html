@@ -5,23 +5,31 @@
             <span ng-hide="overDrop">Перетащите сюда файл</span>
     </div>
     <div class="grid-block upload1" ng-show="progress">
-           <h5>Очередь загрузки</h5>
+           <h5>Загрузить файл</h5>
             <div class="table-container">
                 <table class="simple middle">
 
+<!--
                     <tr>
                         <td colspan="3">
                             <progress value="50" max="100"></progress>
                         </td>
                     </tr>
+-->
                     <tr>
-                        <td>Договор с Ленэнерго.doc</td>
+                        <td><img src="../../img/word.png" alt="" width="32"> Договор с Ленэнерго.doc</td>
                         <td class="text-right nowrap">117 kb</td>
                         <td class="text-right nowrap">
-                            <a href="" ng-click="progress = false" tooltips="" tooltip-speed="fast" tooltip-delay="1000" tooltip-title="Остановить загрузку"><img zf-iconic="" icon="ban" size="small"></a>
-                            <a href="" ng-click="progress = false" tooltips="" tooltip-speed="fast" tooltip-delay="1000" tooltip-title="Удалить"><img src="../../img/xdelete.png" alt=""></a>
-                            <a href="" ng-click="progress = false" tooltips="" tooltip-speed="fast" tooltip-delay="1000" tooltip-title="Начать загрузку"><img src="../../img/upload.png" alt=""></a>
+                            <a tooltips="" tooltip-speed="fast" tooltip-delay="1000" tooltip-title="Удалить"><img src="../../img/xdelete.png" alt=""></a>
                         </td>
+                    </tr>
+                    <tr>
+                        <td><img src="../../img/word.png" alt="" width="32"> Приложение.doc</td>
+                        <td class="text-right nowrap">14 kb</td>
+                        <td class="text-right nowrap">
+                            <a href="" ng-click="progress = false" tooltips="" tooltip-speed="fast" tooltip-delay="1000" tooltip-title="Удалить"><img src="../../img/xdelete.png" alt=""></a>
+                        </td>
+                    </tr>
                 </table>
             </div>
 
