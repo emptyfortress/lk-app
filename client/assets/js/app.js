@@ -269,6 +269,30 @@ app.controller('FileCtrl', ['$scope', function($scope){
 
         ];
   }]);
+    
+
+app.controller('linkCtrl', ['$scope', function($scope){
+        $scope.orderByField = 'img';
+        $scope.reverseSort = false;
+        $scope.files = [
+            {
+            'name' : 'Согласование договора',
+            'type' : 'Связанная карточка',
+            'created' : '09.10.2014 7:20',
+            'modified' : '09.10.2014 7:20',
+            'number' : 'Вх-4',
+            'img' : '../../img/dv.png'
+            },
+            {
+            'name' : 'www.google.com',
+            'type' : 'URL',
+            'created' : '09.10.2014 7:15',
+            'modified' : '09.10.2014 7:20',
+            'number' : '',
+            'img' : '../../img/url.png'
+            }
+        ];
+  }]);
 
 
 // tree controller

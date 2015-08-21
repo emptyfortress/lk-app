@@ -17,7 +17,10 @@ view: true
 
 
    <div class="grid-content">
-         <h3>{{vars.name}}</h3>
+         <h3> {{ vars.name }}
+            <span class="shown">показано 5 из 53</span>
+            <span class="shown-small">(5/53)</span>
+        </h3>
         <div ng-include="'templates/partials/table3.html'"></div>
     </div>
 

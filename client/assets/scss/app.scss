@@ -1018,6 +1018,7 @@ textarea.grow {
     top:0;
     right:30px;
     img {
+        margin-left: 1rem;
         cursor: pointer;
         opacity: .3;
         float: right;
@@ -1028,14 +1029,19 @@ textarea.grow {
 }
 
 .jump {
+    background: #fff;
+//    padding: 10px;
+//    border: 1px dotted #666;
     float: right;
     display: inline-block;
-    margin-right: 1rem;
+//    margin-right: .5rem;
+//    margin-bottom: 20px;
     a {
-     padding: 5px;
+     padding: 3px;
     font-size: 14px;
     &:hover {
         background: #eee;
+//        text-decoration: underline;
     }
     }
 }
@@ -1182,6 +1188,9 @@ textarea.grow {
     & ul, li {
         font-size: 0.8rem;
         margin: 0; padding: 0;
+    }
+    @include breakpoint (small only) {
+        width: 100%;
     }
 }
 
@@ -1418,10 +1427,12 @@ table td, table th { padding: 9px 10px; text-align: left; vertical-align: top;}
 //end responsive tables *******************************
 
 .table-container {
-	width: 100%;
+    @include breakpoint(small only) {
+    width: 100%;
 	overflow-y: auto;
 	_overflow: auto;
 	margin: 0 0 1em;
+    }
 }
 td.nowrap {white-space: nowrap;}
 
@@ -1984,5 +1995,33 @@ h3.title {
 li.shevron {
     background-image: url(../../img/next-folder.png);
     background-repeat: no-repeat;
-    background-position: right 15px;
+    background-position: 5px 15px;
+}
+h3 .shown {
+    font-size: rem-calc(15);
+//    color: #aaa;
+    float: right;
+    margin-top: 10px;
+    @include breakpoint(small only) {
+       display: none;
+    }
+}
+
+h3 .shown-small {
+    display: none;
+    @include breakpoint(small only) {
+    margin-left: 1rem;
+    display: inline;    
+    }
+}
+.attrblock {
+    margin-left: 1.2rem !important;
+    @include breakpoint (large) { 
+    margin-left: -1rem !important;
+    }
+}
+.small-hide {
+    @include breakpoint (small only) {
+        display: none;
+    }
 }
