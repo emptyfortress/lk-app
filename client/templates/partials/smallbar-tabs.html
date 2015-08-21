@@ -1,0 +1,24 @@
+<section class="small-bar">
+
+<!--
+    <div class="grid-block imgTab">
+        <div class="grid-content text-center" ng-class="{active:tab.isSet(1)}"><a href ng-click="tab.setTab(1)"><img src="../../img/main.png" alt=""></a></div>
+        <div class="grid-content text-center"  ng-class="{active:tab.isSet(2)}"><a href ng-click="tab.setTab(2)"><img src="../../img/comments.png" alt=""></a></div>
+        <div class="grid-content text-center" ng-class="{active:tab.isSet(3)}"><a href ng-click="tab.setTab(3)"><img src="../../img/approve.png" alt=""></a></div>
+        <div class="grid-content text-center" ng-class="{active:tab.isSet(4)}"><a href ng-click="tab.setTab(4)"><img src="../../img/tree.png" alt=""></a></div>
+        <div class="grid-content text-center" zf-toggle="topbar"><img src="../../img/kebab-w.png" alt=""></div>
+    </div>
+-->
+
+<div class="grid-block">
+    <div class="grid-block dropdown" ng-click="showDrop=!showDrop; tab.setTab(1)">
+        Главное
+    </div>
+    
+</div>
+</section>
+<ul ng-show="showDrop" data-slide-toggle="showDrop" data-slide-toggle-duration="500" class="dropD">
+        <li ng-click="showDrop=false"><a ng-click="tab.setTab(2)">Комментарии</a></li>
+        <li ng-click="showDrop=false"><a ng-click="tab.setTab(3)">Ход согласования</a></li>
+        <li ng-click="showDrop=false"><a ng-click="tab.setTab(4)">Дерево версий</a></li>
+</ul>

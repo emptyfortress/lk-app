@@ -9,9 +9,8 @@ view: true
 <div  ng-controller="TabController as tab">
 
 <div ng-include="'templates/partials/header.html'" class="task slide-top"></div>
-<div ng-include="'templates/partials/smallbar.html'" class="show-for-medium task slide-top"></div>
-<div ng-include="'templates/partials/smallbar2.html'" class="show-for-small-only task slide-top"></div>
-
+<div ng-include="'templates/partials/smallbar.html'" class="show-for-medium task"></div>
+<div ng-include="'templates/partials/smallbar-tabs.html'" class="show-for-small-only task"></div>
 
 
 
@@ -53,7 +52,7 @@ view: true
                    <div zf-tab="" title="Дерево версий">
                         <div ng-include="'templates/partials/tree-tab.html'"></div>
                     </div>
-                    <div zf-tab="" title="История" class="slide-right">
+                    <div zf-tab="" title="История">
                         Здесь будет таблица со всеми действиями в карточке
                     </div>
                 </div>
@@ -72,9 +71,8 @@ view: true
 
                  <div ng-include="'templates/partials/main-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(1)"></div>
                  <div ng-include="'templates/partials/comment-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(2)"></div>
-                 <div ng-include="'templates/partials/sogl-tab1.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(2)"></div>
+                 <div ng-include="'templates/partials/sogl-tab1.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(3)"></div>
                  <div ng-include="'templates/partials/tree-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(4)"></div>
-                 <div ng-include="'templates/partials/history-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(3)"></div>
 
 <!--        <div class="prev">&lsaquo;</div>-->
 <!--        <div class="next slick-next">&rsaquo;</div>-->

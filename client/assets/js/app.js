@@ -301,16 +301,6 @@ app.controller('TreeCtrl', function ($scope){
     $scope.treeOptions = {
     nodeChildren: "children",
     dirSelectable: true
-//    injectClasses: {
-//        ul: "a1",
-//        li: "a2",
-//        liSelected: "a7",
-//        iExpanded: "a3",
-//        iCollapsed: "a4",
-//        iLeaf: "a5",
-//        label: "a6",
-//        labelSelected: "a8"
-//    }
 }
 $scope.dataForTheTree =
 [
@@ -489,27 +479,27 @@ angular.module('angularSlideables', [])
         }
     };
 })
-.directive('slideToggle', function() {
-    return {
-        restrict: 'A',
-        link: function(scope, element, attrs) {
-            var target = document.querySelector(attrs.slideToggle);
-            attrs.expanded = false;
-            element.bind('click', function() {
-                var content = target.querySelector('.slideable_content');
-                if(!attrs.expanded) {
-                    content.style.border = '1px solid rgba(0,0,0,0)';
-                    var y = content.clientHeight;
-                    content.style.border = 0;
-                    target.style.height = y + 'px';
-                } else {
-                    target.style.height = '0px';
-                }
-                attrs.expanded = !attrs.expanded;
-            });
-        }
-    }
-});
+//.directive('slideToggle', function() {
+//    return {
+//        restrict: 'A',
+//        link: function(scope, element, attrs) {
+//            var target = document.querySelector(attrs.slideToggle);
+//            attrs.expanded = false;
+//            element.bind('click', function() {
+//                var content = target.querySelector('.slideable_content');
+//                if(!attrs.expanded) {
+//                    content.style.border = '1px solid rgba(0,0,0,0)';
+//                    var y = content.clientHeight;
+//                    content.style.border = 0;
+//                    target.style.height = y + 'px';
+//                } else {
+//                    target.style.height = '0px';
+//                }
+//                attrs.expanded = !attrs.expanded;
+//            });
+//        }
+//    }
+//});
 
 
 //monospaced elastic ***************************
