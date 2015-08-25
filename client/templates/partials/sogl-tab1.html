@@ -1,3 +1,15 @@
+
+       <div class="grid-content p0 small-12 medium-3 large-2 down">
+        <div class="report" ng-mouseover="overDrop == true" ng-mouseleave="overDrop == false">
+               <img src="../../img/attach.png" alt=""><br>
+            <span ng-hide="overDrop">Прикрепить отчет</span>
+            <span ng-show="overDrop">Перетащите сюда файлы</span>
+        </div>
+        <a class="decision primary" href="#">Действие 1</a>
+        <a class="decision" href="#">Действие 2</a>
+        <a class="decision more" zf-toggle="buttPanel">...</a>
+
+    </div>
 <div class="grid-block">
     <div class="grid-content small-12 medium-9 large-10">
                         <img src="../../img/print.png" alt="" class="print float-right">
@@ -125,15 +137,4 @@
 
 
 
-       <div class="grid-content p0 small-12 medium-3 large-2 down">
-        <div class="report" ng-mouseover="overDrop == true" ng-mouseleave="overDrop == false">
-               <img src="../../img/attach.png" alt=""><br>
-            <span ng-hide="overDrop">Прикрепить отчет</span>
-            <span ng-show="overDrop">Перетащите сюда файлы</span>
-        </div>
-        <a class="decision primary" href="#">Согласовать</a>
-        <a class="decision" href="#">Отклонить</a>
-        <a class="decision more" zf-toggle="buttPanel">...</a>
-
-    </div>
 </div>

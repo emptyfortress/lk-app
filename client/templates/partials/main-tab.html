@@ -27,26 +27,27 @@
         <div class="zag medium-size" ng-click="hideDescription = !hideDescription;">Описание<span ng-show="!hideDescription" class="arrow">&and;</span><span ng-show="hideDescription" class="arrow">&or;</span></div>
             <div slide-toggle="hideDescription">
                 <p class="medium-size">
-                    Кластерное вибрато, по определению, начинает звукосниматель. Плавно-мобильное голосовое поле просветляет аккорд. Адажио, следовательно, продолжает флюгель-горн. Арпеджио продолжает мелодический сет, это и есть одномоментная вертикаль в сверхмногоголосной полифонической ткани. Процессуальное изменение монотонно иллюстрирует позиционный динамический эллипсис.
+                    Кластерное вибрато, по определению, начинает звукосниматель. Плавно-мобильное голосовое поле просветляет аккорд.
                 </p>
             </div>
 
-            <div ng-include="'templates/partials/files2.html'"></div>
+             <div ng-include="'templates/partials/files2.html'"></div>
 
 
     </div>
 <!--button panel *******************************************-->
 
-    <div class="task grid-content p0 medium-3 large-2 small-order-1 medium-order-2 large-order-3">
+    <div class="task grid-content p0 medium-3 large-2 small-order-1 medium-order-2 large-order-2">
         <a zf-open="reportModal">
            <div class="report">
                 <img src="../../img/attach.png" alt=""><br>
                 <span>Прикрепить отчет</span>
             </div>
         </a>
-        <a class="decision primary">Согласовать</a>
-        <a class="decision">Отклонить</a>
-        <a class="decision more" zf-toggle="buttPanel">...</a>
+        
+        <a class="decision primary">Действие 1</a>
+        <a class="decision">Действие 2</a>
+        <a class="decision more" zf-toggle="buttPanel" tooltips tooltip-title="Еще" tooltip-side="bottom">...</a>
     </div>
 </div>
 

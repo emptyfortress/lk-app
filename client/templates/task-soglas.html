@@ -1,11 +1,13 @@
 ---
-name: Задание
-url: /task/isp
+name: Задание на согласование
+url: /task/soglas
 par: Задание
-title: Исполнение
+title: Согласование
 back: true
 view: true
-doc: true
+buttons:
+    - Завершить
+    - Отклонить
 ---
 <div  ng-controller="TabController as tab">
 
@@ -21,21 +23,21 @@ doc: true
 
                 <div class="grid-block nowrap">
                     <div class="grid-content">
-                       <br><br>
-                        <h3 class="title"  ng-mouseover="showEdit=true" ng-mouseleave="showEdit=false">
+                    <br><br>
+                        <h3 class="title" ng-mouseover="showEdit=true" ng-mouseleave="showEdit=false">
 <!--                            <span class="important">&uarr;&nbsp;</span>-->
-                            Обычное задание на исполнение
+                            Задание на согласование
                             <span ng-show="showEdit">
                                <a tooltips tooltip-content="Редактировать" tooltip-delay="800"><img src="../img/edit.png" alt="" class="edit"></a>
                                 <a tooltips tooltip-content="Обновить" tooltip-delay="800"><img src="../img/refresh.png" alt="" class="fade"></a>
                                 <a tooltips tooltip-content="Удалить" tooltip-delay="800"><img src="../img/bin.png" alt="" class="fade"></a>
                             </span>
                         </h3>
-                        <h5 class="show-for-small-only" ng-click="completed = !completed" ng-hide="completed">В работе</h5>
+                        <h5 class="show-for-small-only" ng-click="completed = !completed" ng-hide="completed">Ожидает решения</h5>
                         <img class="show-for-small-only" src="../img/completed.png" alt="" ng-show="completed" ng-click="completed = !completed">
                     </div>
                     <div class="grid-content shrink bottom hide-for-small-only">
-                        <h5 ng-click="completed = !completed" ng-hide="completed">В работе</h5>
+                        <h5 ng-click="completed = !completed" ng-hide="completed">Ожидает решения</h5>
                         <img class="hide-for-small-only" src="../img/completed.png" alt="" ng-show="completed" ng-click="completed = !completed">
                     </div>
                 </div>
@@ -44,17 +46,19 @@ doc: true
 
                 <div zf-tabs="" class="custom-tabs hide-for-small-only">
                     <div zf-tab="" title="Главное">
-                        <div ng-include="'templates/partials/main-tab-isp.html'"></div>
+                        <div ng-include="'templates/partials/main-tab.html'"></div>
                     </div>
                     <div zf-tab="" title="Ход согласования">
                         <div ng-include="'templates/partials/sogl-tab.html'"></div>
                     </div>
-                    <div zf-tab="" title="Дерево версий">
-                        <div ng-include="'templates/partials/tree-tab.html'"></div>
-                    </div>
                     <div zf-tab="" title="Комментарии">
                         <div ng-include="'templates/partials/comment-tab.html'"></div>
                     </div>
+<!--
+                   <div zf-tab="" title="Дерево версий">
+                        <div ng-include="'templates/partials/tree-tab.html'"></div>
+                    </div>
+-->
                 </div>
 
 <!--
@@ -71,10 +75,10 @@ doc: true
 -->
 
 
-                 <div ng-include="'templates/partials/main-tab-isp.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(1)"></div>
+                 <div ng-include="'templates/partials/main-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(1)"></div>
                  <div ng-include="'templates/partials/sogl-tab1.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(2)"></div>
-                 <div ng-include="'templates/partials/tree-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(3)"></div>
-                 <div ng-include="'templates/partials/comment-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(4)"></div>
+                 <div ng-include="'templates/partials/comment-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(3)"></div>
+<!--                 <div ng-include="'templates/partials/tree-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(4)"></div>-->
 
 <!--        <div class="prev">&lsaquo;</div>-->
 <!--        <div class="next slick-next">&rsaquo;</div>-->
@@ -86,4 +90,8 @@ doc: true
         <div ng-include="'templates/partials/addReport.html'"></div>
     </div>
 
-
+<!--
+  <div class="absolute">
+        <img src="../img/ajax-spinner-blue.gif" alt="">
+    </div>
+-->

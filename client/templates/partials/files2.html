@@ -43,7 +43,7 @@
                               <a ng-click="version=!version">{{file.type}}</a>
                             </td>
                           <td class="narrow">
-                                <div class="rel" zf-action-sheet="">
+                                <div class="rel pointer" zf-action-sheet="">
                                     <a ng-click="showKebab = !showKebab" zf-as-button=""><img src="../../img/kebab.png" alt="" class="fade"></a>
                                     <div class="subMenu myslide hide-for-small-only" ng-show="showKebab">
                                         <ul>
@@ -64,10 +64,6 @@
                                             <li><a ng-click="showKebab=false">Удалить</a></li>
                                         </ul>
                                         </div>
-                                    
-                                    
-                                    
-                                    
                                 </div>
                                 
                                 
@@ -190,9 +186,26 @@
                       <td><a href="">{{file.name}}</a></td>
                       <td class="italic small-hide">{{file.type}}</td>
                       <td class="text-right">
-<!--                            <a href=""><img src="../../img/info-black.png" alt="" class="fade"></a>-->
-<!--                                &nbsp;&nbsp;-->
-                            <a href=""><img src="../../img/kebab.png" alt="" class="fade"></a>
+                            <div class="rel pointer" zf-action-sheet="">
+                                    <a ng-click="showKebab = !showKebab" zf-as-button=""><img src="../../img/kebab.png" alt="" class="fade"></a>
+                                    <div class="subMenu myslide hide-for-small-only" ng-show="showKebab">
+                                        <ul>
+                                            <li><a ng-click="showKebab=false">Удалить</a></li>
+                                            <li><a ng-click="showKebab=false">Блокировать?</a></li>
+                                            <li><a ng-click="showKebab=false">Скачать&nbsp;версию?</a></li>
+                                            <li><a ng-click="showKebab=false">Добавить&nbsp;версию?</a></li>
+                                        </ul>
+                                    </div>
+                                    
+                                        <div zf-as-content="" position="bottom" class="show-for-small-only">
+                                        <ul>
+                                            <li><a ng-click="showKebab=false">Удалить</a></li>
+                                            <li><a ng-click="showKebab=false">Блокировать?</a></li>
+                                            <li><a ng-click="showKebab=false">Скачать&nbsp;версию?</a></li>
+                                            <li><a ng-click="showKebab=false">Добавить&nbsp;версию?</a></li>
+                                        </ul>
+                                        </div>
+                                </div>
                       </td>
                   </tr>
 
