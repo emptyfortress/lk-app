@@ -1,0 +1,276 @@
+
+<!--<div ng-include="'templates/partials/ecp.html'"></div>-->
+<!--<div ng-include="'templates/partials/ecp1.html'"></div>-->
+
+<div class="rel">
+    <div class="zag medium-size" ng-click="hideFile = !hideFile;">
+        <span>Документы</span>
+        <span class="arrow" ng-hide="hideFile">&and;</span>
+        <span ng-hide="!hideFile" class="arrow">&or;</span>
+    </div>
+    <div class="plus">
+        <img src="../../img/plus-dark.png" alt="" tooltips tooltip-title="Добавить документ" tooltip-delay="500">
+<!--        <img src="../../img/close-dark.png" alt="" class="close"  ng-show="showSubMenu" ng-click="showSubMenu = !showSubMenu">-->
+<!--
+        <div ng-show="showSubMenu" class="jump slide-right">
+            <a>+ Основной</a>
+            <a class="ml-20">+ Дополнительный</a>
+        </div>
+-->
+    </div>
+<!--
+    <div class="ecp" ng-hide="showSubMenu" ng-click="showSign = !showSign"  tooltips tooltip-title="Электронная подпись" tooltip-delay="500">
+        <img src="../../img/ecp.png" alt="">
+        <div ng-show="showSign" class="jump slide-right">
+            <a zf-open="signModal1">Подписать</a>
+            <a zf-open="signModal" class="ml-20">Проверить</a>
+        </div>
+    </div>
+-->
+
+
+       <div ng-controller="FileCtrl">
+           <div slide-toggle="!hideFile" >
+               <div class="table-container">
+                   <table class="simple">
+                    <tbody>
+<!--
+                      <tr class="table-header">
+                          <th ng-click="orderByField='img'; reverseSort = !reverseSort">вид</th>
+                          <th ng-click="orderByField='name'; reverseSort = !reverseSort">имя</th>
+                          <th ng-click="orderByField='type'; reverseSort = !reverseSort">версия</th>
+                          <th></th>
+                      </tr>
+-->
+                    <tr>
+                        <td colspan="3" class="bold">
+                            <a href=""><img src="../../img/dv.png" alt="" class="fade">&nbsp;&nbsp;Это карточка документа по которому создано задание</a>
+                        </td>
+                        <td class="narrow pointer">
+                            <div class="rel" zf-action-sheet="">
+                                    <a tooltips tooltip-content="Отвязать" tooltip-delay="500"><img src="../../img/close-red.png" alt="" class="fade"></a>
+<!--
+                                    <div class="subMenu myslide hide-for-small-only" ng-show="showKebab">
+                                        <ul>
+                                            <li><a ng-click="showKebab=false">Отвязать</a></li>
+                                        </ul>
+                                    </div>
+-->
+                                    
+                                        <div zf-as-content="" position="bottom" class="show-for-small-only">
+                                        <ul>
+                                            <li><a ng-click="showKebab=false">Отвязать</a></li>
+                                        </ul>
+                                        </div>
+                                </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="narrow">&nbsp;</td>
+                        <td class="narrow"><img src="../../img/mainfile.png" alt=""  tooltips tooltip-title="Основной файл" tooltip-delay="500"></td>
+                        <td colspan="2"><a href=""><img src="../../img/word-sm.png" alt="">&nbsp;&nbsp;Исходящее письмо.doc</a></td>
+                    </tr>
+                    <tr>
+                        <td class="narrow">&nbsp;</td>
+                        <td class="narrow"></td>
+                        <td colspan="2"><a href=""><img src="../../img/word-sm.png" alt="">&nbsp;&nbsp;Примечания.doc</a></td>
+                    </tr>  
+                    
+                         
+                         
+                         
+                         
+<!--
+                    <tr ng-repeat-start="file in files | orderBy:orderByField:reverseSort" class="repeat-animation">
+                          <td class="narrow"><img ng-src="{{file.img}}" tooltips tooltip-title="Основной" tooltip-delay="500"></td>
+                          <td><img src="../../img/word-sm.png" alt="">&nbsp;&nbsp;<a href="">{{file.name}}</a></td>
+                          <td class="narrow">
+                              <a ng-click="version=!version">{{file.type}}</a>
+                            </td>
+                          <td class="narrow">
+                                <div class="rel" zf-action-sheet="">
+                                    <a ng-click="showKebab = !showKebab" zf-as-button=""><img src="../../img/kebab.png" alt="" class="fade"></a>
+                                    <div class="subMenu myslide hide-for-small-only" ng-show="showKebab">
+                                        <ul>
+                                            <li><a ng-click="showKebab=false">Комментировать</a></li>
+                                            <li><a ng-click="showKebab=false">Блокировать</a></li>
+                                            <li><a ng-click="showKebab=false">Скачать версию</a></li>
+                                            <li><a ng-click="showKebab=false">Добавить версию</a></li>
+                                            <li><a ng-click="showKebab=false">Удалить</a></li>
+                                        </ul>
+                                    </div>
+                                    
+                                        <div zf-as-content="" position="bottom" class="show-for-small-only">
+                                        <ul>
+                                            <li><a ng-click="showKebab=false">Комментировать</a></li>
+                                            <li><a ng-click="showKebab=false">Блокировать</a></li>
+                                            <li><a ng-click="showKebab=false">Скачать версию</a></li>
+                                            <li><a ng-click="showKebab=false">Добавить версию</a></li>
+                                            <li><a ng-click="showKebab=false">Удалить</a></li>
+                                        </ul>
+                                        </div>
+                                </div>
+                                
+                                
+                          </td>
+                      </tr>
+                      <tr ng-repeat-end ng-show="version" class="transparent">
+                          <td colspan="4">
+                          <table class="no-border">
+                              <tr>
+                                  <td><a href="">v.1.0</a></td>
+                                  <td>Гордеева</td>
+                                  <td>15.08.2015</td>
+                                  <td><a href="" tooltips tooltip-title="Комментировать" tooltip-delay="500"><img src="../../img/comment.png" alt=""></a></td>
+                                <td><a href="" class="fade" tooltips tooltip-title="Скачать" tooltip-delay="500"><img src="../../img/download.png" alt=""></a></td>
+                              </tr>
+                              <tr>
+                                  <td><a href="">v.1.1</a></td>
+                                  <td>Гордеева</td>
+                                  <td>18.08.2015</td>
+                                  <td><a href="" tooltips tooltip-title="Комментировать" tooltip-delay="500"><img src="../../img/comment.png" alt=""></a></td>
+                                <td><a href="" class="fade" tooltips tooltip-title="Скачать" tooltip-delay="500"><img src="../../img/download.png" alt=""></a></td>
+                              </tr>
+                          </table>
+                          </td>
+                      </tr>
+-->
+                   
+                    </tbody>
+                                 </table>
+               </div>
+           </div>
+       </div>
+            <br><br>
+</div>
+
+
+
+<div class="rel">
+    <div class="zag medium-size" ng-click="hideFile1 = !hideFile1;">
+        <span  ng-hide="showSubMenu1">Ссылки (2)</span>&nbsp;
+        <span class="arrow" ng-hide="hideFile1 || showSubMenu1">&and;</span>
+        <span ng-hide="!hideFile1 || showSubMenu1" class="arrow">&or;</span>
+    </div>
+    <div class="plus">
+    <img src="../../img/plus-dark.png" alt="" ng-hide="showSubMenu1" ng-click="showSubMenu1 = !showSubMenu1" tooltips tooltip-title="Добавить ссылку" tooltip-delay="500">
+    <img src="../../img/close-dark.png" alt="" class="close"  ng-show="showSubMenu1" ng-click="showSubMenu1 = !showSubMenu1">
+    <div ng-show="showSubMenu1" class="jump slide-right">
+        <div zf-action-sheet="">
+            <div zf-as-button="">
+                <img src="../../img/url.png" alt="">
+            </div>
+            <div zf-as-content="" position="bottom" class="custom-as">
+            <p>Прикрепить URL</p>
+            <ul>
+            <li zf-as-button=""><a href="#" >Дополнение</a></li>
+            <li zf-as-button=""><a href="#" >Ссылается на</a></li>
+            <li zf-as-button=""><a href="#" >Связано с</a></li>
+            </ul>
+            </div>
+        </div>
+<!--
+        <div zf-action-sheet="" >
+            <div zf-as-button="">
+                <img src="../../img/link-attach.png" alt="">
+            </div>
+            <div zf-as-content="" position="bottom" class="custom-as">
+            <p>Прикрепить файл</p>
+            <ul>
+            <li zf-as-button=""><a href="#" >Основной документ</a></li>
+            <li zf-as-button=""><a href="#" >Дополнение</a></li>
+            <li zf-as-button=""><a href="#" >Отчет</a></li>
+            </ul>
+            </div>
+        </div>
+-->
+        <div zf-action-sheet="" >
+            <div zf-as-button="">
+                <img src="../../img/link.png" alt="">
+            </div>
+            <div zf-as-content="" position="bottom" class="custom-as">
+            <p>Прикрепить ссылку</p>
+            <ul>
+            <li zf-as-button=""><a href="#" >Отчет</a></li>
+            <li zf-as-button=""><a href="#" >Дополнение</a></li>
+            <li zf-as-button=""><a href="#" >Ссылается на</a></li>
+            <li zf-as-button=""><a href="#" >В ответ на</a></li>
+            </ul>
+            </div>
+        </div>
+        <div zf-action-sheet="" >
+            <div zf-as-button="">
+                <img src="../../img/add-link.png" alt="">
+            </div>
+            <div zf-as-content="" position="bottom" class="custom-as">
+            <p>Создать</p>
+            <ul>
+            <li zf-as-button=""><a href="#" >Отчет</a></li>
+            <li zf-as-button=""><a href="#" >Дополнение</a></li>
+            <li zf-as-button=""><a href="#" >Ссылается на</a></li>
+            <li zf-as-button=""><a href="#" >В ответ на</a></li>
+            </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+       <div ng-controller="linkCtrl">
+           <div slide-toggle="!hideFile1" >
+               <table class="simple">
+                <tbody>
+                  <tr class="table-header">
+                      <th ng-click="orderByField='img'; reverseSort = !reverseSort">вид</th>
+                      <th ng-click="orderByField='name'; reverseSort = !reverseSort">имя</th>
+                      <th class="small-hide" ng-click="orderByField='type'; reverseSort = !reverseSort">тип</th>
+                      <th></th>
+                  </tr>
+                  <tr ng-repeat="file in files | orderBy:orderByField:reverseSort" class="repeat-animation">
+                      <td><img ng-src="{{file.img}}" class="fade"></td>
+                      <td><a href="">{{file.name}}</a></td>
+                      <td class="italic small-hide">{{file.type}}</td>
+                      <td class="text-right">
+<!--                            <a href=""><img src="../../img/info-black.png" alt="" class="fade"></a>-->
+<!--                                &nbsp;&nbsp;-->
+                            <div class="rel" zf-action-sheet="">
+                                    <a ng-click="showKebab = !showKebab" zf-as-button=""><img src="../../img/kebab.png" alt="" class="fade"></a>
+                                    <div class="subMenu myslide hide-for-small-only" ng-show="showKebab">
+                                        <ul>
+                                            <li><a ng-click="showKebab=false">Удалить</a></li>
+                                            <li><a ng-click="showKebab=false">Блокировать?</a></li>
+<!--                                            <li><a ng-click="showKebab=false">Скачать&nbsp;версию?</a></li>-->
+<!--                                            <li><a ng-click="showKebab=false">Добавить&nbsp;версию?</a></li>-->
+                                        </ul>
+                                    </div>
+                                    
+                                        <div zf-as-content="" position="bottom" class="show-for-small-only">
+                                        <ul>
+                                            <li><a ng-click="showKebab=false">Комментировать</a></li>
+                                            <li><a ng-click="showKebab=false">Блокировать</a></li>
+                                            <li><a ng-click="showKebab=false">Скачать версию</a></li>
+                                            <li><a ng-click="showKebab=false">Добавить версию</a></li>
+                                            <li><a ng-click="showKebab=false">Удалить</a></li>
+                                        </ul>
+                                        </div>
+                                </div>
+                            
+                            
+                            
+                      </td>
+                  </tr>
+
+                </tbody>
+              </table>
+           </div>
+       </div>
+    <br><br>
+</div>
+
+
+
+
+
+</div>
+

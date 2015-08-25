@@ -1,0 +1,58 @@
+<div class="grid-block">
+       <div class="grid-block medium-12 large-3 small-order-3 medium-order-3 large-order-1">
+
+
+<!--       slide-toggle="#attr1-->
+        <div class="attrblock">
+            <div class="zag" ng-click="hideAttr = !hideAttr;">Атрибуты<span class="arrow" ng-show="!hideAttr">&and;</span><span ng-show="hideAttr" class="arrow">&or;</span></div>
+            <ul id="attr1" class="light" data-slide-toggle="!hideAttr">
+                <li>Номер: ОРГ-3</li>
+                <li>Вид: ОРД</li>
+
+                <li class="mt-10">Автор: Константинопольский К.</li>
+                <li>Исполнитель: Пуцин С.</li>
+
+                <li class="mt-10">Создан: 23.10.2015</li>
+                <li class="red-color">Срок: 25.10.2015</li>
+            </ul>
+            <br>
+            <div class="zag" ng-click="hideAttr1 = !hideAttr1;">Связанные задания<span class="arrow" ng-show="!hideAttr1">&and;</span><span ng-show="hideAttr1" class="arrow">&or;</span></div>
+            <ul class="light" slide-toggle="hideAttr1">
+                <li><a href="">Прочитать письмо</a></li>
+                <li class="mt-10"><a href="">Законспектировать письмо</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="grid-content small-12 medium-9  large-7 small-order-2 medium-order-1 large-order-2">
+        <div class="zag medium-size" ng-click="hideDescription = !hideDescription;">Описание<span ng-show="!hideDescription" class="arrow">&and;</span><span ng-show="hideDescription" class="arrow">&or;</span></div>
+            <div slide-toggle="hideDescription">
+                <p class="medium-size">
+                    Кластерное вибрато, по определению, начинает звукосниматель. Плавно-мобильное голосовое поле просветляет аккорд.
+                </p>
+            </div>
+
+             <div ng-include="'templates/partials/doc-control.html'"></div>
+
+
+    </div>
+<!--button panel *******************************************-->
+
+    <div class="task grid-content p0 medium-3 large-2 small-order-1 medium-order-2 large-order-3">
+        <a zf-open="reportModal">
+           <div class="report">
+                <img src="../../img/attach.png" alt=""><br>
+                <span>Прикрепить отчет</span>
+            </div>
+        </a>
+        
+        <a class="decision primary">Действие 1</a>
+        <a class="decision">Действие 2</a>
+        <a class="decision more" zf-toggle="buttPanel" tooltips tooltip-title="Еще" tooltip-side="bottom">...</a>
+    </div>
+</div>
+
+
+
+
+
+

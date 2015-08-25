@@ -19,7 +19,7 @@ view: true
 
 <div ng-include="'templates/partials/header.html'" class="task slide-top"></div>
 <div ng-include="'templates/partials/smallbar.html'" class="show-for-medium task slide-top"></div>
-<div ng-include="'templates/partials/smallbar1.html'" class="show-for-small-only task slide-top"></div>
+<div ng-include="'templates/partials/smallbar-tabs.html'" class="show-for-small-only task slide-top"></div>
 
 
 
@@ -33,8 +33,12 @@ view: true
                     <div class="grid-content">
                     <br><br>
 <!--                        <p class="nomer">ОРГ-3</p>-->
-                        <h3><span class="important">&uarr;&nbsp;</span>Это заголовок задания
-<!--                        <a href=""><img src="../img/edit.png" alt="" class="edit"></a>-->
+                        <h3 class="title">
+<!--                            <span class="important">&uarr;&nbsp;</span>-->
+                            Это заголовок задания
+                            <a href=""><img src="../img/edit.png" alt="" class="edit"></a>
+                            <a href=""><img src="../img/refresh.png" alt="" class="fade"></a>
+                            <a href=""><img src="../img/bin.png" alt="" class="fade"></a>
                         </h3>
                         <h5 class="show-for-small-only" ng-click="completed1 = !completed1" ng-hide="completed1">Ожидает решения</h5>
                         <img class="show-for-small-only" src="../img/completed.png" alt="" ng-show="completed1" ng-click="completed1 = !completed1">
@@ -60,11 +64,9 @@ view: true
                        <div zf-tab="" title="Дерево версий">
                         <div ng-include="'templates/partials/tree-tab.html'"></div>
                     </div>
-                    <div zf-tab="" title="История" class="slide-right">
-                        История
-                    </div>
                 </div>
 
+<!--
                 <zf-panel id="topbar" position="top" class="myTabSmall">
                     <a href="#" zf-close="" class="close-button">×</a>
                     <ul>
@@ -75,31 +77,32 @@ view: true
                         <li><a href="#">История</a></li>
                     </ul>
                 </zf-panel>
-
+-->
 
                  <div ng-include="'templates/partials/main-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(1)"></div>
                  <div ng-include="'templates/partials/comment-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(2)"></div>
                  <div ng-include="'templates/partials/sogl-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(3)"></div>
                  <div ng-include="'templates/partials/tree-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(4)"></div>
 
-
         </div>
-
 
     </div>
 
 
-    <div>
-        <div class="grid-container rel">
-
+<div>
+    <div class="grid-container rel">
         <div class="grid-content">
 
                 <div class="grid-block nowrap">
                     <div class="grid-content">
                     <br><br>
 <!--                        <p class="nomer">ОРГ-3</p>-->
-                        <h3><span class="important">&uarr;&nbsp;</span>Согласовать письмо в исполком российского футбольного союза
-<!--                        <a href=""><img src="../img/edit.png" alt="" class="edit"></a>-->
+                        <h3 class="title">
+<!--                            <span class="important">&uarr;&nbsp;</span>-->
+                            Согласовать письмо в исполком российского футбольного союза
+                            <a href=""><img src="../img/edit.png" alt="" class="edit"></a>
+                            <a href=""><img src="../img/refresh.png" alt="" class="fade"></a>
+                            <a href=""><img src="../img/bin.png" alt="" class="fade"></a>
                         </h3>
                         <h5 class="show-for-small-only" ng-click="completed2 = !completed2" ng-hide="completed2">Ожидает решения</h5>
                         <img class="hide-for-small-only" src="../img/completed.png" alt="" ng-show="completed2" ng-click="completed2 = !completed2">
@@ -114,7 +117,7 @@ view: true
 
                 <div zf-tabs="" class="custom-tabs hide-for-small-only">
                     <div zf-tab="" title="Главное">
-                        <div ng-include="'templates/partials/main-tab-short.html'"></div>
+                        <div ng-include="'templates/partials/main-tab.html'"></div>
                     </div>
                     <div zf-tab="" title="Комментарии">
                         <div ng-include="'templates/partials/comment-tab.html'"></div>
@@ -125,11 +128,9 @@ view: true
                        <div zf-tab="" title="Дерево версий">
                         <div ng-include="'templates/partials/tree-tab.html'"></div>
                     </div>
-                    <div zf-tab="" title="История" class="slide-right">
-                        История
-                    </div>
                 </div>
 
+<!--
                 <zf-panel id="topbar" position="top" class="myTabSmall">
                     <a href="#" zf-close="" class="close-button">×</a>
                     <ul>
@@ -140,9 +141,10 @@ view: true
                         <li><a href="#">История</a></li>
                     </ul>
                 </zf-panel>
+-->
 
 
-                 <div ng-include="'templates/partials/main-tab-short.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(1)"></div>
+                 <div ng-include="'templates/partials/main-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(1)"></div>
                  <div ng-include="'templates/partials/comment-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(2)"></div>
                  <div ng-include="'templates/partials/sogl-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(3)"></div>
                  <div ng-include="'templates/partials/tree-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(4)"></div>

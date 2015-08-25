@@ -1,10 +1,11 @@
 ---
-name: Задание на согласование
-url: /task/soglas
-par: Документ
-title: Согласование
+name: Задание
+url: /task/isp
+par: Задание
+title: Исполнение
 back: true
 view: true
+doc: true
 ---
 <div  ng-controller="TabController as tab">
 
@@ -20,19 +21,19 @@ view: true
 
                 <div class="grid-block nowrap">
                     <div class="grid-content">
-                    <br><br>
+                       <br><br>
                         <h3 class="title">
 <!--                            <span class="important">&uarr;&nbsp;</span>-->
-                            Заявка на покупку кондиционеров
+                            Обычное задание на исполнение
                             <a href=""><img src="../img/edit.png" alt="" class="edit"></a>
                             <a href=""><img src="../img/refresh.png" alt="" class="fade"></a>
                             <a href=""><img src="../img/bin.png" alt="" class="fade"></a>
                         </h3>
-                        <h5 class="show-for-small-only" ng-click="completed = !completed" ng-hide="completed">Ожидает решения</h5>
+                        <h5 class="show-for-small-only" ng-click="completed = !completed" ng-hide="completed">В работе</h5>
                         <img class="show-for-small-only" src="../img/completed.png" alt="" ng-show="completed" ng-click="completed = !completed">
                     </div>
                     <div class="grid-content shrink bottom hide-for-small-only">
-                        <h5 ng-click="completed = !completed" ng-hide="completed">Ожидает решения</h5>
+                        <h5 ng-click="completed = !completed" ng-hide="completed">В работе</h5>
                         <img class="hide-for-small-only" src="../img/completed.png" alt="" ng-show="completed" ng-click="completed = !completed">
                     </div>
                 </div>
@@ -41,38 +42,31 @@ view: true
 
                 <div zf-tabs="" class="custom-tabs hide-for-small-only">
                     <div zf-tab="" title="Главное">
-                        <div ng-include="'templates/partials/main-tab.html'"></div>
+                        <div ng-include="'templates/partials/main-tab-isp.html'"></div>
                     </div>
                     <div zf-tab="" title="Комментарии">
                         <div ng-include="'templates/partials/comment-tab.html'"></div>
                     </div>
-                    <div zf-tab="" title="Ход согласования">
-                        <div ng-include="'templates/partials/sogl-tab.html'"></div>
-                    </div>
-                   <div zf-tab="" title="Дерево версий">
-                        <div ng-include="'templates/partials/tree-tab.html'"></div>
-                    </div>
-                    <div zf-tab="" title="История">
-                        Здесь будет таблица со всеми действиями в карточке
-                    </div>
                 </div>
 
+<!--
                 <zf-panel id="topbar" position="top" class="myTabSmall">
                     <a href="#" zf-close="" class="close-button">×</a>
                     <ul>
                         <li><a href="#">Главное</a></li>
-<!--                        <li><a href="#">Комментарии</a></li>-->
+                        <li><a href="#">Комментарии</a></li>
                         <li><a href="#">Ход согласования</a></li>
-<!--                        <li><a href="#">Дерево версий</a></li>-->
+                        <li><a href="#">Дерево версий</a></li>
                         <li><a href="#">История</a></li>
                     </ul>
                 </zf-panel>
+-->
 
 
-                 <div ng-include="'templates/partials/main-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(1)"></div>
+                 <div ng-include="'templates/partials/main-tab-isp.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(1)"></div>
                  <div ng-include="'templates/partials/comment-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(2)"></div>
-                 <div ng-include="'templates/partials/sogl-tab1.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(3)"></div>
-                 <div ng-include="'templates/partials/tree-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(4)"></div>
+<!--                 <div ng-include="'templates/partials/sogl-tab1.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(3)"></div>-->
+<!--                 <div ng-include="'templates/partials/tree-tab.html'" class="show-for-small-only grid-content"  ng-show="tab.isSet(4)"></div>-->
 
 <!--        <div class="prev">&lsaquo;</div>-->
 <!--        <div class="next slick-next">&rsaquo;</div>-->
